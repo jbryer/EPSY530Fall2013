@@ -7,7 +7,13 @@
 **Class Location:** TBD  
 **Office Hours:** By appointment  
 
+#### Textbook
+
+De Veaux, R.D., Velleman, P.F., & Bock, D.E. (2013). *Intro Stats 4th Ed.* Pearson.
+![Intro Stats](http://ecx.images-amazon.com/images/I/51dhcukukGL._SY300_.jpg)
+
 #### Course Description
+
 Descriptive statistics including measures of central tendency and variability, correlation and regression. Introduction to statistical inference, including sampling distributions, significance tests, confidence intervals, and power of tests of significance.
 
 #### Academic Integrity
