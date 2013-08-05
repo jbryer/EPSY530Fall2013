@@ -2,7 +2,7 @@
 
 **Instructor:** Jason Bryer [jason@bryer.org](mailto:jason@bryer.org)  
 **TA:** Timothy (Julio) McLaughlin [mclaughlint@yahoo.com](mailto:mclaughlint@yahoo.com)  
-**Website:** [www.github.com/jbryer/EPSY530Fall2013](http://www.github.com/jbryer/EPSY530Fall2013)  
+**Website:** [epsy530.bryer.org](http://epsy530.bryer.org)  
 **Class Time:** Monday & Wednesday 4:15pm to 5:35pm  
 **Class Location:** TBD  
 **Office Hours:** By appointment  
