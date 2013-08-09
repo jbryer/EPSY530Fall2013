@@ -7,16 +7,16 @@
 **Class Location:** HU 020  
 **Office Hours:** By appointment  
 
-#### Textbook
-
-De Veaux, R.D., Velleman, P.F., & Bock, D.E. (2013). *Intro Stats 4th Ed.* Pearson.
-![Intro Stats](http://ecx.images-amazon.com/images/I/51dhcukukGL._SY300_.jpg)
-
-The textbook should be available in the book store or on [Amazon](http://www.amazon.com/Intro-Stats-Edition-Richard-Veaux/dp/0321825276/ref=sr_1_3?ie=UTF8&qid=1375575375&sr=8-3&keywords=intro+stats).
-
 #### Course Description
 
 Descriptive statistics including measures of central tendency and variability, correlation and regression. Introduction to statistical inference, including sampling distributions, significance tests, confidence intervals, and power of tests of significance.
+
+#### Grading
+
+* Midterm (25%) - In class multiple choice and take home short answers.
+* Final exam (25%) - In class multipel choice and take home short answers.
+* Homework (20%)
+* Project (30%) - The project can be completed individually or in pairs. If you choose to work with a partner you are required to provide a statment that indicates you participated equally and that you understand one grade will be given for the project for both participants. The project will involve analyzing and presenting analysis of a dataset of your choosing. A list of datasets will be provided but other datasets may be used if approved by the instructor.
 
 #### Schedule
 
@@ -192,9 +192,16 @@ Descriptive statistics including measures of central tendency and variability, c
  </tr>
 </table>
 
+#### Textbook
+
+De Veaux, R.D., Velleman, P.F., & Bock, D.E. (2013). *Intro Stats 4th Ed.* Pearson.
+![Intro Stats](http://ecx.images-amazon.com/images/I/51dhcukukGL._SY300_.jpg)
+
+The textbook should be available in the book store or on [Amazon](http://www.amazon.com/Intro-Stats-Edition-Richard-Veaux/dp/0321825276/ref=sr_1_3?ie=UTF8&qid=1375575375&sr=8-3&keywords=intro+stats).
+
 #### Homework Assignments
 
-* Chapter 2: 9, 10, and 12 on page 16. (Note that each of these is a Who and What exercise, cf. p. 16, lower left.) 
+* Chapter 2: 9, 10, and 12.
 * Chapter 3: 4 (any current newspaper will do), 22 & 32
 * Chapter 4: 2, 12 & 20
 * Chapter 5: 2, 16, 24 & 34
@@ -215,13 +222,6 @@ Descriptive statistics including measures of central tendency and variability, c
 * Chapter 24: 2, 5, 6, 7, 11, 14
 * Chapter 25: 1, 2, 13, 16, 20
 
-
-#### Grading
-
-* Midterm (25%) - In class multiple choice and take home short answers.
-* Final exam (25%) - In class multipel choice and take home short answers.
-* Homework (20%)
-* Project (30%) - The project can be completed individually or in pairs. If you choose to work with a partner you are required to provide a statment that indicates you participated equally and that you understand one grade will be given for the project for both participants. The project will involve analyzing and presenting analysis of a dataset of your choosing. A list of datasets will be provided but other datasets may be used if approved by the instructor.
 
 #### Software
 
