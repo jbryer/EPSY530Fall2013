@@ -12,3 +12,6 @@ I have provided access to running R in a Google Chrome browser at [rstudio.bryer
 * [Quick-R](http://statmethods.net/) - by Robert I. Kabacoff. This is, IMHO, perhaps the single most useful resource for working with R. His book, *R in Action* is also highly recommended. A link to purchase his book with a discount is available on the [statmethods.net](http://statmethods.net) website.
 
 * [simpleR - Using R for Introductory Statistics](http://www.math.csi.cuny.edu/Statistics/R/simpleR/printable/simpleR.pdf) by John Verzani
+
+* [Google R PRogramming Video Lectures](http://gettinggeneticsdone.blogspot.com/2013/08/google-developers-r-programming-video.html)
+

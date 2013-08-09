@@ -22,274 +22,199 @@ Descriptive statistics including measures of central tendency and variability, c
 
 *NOTE: Tentative. Subject to change*
 
-<table border=0 cellpadding=0 cellspacing=0 width=1090 style='border-collapse:
- collapse;table-layout:fixed;width:1090pt'>
+<table border=0 cellpadding=0 cellspacing=0 width=386 style='border-collapse:
+ collapse;table-layout:fixed;width:386pt'>
  <col class=xl68 width=79 style='mso-width-source:userset;mso-width-alt:3370;
  width:79pt'>
- <col class=xl66 width=248 style='mso-width-source:userset;mso-width-alt:10581;
+ <col class=xl69 width=248 style='mso-width-source:userset;mso-width-alt:10581;
  width:248pt'>
  <col class=xl70 width=59 style='mso-width-source:userset;mso-width-alt:2517;
  width:59pt'>
- <col class=xl66 width=574 style='mso-width-source:userset;mso-width-alt:24490;
- width:574pt'>
- <col class=xl66 width=65 span=2 style='width:65pt'>
- <tr class=xl65 height=18 style='height:18.0pt'>
-  <td height=18 class=xl67 width=79 style='height:18.0pt;width:79pt'>Date</td>
-  <td class=xl65 width=248 style='width:248pt'>Topic</td>
-  <td class=xl69 width=59 style='width:59pt'>Chapter</td>
-  <td class=xl65 width=574 style='width:574pt'>Assignment</td>
-  <td class=xl65 width=65 style='width:65pt'></td>
-  <td class=xl65 width=65 style='width:65pt'></td>
+ <tr height=18 style='height:18.0pt'>
+  <td height=18 class=xl65 width=79 style='height:18.0pt;width:79pt'>Date</td>
+  <td class=xl66 width=248 style='width:248pt'>Topic</td>
+  <td class=xl67 width=59 style='width:59pt'>Chapter</td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Aug-26</td>
-  <td class=xl66>Introduction / Variables</td>
+  <td class=xl69>Introduction / Variables</td>
   <td class=xl70>1 &amp; 2</td>
-  <td class=xl66 colspan=3 style='mso-ignore:colspan'>From chapter 2: 9, 10,
-  and 12 on page 16. (Note that each of these is a Who and What exercise, cf.
-  p. 16, lower left.)<span style="mso-spacerun:yes">&nbsp;</span></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Aug-28</td>
-  <td class=xl66>Displaying and Describing Categorical Data</td>
+  <td class=xl69>Displaying and Describing Categorical Data</td>
   <td class=xl70>3</td>
-  <td class=xl66>4 (any current newspaper will do), 22 &amp; 32</td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Sep-02</td>
-  <td class=xl66>NO CLASS - Labour Day</td>
+  <td class=xl69>NO CLASS - Labour Day</td>
   <td class=xl70></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Sep-04</td>
-  <td class=xl66>NO CLASS - Rosh Hashanah</td>
+  <td class=xl69>NO CLASS - Rosh Hashanah</td>
   <td class=xl70></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Sep-09</td>
-  <td class=xl66>Displaying Quantitative Data</td>
+  <td class=xl69>Displaying Quantitative Data</td>
   <td class=xl70>4</td>
-  <td class=xl66>2, 12 &amp; 20</td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Sep-11</td>
-  <td class=xl66>Lab - Intro to R</td>
+  <td class=xl69>Lab - Intro to R</td>
   <td class=xl70></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Sep-16</td>
-  <td class=xl66>Distrubutions</td>
+  <td class=xl69>Distrubutions</td>
   <td class=xl70>5</td>
-  <td class=xl66>2, 16, 24 &amp; 34</td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Sep-18</td>
-  <td class=xl66>Standard Deviation and Normality</td>
+  <td class=xl69>Standard Deviation and Normality</td>
   <td class=xl70>6</td>
-  <td class=xl66>2, 10 &amp; 26</td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Sep-23</td>
-  <td class=xl66>Scatterplots, Association, Correlation</td>
+  <td class=xl69>Scatterplots, Association, Correlation</td>
   <td class=xl70>7</td>
-  <td class=xl66>4, 6, 12, 16</td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Sep-25</td>
-  <td class=xl66>Lab</td>
+  <td class=xl69>Lab</td>
   <td class=xl70></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Sep-30</td>
-  <td class=xl66>Linear Regression</td>
+  <td class=xl69>Linear Regression</td>
   <td class=xl70>8</td>
-  <td class=xl66>8, 12, 16, 20, 28, 42</td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Oct-02</td>
-  <td class=xl66>Regression cont.</td>
+  <td class=xl69>Regression cont.</td>
   <td class=xl70>9</td>
-  <td class=xl66>2, 4, 6, 12, 16</td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Oct-07</td>
-  <td class=xl66>Review</td>
+  <td class=xl69>Review</td>
   <td class=xl70></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Oct-09</td>
-  <td class=xl66>MIDTERM</td>
+  <td class=xl69>MIDTERM</td>
   <td class=xl70></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Oct-14</td>
-  <td class=xl66>NO CLASS - Columbus Day</td>
+  <td class=xl69>NO CLASS - Columbus Day</td>
   <td class=xl70></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Oct-16</td>
-  <td class=xl66></td>
+  <td class=xl69></td>
   <td class=xl70></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Oct-21</td>
-  <td class=xl66></td>
+  <td class=xl69></td>
   <td class=xl70></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Oct-23</td>
-  <td class=xl66>NO CLASS</td>
+  <td class=xl69>NO CLASS</td>
   <td class=xl70></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Oct-28</td>
-  <td class=xl66></td>
+  <td class=xl69></td>
   <td class=xl70></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Oct-30</td>
-  <td class=xl66></td>
+  <td class=xl69></td>
   <td class=xl70></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Nov-04</td>
-  <td class=xl66></td>
+  <td class=xl69></td>
   <td class=xl70></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Nov-06</td>
-  <td class=xl66></td>
+  <td class=xl69></td>
   <td class=xl70></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Nov-11</td>
-  <td class=xl66>NO CLASS</td>
+  <td class=xl69>NO CLASS</td>
   <td class=xl70></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Nov-13</td>
-  <td class=xl66></td>
+  <td class=xl69></td>
   <td class=xl70></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Nov-18</td>
-  <td class=xl66></td>
+  <td class=xl69></td>
   <td class=xl70></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Nov-20</td>
-  <td class=xl66></td>
+  <td class=xl69></td>
   <td class=xl70></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Nov-25</td>
-  <td class=xl66></td>
+  <td class=xl69></td>
   <td class=xl70></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Nov-27</td>
-  <td class=xl66>NO CLASS - Thanksgiving</td>
+  <td class=xl69>NO CLASS - Thanksgiving</td>
   <td class=xl70></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Dec-02</td>
-  <td class=xl66></td>
+  <td class=xl69></td>
   <td class=xl70></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Dec-04</td>
-  <td class=xl66></td>
+  <td class=xl69></td>
   <td class=xl70></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Dec-09</td>
-  <td class=xl66>FINAL EXAM</td>
+  <td class=xl69>FINAL EXAM</td>
   <td class=xl70></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
-  <td class=xl66></td>
  </tr>
 </table>
+
+#### Homework Assignments
+
+* Chapter 2: 9, 10, and 12 on page 16. (Note that each of these is a Who and What exercise, cf. p. 16, lower left.) 
+* Chapter 3: 4 (any current newspaper will do), 22 & 32
+* Chapter 4: 2, 12 & 20
+* Chapter 5: 2, 16, 24 & 34
+* Chapter 6: 2, 10 & 26.
+* Chapter 7: 4, 6, 12, 16
+* Chapter 8: 8, 12, 16, 20, 28, 42
+* Chapter 9: 2, 4, 6, 12, 16 (Note that no exercises are required for chapter 10)
+* Chapter 11: 2, 4, 6
+* Chapter 12: 2, 4, 6, 16, 20, 32
+* Chapter 13: 26, 28, 38
+* Chapter 14: 11, 12, 20, 29, 30
+* Chapter 15: 2, 6, 7, 8, 12
+* Chapter 16: 1, 2, 6, 14, 27, 28, 30
+* Chapter 17: 1, 2, 28, 35, 36
+* Chapter 18: 5, 6,11, 12, 19, & 25
+* Chapter 19: 3, 4, 7, 8, 14, 26
+* Chapter 23: 2, 6, 8, 10, 11
+* Chapter 24: 2, 5, 6, 7, 11, 14
+* Chapter 25: 1, 2, 13, 16, 20
+
 
 #### Grading
 
