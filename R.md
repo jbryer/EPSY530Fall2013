@@ -13,5 +13,5 @@ I have provided access to running R in a Google Chrome browser at [rstudio.bryer
 
 * [simpleR - Using R for Introductory Statistics](http://www.math.csi.cuny.edu/Statistics/R/simpleR/printable/simpleR.pdf) by John Verzani
 
-* [Google R PRogramming Video Lectures](http://gettinggeneticsdone.blogspot.com/2013/08/google-developers-r-programming-video.html)
+* [Google R Programming Video Lectures](http://gettinggeneticsdone.blogspot.com/2013/08/google-developers-r-programming-video.html)
 

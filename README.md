@@ -37,7 +37,7 @@ Descriptive statistics including measures of central tendency and variability, c
  </tr>
  <tr height=18 style='height:18.0pt'>
   <td height=18 class=xl68 style='height:18.0pt'>Aug-26</td>
-  <td class=xl69>Introduction / Variables</td>
+  <td class=xl69><a href="http://htmlpreview.github.io/?https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class01/index.html">Introduction / Variables</a></td>
   <td class=xl70>1 &amp; 2</td>
  </tr>
  <tr height=18 style='height:18.0pt'>
