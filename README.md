@@ -22,175 +22,40 @@ Descriptive statistics including measures of central tendency and variability, c
 
 *NOTE: Tentative. Subject to change*
 
-<table border=0 cellpadding=0 cellspacing=0 width=386 style='border-collapse:
- collapse;table-layout:fixed;width:386pt'>
- <col class=xl68 width=79 style='mso-width-source:userset;mso-width-alt:3370;
- width:79pt'>
- <col class=xl69 width=248 style='mso-width-source:userset;mso-width-alt:10581;
- width:248pt'>
- <col class=xl70 width=59 style='mso-width-source:userset;mso-width-alt:2517;
- width:59pt'>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl65 width=79 style='height:18.0pt;width:79pt'>Date</td>
-  <td class=xl66 width=248 style='width:248pt'>Topic</td>
-  <td class=xl67 width=59 style='width:59pt'>Chapter</td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Aug-26</td>
-  <td class=xl69><a href="http://htmlpreview.github.io/?https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class01/index.html">Introduction / Variables</a></td>
-  <td class=xl70>1 &amp; 2</td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Aug-28</td>
-  <td class=xl69>Displaying and Describing Categorical Data</td>
-  <td class=xl70>3</td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Sep-02</td>
-  <td class=xl69>NO CLASS - Labour Day</td>
-  <td class=xl70></td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Sep-04</td>
-  <td class=xl69>NO CLASS - Rosh Hashanah</td>
-  <td class=xl70></td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Sep-09</td>
-  <td class=xl69>Displaying Quantitative Data</td>
-  <td class=xl70>4</td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Sep-11</td>
-  <td class=xl69>Lab - Intro to R</td>
-  <td class=xl70></td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Sep-16</td>
-  <td class=xl69>Distrubutions</td>
-  <td class=xl70>5</td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Sep-18</td>
-  <td class=xl69>Standard Deviation and Normality</td>
-  <td class=xl70>6</td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Sep-23</td>
-  <td class=xl69>Scatterplots, Association, Correlation</td>
-  <td class=xl70>7</td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Sep-25</td>
-  <td class=xl69>Lab</td>
-  <td class=xl70></td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Sep-30</td>
-  <td class=xl69>Linear Regression</td>
-  <td class=xl70>8</td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Oct-02</td>
-  <td class=xl69>Regression cont.</td>
-  <td class=xl70>9</td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Oct-07</td>
-  <td class=xl69>Review</td>
-  <td class=xl70></td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Oct-09</td>
-  <td class=xl69>MIDTERM</td>
-  <td class=xl70></td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Oct-14</td>
-  <td class=xl69>NO CLASS - Columbus Day</td>
-  <td class=xl70></td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Oct-16</td>
-  <td class=xl69></td>
-  <td class=xl70></td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Oct-21</td>
-  <td class=xl69></td>
-  <td class=xl70></td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Oct-23</td>
-  <td class=xl69>NO CLASS</td>
-  <td class=xl70></td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Oct-28</td>
-  <td class=xl69></td>
-  <td class=xl70></td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Oct-30</td>
-  <td class=xl69></td>
-  <td class=xl70></td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Nov-04</td>
-  <td class=xl69></td>
-  <td class=xl70></td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Nov-06</td>
-  <td class=xl69></td>
-  <td class=xl70></td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Nov-11</td>
-  <td class=xl69>NO CLASS</td>
-  <td class=xl70></td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Nov-13</td>
-  <td class=xl69></td>
-  <td class=xl70></td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Nov-18</td>
-  <td class=xl69></td>
-  <td class=xl70></td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Nov-20</td>
-  <td class=xl69></td>
-  <td class=xl70></td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Nov-25</td>
-  <td class=xl69></td>
-  <td class=xl70></td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Nov-27</td>
-  <td class=xl69>NO CLASS - Thanksgiving</td>
-  <td class=xl70></td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Dec-02</td>
-  <td class=xl69></td>
-  <td class=xl70></td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Dec-04</td>
-  <td class=xl69></td>
-  <td class=xl70></td>
- </tr>
- <tr height=18 style='height:18.0pt'>
-  <td height=18 class=xl68 style='height:18.0pt'>Dec-09</td>
-  <td class=xl69>FINAL EXAM</td>
-  <td class=xl70></td>
- </tr>
-</table>
+Date   | Topic | Chapter
+-------|-------|:--------:
+Aug-26 | [Introduction / Variables](http://htmlpreview.github.io/?https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class01/index.html) | 1
+Aug-28 | Displaying and Describing Categorical Data | 3
+Sep-02 | NO CLASS - Labour Day
+Sep-04 | NO CLASS - Rosh Hashanah
+Sep-09 | Displaying Quantitative Data | 4
+Sep-11 | Lab - Intro to R | 
+Sep-16 | Distrubutions | 5
+Sep-18 | Standard Deviation and Normality | 6
+Sep-23 | Scatterplots, Association, Correlation | 7
+Sep-25 | Lab	
+Sep-30 | Linear Regression	8
+Oct-02 | Regression cont.	9
+Oct-07 | Review	
+Oct-09 | MIDTERM	
+Oct-14 | NO CLASS - Columbus Day	
+Oct-16 | 	
+Oct-21 | 	
+Oct-23 | NO CLASS	
+Oct-28 | 	
+Oct-30 | 	
+Nov-04 | 	
+Nov-06 | 	
+Nov-11 | NO CLASS	
+Nov-13 | 	
+Nov-18 | 	
+Nov-20 | 	
+Nov-25 | 	
+Nov-27 | NO CLASS - Thanksgiving	
+Dec-02 | 	
+Dec-04 | 	
+Dec-09 | FINAL EXAM
+
 
 #### Textbook
 
@@ -201,14 +66,15 @@ The textbook should be available in the book store or on [Amazon](http://www.ama
 
 #### Homework Assignments
 
-* Chapter 2: 9, 10, and 12.
-* Chapter 3: 4 (any current newspaper will do), 22 & 32
-* Chapter 4: 2, 12 & 20
-* Chapter 5: 2, 16, 24 & 34
-* Chapter 6: 2, 10 & 26.
-* Chapter 7: 4, 6, 12, 16
-* Chapter 8: 8, 12, 16, 20, 28, 42
-* Chapter 9: 2, 4, 6, 12, 16 (Note that no exercises are required for chapter 10)
+* Chapter 1: 9, 10, and 12.
+* Chapter 2: 4 (any current newspaper will do), 22 & 32
+* Chapter 3: 2, 12 & 20
+* Chapter 4: 2, 16, 24 & 34
+* Chapter 5: 2, 10 & 26.
+* Chapter 6: 4, 6, 12, 16
+* Chapter 7: 8, 12, 16, 20, 28, 42
+* Chapter 8: 2, 4, 6, 12, 16
+
 * Chapter 11: 2, 4, 6
 * Chapter 12: 2, 4, 6, 16, 20, 32
 * Chapter 13: 26, 28, 38
