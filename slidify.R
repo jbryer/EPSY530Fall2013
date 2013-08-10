@@ -22,11 +22,14 @@ author <- function(dir, git=FALSE, jekyll=FALSE) {
 		todel <- list.files(dir, pattern='.git*', recursive=TRUE, all.files=TRUE)
 		if(length(todel) > 0) {
 			todel <- paste0(dir, '/', todel)
-			unlink(todel)
+			unlink(todel, recursive=TRUE)
 		}
 	}
 	if(!jekyll) {
-		unlink(paste0(dir, '/.nojekyll'), recursive=TRUE)
+		todel <- paste0(dir, '/.nojekyll')
+		if(file.exists(todel)) {
+			unlink(todel)
+		}
 	}
 }
 
@@ -39,7 +42,9 @@ slidify <- function(dir, ...) {
 	if(missing(dir)) {
 		slidify::slidify(...)
 	} else {
-		slidify::slidify(inputFile=paste0(dir, '/index.Rmd'),
-						 outputFile=paste0(dir, '/index.html'))
+		oldwd <- setwd(dir)
+		tryCatch({
+			slidify::slidify(inputFile='index.Rmd', outputFile='index.html')
+		}, finally={ setwd(oldwd) })
 	}
 }
