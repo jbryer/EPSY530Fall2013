@@ -74,19 +74,18 @@ The textbook should be available in the book store or on [Amazon](http://www.ama
 * Chapter 6: 4, 6, 12, 16
 * Chapter 7: 8, 12, 16, 20, 28, 42
 * Chapter 8: 2, 4, 6, 12, 16
-
-* Chapter 11: 2, 4, 6
-* Chapter 12: 2, 4, 6, 16, 20, 32
-* Chapter 13: 26, 28, 38
-* Chapter 14: 11, 12, 20, 29, 30
-* Chapter 15: 2, 6, 7, 8, 12
-* Chapter 16: 1, 2, 6, 14, 27, 28, 30
-* Chapter 17: 1, 2, 28, 35, 36
-* Chapter 18: 5, 6,11, 12, 19, & 25
-* Chapter 19: 3, 4, 7, 8, 14, 26
-* Chapter 23: 2, 6, 8, 10, 11
-* Chapter 24: 2, 5, 6, 7, 11, 14
-* Chapter 25: 1, 2, 13, 16, 20
+* Chapter 10: 2, 4, 6
+* Chapter 11: 2, 4, 6, 16, 20, 32
+* Chapter 12: 26, 28, 38
+* Chapter 13: 11, 12, 20, 29, 30
+* Chapter 14: 2, 6, 7, 8, 12
+* Chapter 15: 1, 2, 6, 14, 27, 28, 30
+* Chapter 16: 1, 2, 28, 35, 36
+* Chapter 17: 5, 6,11, 12, 19, & 25
+* Chapter 18: 3, 4, 7, 8, 14, 26
+* Chapter 22: 2, 6, 8, 10, 11
+* Chapter 23: 2, 5, 6, 7, 11, 14
+* Chapter 24: 1, 2, 13, 16, 20
 
 
 #### Software

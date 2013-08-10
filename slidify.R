@@ -16,7 +16,9 @@ if(!require(slidify) | !require(slidifyLibraries)) {
 #' @param git whether git repository should be created.
 #' @param jekyll whether to include a \code{.nojekyll} file.
 author <- function(dir, git=FALSE, jekyll=FALSE) {
+	oldwd <- setwd(dir)
 	slidify::author(dir)
+	setwd(oldwd)
 	if(!git) {
 		# Delete the git files and directories
 		todel <- list.files(dir, pattern='.git*', recursive=TRUE, all.files=TRUE)
