@@ -25,17 +25,17 @@ Descriptive statistics including measures of central tendency and variability, c
 Date   | Topic | Chapter
 -------|-------|:--------:
 Aug-26 | [Introduction / Variables](http://htmlpreview.github.io/?https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class01/index.html) | 1
-Aug-28 | Displaying and Describing Categorical Data | 3
+Aug-28 | Displaying and Describing Categorical Data | 2
 Sep-02 | NO CLASS - Labour Day
 Sep-04 | NO CLASS - Rosh Hashanah
-Sep-09 | Displaying Quantitative Data | 4
+Sep-09 | Displaying Quantitative Data | 3
 Sep-11 | Lab - Intro to R | 
-Sep-16 | Distrubutions | 5
-Sep-18 | Standard Deviation and Normality | 6
-Sep-23 | Scatterplots, Association, Correlation | 7
+Sep-16 | Distrubutions | 4
+Sep-18 | Standard Deviation and Normality | 5
+Sep-23 | Scatterplots, Association, Correlation | 6
 Sep-25 | Lab	
-Sep-30 | Linear Regression	8
-Oct-02 | Regression cont.	9
+Sep-30 | Linear Regression | 7
+Oct-02 | Regression cont. | 8
 Oct-07 | Review	
 Oct-09 | MIDTERM	
 Oct-14 | NO CLASS - Columbus Day	
