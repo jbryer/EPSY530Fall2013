@@ -15,3 +15,4 @@ I have provided access to running R in a Google Chrome browser at [rstudio.bryer
 
 * [Google R Programming Video Lectures](http://gettinggeneticsdone.blogspot.com/2013/08/google-developers-r-programming-video.html)
 
+* [Introduction to R](http://www.biostat.wisc.edu/~kbroman/Rintro/) - A nice collection of notes and links by Karl Broman.

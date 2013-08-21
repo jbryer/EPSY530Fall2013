@@ -24,7 +24,7 @@ Descriptive statistics including measures of central tendency and variability, c
 
 Date   | Topic | Chapter
 -------|-------|:--------:
-Aug-26 | [Introduction / Variables](http://htmlpreview.github.io/?https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class01/index.html) | 1
+Aug-26 | Introduction / Variables ([HTML](http://htmlpreview.github.io/?https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/index.html), PDF, Source) | 1
 Aug-28 | Displaying and Describing Categorical Data | 2
 Sep-02 | NO CLASS - Labour Day
 Sep-04 | NO CLASS - Rosh Hashanah
@@ -93,7 +93,11 @@ The textbook should be available in the book store or on [Amazon](http://www.ama
 Although this course will emphasize statistical concepts, we will make occosional use of [R](http://r-project.org), an open source statistics program and language. You are free to [install R](http://cran.r-project.org/) and [RStudio](http://rstudio.com) on your own computers, but you can run R within a [Google Chrome](http://google.com/chrome) browser at [rstudio.bryer.org](http://rstudio.bryer.org). Your username and password will be provided within the first week of the semester.
 
 #### Academic Integrity
-Whatever you produce for this course should be your own work and created specifically for this course. You cannot present work produced by others, nor offer any work that you presented or will present to another course. If you borrow text or media from another source or paraphrase substantial ideas from someone else, you must provide a reference to your source.The University policy on academic dishonesty is clearly outlined in the Student Bulletin, and includes, but is not limited to plagiarism, cheating on examinations, multiple submissions, forgery, unauthorized collaboration, and falsification. These are serious infractions of University regulations and could result in a failing grade for the work in question, a failing grade in the course, or dismissal from the University. http://www.albany.edu/undergraduate_bulletin/regulations.html
+
+Whatever you produce for this course should be your own work and created specifically for this course. You cannot present work produced by others, nor offer any work that you presented or will present to another course. If you borrow text or media from another source or paraphrase substantial ideas from someone else, you must provide a reference to your source.
+
+The University policy on academic dishonesty is clearly outlined in the Student Bulletin, and includes, but is not limited to plagiarism, cheating on examinations, multiple submissions, forgery, unauthorized collaboration, and falsification. These are serious infractions of University regulations and could result in a failing grade for the work in question, a failing grade in the course, or dismissal from the University. http://www.albany.edu/undergraduate_bulletin/regulations.html
 
 #### Reasonable Accommodation
-Reasonable accommodations will be provided for students with documented physical, sensory, sys- temic, cognitive, learning and psychiatric disabilities. If you believe you have a disability requiring accommodation in this class, please notify the Director of Disabled Student Services (Campus Center 137, 442-5490). That office will provide the course instructor with verification of your dis- ability, and will recommend appropriate accommodations. For more information, visit the website of the UAlbany Office for Disabled Student Services. http://www.albany.edu/studentlife/DSS/ guidelines/accomodation.html
+
+Reasonable accommodations will be provided for students with documented physical, sensory, sys- temic, cognitive, learning and psychiatric disabilities. If you believe you have a disability requiring accommodation in this class, please notify the Director of Disabled Student Services (Campus Center 137, 442-5490). That office will provide the course instructor with verification of your dis- ability, and will recommend appropriate accommodations. For more information, visit the website of the UAlbany Office for Disabled Student Services. http://www.albany.edu/studentlife/DSS/ guidelines/accomodation.html
