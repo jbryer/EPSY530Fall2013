@@ -24,7 +24,7 @@ Descriptive statistics including measures of central tendency and variability, c
 
 Date   | Topic | Chapter
 -------|-------|:--------:
-Aug-26 | Introduction / Variables ([HTML](http://htmlpreview.github.io/?https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/index.html), PDF, Source) | 1
+Aug-26 | Introduction / Variables ([HTML](http://htmlpreview.github.io/?https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class01.html), PDF, Source) | 1
 Aug-28 | Displaying and Describing Categorical Data | 2
 Sep-02 | NO CLASS - Labour Day
 Sep-04 | NO CLASS - Rosh Hashanah
