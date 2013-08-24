@@ -22,39 +22,39 @@ Descriptive statistics including measures of central tendency and variability, c
 
 *NOTE: Tentative. Subject to change*
 
-Date   | Topic | Chapter
--------|-------|:--------:
-Aug-26 | Introduction / Variables ([HTML](http://htmlpreview.github.io/?https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class01.html), PDF, [Source](Slides/Class01.Rmd)) | 1
-Aug-28 | Displaying and Describing Categorical Data | 2
-Sep-02 | NO CLASS - Labour Day | 
-Sep-04 | NO CLASS - Rosh Hashanah | 
-Sep-09 | Displaying Quantitative Data | 3
-Sep-11 | Lab - Intro to R | 
-Sep-16 | Distrubutions | 4
-Sep-18 | Standard Deviation and Normality | 5
-Sep-23 | Scatterplots, Association, Correlation | 6
-Sep-25 | Lab | 
-Sep-30 | Linear Regression | 7
-Oct-02 | Regression cont. | 8
-Oct-07 | Review | 
-Oct-09 | MIDTERM | 
-Oct-14 | NO CLASS - Columbus Day | 
-Oct-16 | Understanding Randomness | 9
-Oct-21 | Sample Surveys | 10
-Oct-23 | NO CLASS | 
-Oct-28 | Experiments and Observational Studies | 11
-Oct-30 | From Randomness to Probability | 12
-Nov-04 | Probability Rules | 13
-Nov-06 | Random Variables and Probability Models | 14
-Nov-11 | NO CLASS | 
-Nov-13 | Sampling Distribution Models | 15
-Nov-18 | Confidence Intervals for Proportions | 16
-Nov-20 | Inferences About Means | 18
-Nov-25 | Comparing Groups | 20
-Nov-27 | NO CLASS - Thanksgiving | 
-Dec-02 | Paired Smaples and Block | 21
-Dec-04 | Review | 
-Dec-09 | FINAL EXAM | 	
+Date   | Topic | Resources | Chapter
+-------|:------|:----------|:--------:
+Aug-26 | Introduction / Variables | [HTML](http://htmlpreview.github.io/?https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class01.html), PDF, [Source](Slides/Class01.Rmd) | 1
+Aug-28 | Displaying and Describing Categorical Data |  | 2
+Sep-02 | NO CLASS - Labour Day |  | 
+Sep-04 | NO CLASS - Rosh Hashanah |  | 
+Sep-09 | Displaying Quantitative Data | |  3
+Sep-11 | Lab - Intro to R | |  
+Sep-16 | Distrubutions |  | 4
+Sep-18 | Standard Deviation and Normality |  | 5
+Sep-23 | Scatterplots, Association, Correlation |  | 6
+Sep-25 | Lab |  | 
+Sep-30 | Linear Regression |  | 7
+Oct-02 | Regression cont. |  | 8
+Oct-07 | Review |  | 
+Oct-09 | MIDTERM |  | 
+Oct-14 | NO CLASS - Columbus Day |  | 
+Oct-16 | Understanding Randomness |  | 9
+Oct-21 | Sample Surveys |  | 10
+Oct-23 | NO CLASS |  | 
+Oct-28 | Experiments and Observational Studies |  | 11
+Oct-30 | From Randomness to Probability |  | 12
+Nov-04 | Probability Rules |  | 13
+Nov-06 | Random Variables and Probability Models |  | 14
+Nov-11 | NO CLASS |  | 
+Nov-13 | Sampling Distribution Models |  | 15
+Nov-18 | Confidence Intervals for Proportions |  | 16
+Nov-20 | Inferences About Means |  | 18
+Nov-25 | Comparing Groups |  | 20
+Nov-27 | NO CLASS - Thanksgiving |  | 
+Dec-02 | Paired Smaples and Block |  | 21
+Dec-04 | Review |  | 
+Dec-09 | FINAL EXAM |  | 	
 
 
 ### Textbook
