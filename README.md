@@ -77,14 +77,15 @@ You can find a lot of the material in *R in Action* on Kabacoff's website, [stat
 ### Homework Assignments
 
 * Chapter 1: 9, 10, and 12.
-* Chapter 2: 
+* Chapter 2: 1, 6, 7, 10
 * Chapter 3: 
 * Chapter 4: 
 * Chapter 5: 
 * Chapter 6: 
 * Chapter 7: 
 * Chapter 8: 
-* Chapter 9: 
+
+* Chapter 9:
 * Chapter 10: 
 * Chapter 11: 
 * Chapter 12: 
@@ -100,6 +101,8 @@ You can find a lot of the material in *R in Action* on Kabacoff's website, [stat
 ### Software
 
 Although this course will emphasize statistical concepts, we will make occosional use of [R](http://r-project.org), an open source statistics program and language. You are free to [install R](http://cran.r-project.org/) and [RStudio](http://rstudio.com) on your own computers, but you can run R within a [Google Chrome](http://google.com/chrome) browser at [rstudio.bryer.org](http://rstudio.bryer.org). Your username and password will be provided within the first week of the semester.
+
+**WARNING** KEEP A LOCAL COPY OF ALL YOUR R SCRIPTS AND DATA. I cannot guarantee that the server will always retain a copy of your work. 
 
 ### Academic Integrity
 
