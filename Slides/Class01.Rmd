@@ -49,8 +49,52 @@ There will be four components to your grade:
 
 ---
 
-## Variables
+## Statistics
 
-* Qualitiative variables
-* Quantitative variables
+"Statistics is the study of the collection, organization, analysis, interpretation and presentation of *data*. It deals with all aspects of data, including the planning of data collection in terms of the design of surveys and experiments." ([Wikipedia](http://en.wikipedia.org/wiki/Statistics), 2013)
+
+Data can be any collection of numbers, characters, images, or other items that provide information about something.
+
+The goal of this course is to explore data and begin to understand what it tells us about the world.
+
+---
+
+## The six “W”s
+
+* <b>W</b>ho - Describe the individuals who were surveyed.
+* <b>W</b>hat - Determine what is being measured.
+* <b>W</b>hen - When was the research conducted?
+* <b>W</b>here - Where was the research conducted?
+* <b>W</b>hy - What was the purpose of the survey or experiment?
+* Ho<b>w</b> - Describe how the survey or experiment was conducted.
+
+
+---
+
+## Who and What
+* Respondents - Individuals who answer the survey (e.g. customers at Amazon).
+* Subjects or Participants - People who are experimented on (e.g. Patients who receive the new medication).
+* Experimental Units - The object of the experiment when it is not a person (e.g. Rats that run through a maze)
+* Records - Rows in a database (e.g. Each person’s purchase record at Amazon)
+
+---
+
+## Sample and Population
+
+* The goal is to describe the population.
+* This is usually impractical or impossible.
+* A sample is used to make inferences about    the population.
+* The sample should be representative of    the population.
+
+---
+
+## Types of Data: Variables
+
+* Qualitiative (or categorical) variables - A variable that tells us what group or category an individual belongs to.
+
+* Quantitative variables - Contains measured numerical values with measurement units.
+
+* Identifier Variable - A variable that is used to uniquely identify the individual.  It does not describe the individual.
+
+* Ordinal Variable - A variable that reports order without natural units (e.g. [Likert](http://jason.bryer.org/likert) items)
 

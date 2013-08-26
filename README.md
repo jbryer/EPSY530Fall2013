@@ -24,7 +24,7 @@ Descriptive statistics including measures of central tendency and variability, c
 
 Date   | Topic | Resources | Chapter
 -------|:------|:----------|:--------:
-Aug-26 | Introduction / Variables | [HTML](http://htmlpreview.github.io/?https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class01.html), PDF, [Source](Slides/Class01.Rmd) | 1
+Aug-26 | Introduction / Variables | [HTML](http://htmlpreview.github.io/?https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class01.html), [PDF](Slides/Class01.pdf), [Source](Slides/Class01.Rmd) | 1
 Aug-28 | Displaying and Describing Categorical Data |  | 2
 Sep-02 | NO CLASS - Labour Day |  | 
 Sep-04 | NO CLASS - Rosh Hashanah |  | 
@@ -84,9 +84,8 @@ You can find a lot of the material in *R in Action* on Kabacoff's website, [stat
 * Chapter 6: 
 * Chapter 7: 
 * Chapter 8: 
-
-* Chapter 9:
-* Chapter 10: 
+* Chapter 9: 
+* Chapter 10:  
 * Chapter 11: 
 * Chapter 12: 
 * Chapter 13: 
