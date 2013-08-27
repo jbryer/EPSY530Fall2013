@@ -20,9 +20,19 @@ author <- function(deckdir, file, git=FALSE, jekyll=FALSE) {
 	if(missing(file)) {
 		slidify::author(deckdir)
 	} else {
-		oldwd <- setwd(deckdir)
-		slidify::author(deckdir)
-		setwd(oldwd)		
+		dir <- tempdir()
+		#slidify::author(dir)
+		scaffold = system.file('skeleton', package = 'slidify')
+		slidify:::copy_dir(scaffold, dir)
+		file.copy(paste0(dir, '/index.Rmd'), paste0(deckdir, '/', file, '.Rmd'))
+		unlink(paste0(dir, '/index.Rmd'))
+		for(i in list.files(dir, include.dirs=FALSE)) {
+			file.copy(paste0(dir, i), paste0(deckdir, i), overwrite=TRUE)			
+		}
+		for(i in dir(dir)) {
+			slidify:::copy_dir(paste0(dir, '/', i), paste0(deckdir, '/', i))			
+		}
+		unlink(dir, recursive=TRUE)
 	}
 	if(!git) {
 		# Delete the git files and directories
