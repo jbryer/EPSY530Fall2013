@@ -1,0 +1,240 @@
+---
+title       : Displaying & Describing Categorical Data
+subtitle    : August 27, 2013
+author      : Jason Bryer (jason@bryer.org)
+job         : epsy530.bryer.org
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : prettify  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+--- &twocol
+
+```{r setup, echo=FALSE, results='hide'}
+require(ggplot2)
+require(gdata)
+options(digits=4)
+opts_chunk$set(fig.path='Figures/Class02-')
+opts_chunk$set(comment=NA)
+source('../R/contingency.table.R')
+```
+
+## Titanic Data
+
+```{r loaddata}
+load('../Data/titanic.Rda')
+head(titanic, n=3)
+```
+
+*** left
+
+- <b>Who?</b> People on the Titanic
+- <b>What?</b> Survival status, class
+- <b>When?</b> April 14, 1912
+
+*** right
+- <b>Where?</b> North Atlantic
+- <b>How?</b> [Vanderbilt University](http://biostat.mc.vanderbilt.edu/twiki/bin/view/Main/DataSets)
+- <b>Why?</b> Historical interest
+
+--- 
+
+## Frequency Table
+
+A frequency table is a table whose first column displays each distinct outcome and second column displays that outcome’s frequency.
+
+```{r freqtable}
+table(titanic$pclass)
+```
+
+---
+
+## Relative Frequency Table
+
+A relative frequency table (also referred to as a proportional table) is a table whose first column displays each distinct outcome and second column displays that outcome’s relative frequency.
+
+```{r proptable}
+prop.table(table(titanic$pclass)) * 100
+```
+
+--- 
+
+## Contingency Tables
+
+A contingency table is a table that displays two categorical variables and their relationships.
+
+```{r freqtable2, echo=FALSE, comment=NA}
+contingency.table(titanic$pclass, titanic$survived)
+```
+
+## Marginal Distribution
+
+The distribution of either variable alone is the marginal distribution. In the table above we have the marginal distribution of *class* on the right column and the marginal distribution of *survival* on the bottom row.
+
+---
+## Table of Percents 
+
+```{r proptable2a}
+prop.table(table(titanic$pclass, titanic$survived)) * 100
+```
+
+---
+
+## Conditional Distributions
+
+You need to be careful how you define the percentages. Do the sum of all cells equal 100, or the sum of each column, or the sum of each row.
+
+```{r proptable2b}
+prop.table(table(titanic$pclass, titanic$survived), 1) * 100
+```
+
+--- quote
+
+## Pie Charts
+
+<p><q>There is no data that can be displayed in a pie chart, that cannot be displayed BETTER in some other type of chart.</q></p> -- John Tukey
+
+---
+
+## Example of a Bad Pie Chart
+
+<center>![Pie Chart](Figures/Class02-PieChart.jpg)</center>
+
+Three of the categories have the same proportions (11%), the other two are 44% and 22%!
+
+--- &twocol
+
+## Bar Charts
+
+*** left
+
+- A bar chart displays the frequency or relative frequency of each category.
+- All bars must have the same width.
+- The y-axis should begin at zero.
+
+
+*** right
+
+```{r barchar}
+plot(titanic$pclass)
+```
+
+---
+
+## Likert Items
+
+```{r likertsetup, echo=FALSE, results='hide'}
+suppressMessages(mass <- read.xls('../Data/MathAnxiety.xls'))
+
+items <- c('I find math interesting.',
+	'I get uptight during math tests.',
+	'I think that I will use math in the future.',
+	'Mind goes blank and I am unable to think clearly when doing my math test.',
+	'Math relates to my life.',
+	'I worry about my ability to solve math problems.',
+	'I get a sinking feeling when I try to do math problems.',
+	'I find math challenging.',
+	'Mathematics makes me feel nervous.',
+	'I would like to take more math classes.',
+	'Mathematics makes me feel uneasy.',
+	'Math is one of my favorite subjects.',
+	'I enjoy learning with mathematics.',
+	'Mathematics makes me feel confused.')
+
+for(i in 2:ncol(mass)) {
+	mass[,i] <- factor(mass[,i], levels=1:5, labels=c('Strongly Disagree', 
+							'Disagree', 'Neutral', 'Agree', 'Strongly Agree'),
+					   ordered=TRUE)
+}
+
+names(mass) <- c('Gender', items)
+```
+
+```{r mathanxiety, fig.height=6, fig.width=9}
+require(likert)
+l <- likert(mass[,2:ncol(mass)])
+plot(l, wrap=30)
+```
+
+---
+
+## Grouped Likert Results
+
+<center>
+```{r mathanxietygrouped, fig.width=9, fig.height=8.5, echo=FALSE}
+lg <- likert(mass[,2:ncol(mass)], grouping=mass$Gender)
+plot(lg)
+```
+<center>
+
+---
+
+## Simpson's Paradox
+#### Berkeley gender bias case
+
+Gender | Applicants | Admitted
+-------|-----------:|--------:
+Men	   |       8442 |      44%
+Women  |       4321 |      35%
+
+In the above table it appears there is a bias against women. However, including department it appears the bias against women disappears, and in fact there are several advantages for women.
+
+Department |        Men |      Men |      Women |    Women
+-----------|-----------:|---------:|-----------:|--------:
+           | Applicants | Admitted | Applicants | Admitted
+A          |        825 |      62% |        108 |     82%
+B          |        560 |      63% |         25 |     68%
+C          |        325 |      37% |        593 |     34%
+D          |        417 |      33% |        375 |     35%
+E          |        191 |      28% |        393 |     24%
+F          |        272 |       6% |        341 |      7%
+
+--- &twocol
+
+## Simpson's Paradox
+#### Teacher salary's and SAT Scores
+
+*** left
+
+SAT data including:
+
+- `state` - the state whose SAT score is used.
+- `salary` - estimated average annual salary of teachers in public schools in 1994-95 school year (in thousands of dollars).
+- `frac` - the faction of eligible students taking the SAT in 1994-95.
+
+Guber, D.L. (1999), Getting what you pay for: the debate over equity in public school expenditures, <i>Journal of Statistics Education 7</i>(2).
+
+See also `?SAT` for more information.
+ 
+*** right
+
+```{r simpsonparadox, echo=FALSE}
+# http://sas-and-r.blogspot.com/2012/02/example-920-visualizing-simpsons.html?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+SASandR+%28SAS+and+R%29
+require(mosaic); trellis.par.set(theme=col.mosaic())
+SAT$fracgrp = cut(SAT$frac, breaks=c(0, 22, 49, 81), labels=c("low", "medium", "high"))
+#SAT$fracgrp = cut(SAT$frac, breaks=c(0, 50, 100), labels=c("low", "high"))
+SAT$fraccount = 1 + as.numeric(SAT$fracgrp=="medium") + 2*as.numeric(SAT$fracgrp=="high")
+ggplot(SAT, aes(x=salary, y=sat, label=state)) + geom_point() + 
+	geom_text(size=3, vjust=0.5, hjust=-0.1)
+```
+
+--- &twocol
+
+## Simpson's Paradox
+
+Let's now include the fraction of eligible students who took the SAT.
+
+*** left
+
+```{r simpsonparadox1, echo=FALSE}
+ggplot(SAT, aes(x=salary, y=sat, label=state, color=frac)) + geom_point() + 
+	geom_text(size=3, vjust=0.5, hjust=-0.1)
+```
+
+*** right
+
+```{r simpsonparadox2, echo=FALSE}
+ggplot(SAT, aes(x=salary, y=sat, label=state, color=fracgrp)) + geom_point() + 
+	geom_text(size=3, vjust=0.5, hjust=-0.1)
+```
+

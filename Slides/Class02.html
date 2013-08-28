@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Displaying &amp; Describing Categorical Data</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Displaying &amp; Describing Categorical Data">
+  <meta name="author" content="Jason Bryer (jason@bryer.org)">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/prettify/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+    <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+    <!-- END LOGO SLIDE -->
+    
+
+    <!-- TITLE SLIDE -->
+    <!-- Should I move this to a Local Layout File? -->
+    <slide class="title-slide segue nobackground">
+      <hgroup class="auto-fadein">
+        <h1>Displaying &amp; Describing Categorical Data</h1>
+        <h2>August 27, 2013</h2>
+        <p>Jason Bryer (jason@bryer.org)<br/>epsy530.bryer.org</p>
+      </hgroup>
+          </slide>
+
+    <!-- SLIDES -->
+      <slide class="" id="">
+  <hgroup>
+    <h2>Titanic Data</h2>
+  </hgroup>
+  <article>
+    <pre><code class="r">load(&quot;../Data/titanic.Rda&quot;)
+head(titanic, n = 3)
+</code></pre>
+
+<pre><code>  pclass survived                           name    sex   age sibsp parch
+1  First      Yes  Allen, Miss. Elisabeth Walton female 29.00     0     0
+2  First      Yes Allison, Master. Hudson Trevor   male  0.92     1     2
+3  First       No   Allison, Miss. Helen Loraine female  2.00     1     2
+  ticket  fare   cabin embarked boat body                       home.dest
+1  24160 211.3      B5        S    2   NA                    St Louis, MO
+2 113781 151.6 C22 C26        S   11   NA Montreal, PQ / Chesterville, ON
+3 113781 151.6 C22 C26        S        NA Montreal, PQ / Chesterville, ON
+</code></pre>
+
+  
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li><b>Who?</b> People on the Titanic</li>
+<li><b>What?</b> Survival status, class</li>
+<li><b>When?</b> April 14, 1912</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <ul>
+<li><b>Where?</b> North Atlantic</li>
+<li><b>How?</b> <a href="http://biostat.mc.vanderbilt.edu/twiki/bin/view/Main/DataSets">Vanderbilt University</a></li>
+<li><b>Why?</b> Historical interest</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Frequency Table</h2>
+  </hgroup>
+  <article>
+    <p>A frequency table is a table whose first column displays each distinct outcome and second column displays that outcome’s frequency.</p>
+
+<pre><code class="r">table(titanic$pclass)
+</code></pre>
+
+<pre><code>
+ First Second  Third 
+   323    277    709 
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Relative Frequency Table</h2>
+  </hgroup>
+  <article>
+    <p>A relative frequency table (also referred to as a proportional table) is a table whose first column displays each distinct outcome and second column displays that outcome’s relative frequency.</p>
+
+<pre><code class="r">prop.table(table(titanic$pclass)) * 100
+</code></pre>
+
+<pre><code>
+ First Second  Third 
+ 24.68  21.16  54.16 
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Contingency Tables</h2>
+  </hgroup>
+  <article>
+    <p>A contingency table is a table that displays two categorical variables and their relationships.</p>
+
+<pre><code>         No Yes Total
+  First 123 200   323
+ Second 158 119   277
+  Third 528 181   709
+  Total 809 500  1309
+</code></pre>
+
+<h2>Marginal Distribution</h2>
+
+<p>The distribution of either variable alone is the marginal distribution. In the table above we have the marginal distribution of <em>class</em> on the right column and the marginal distribution of <em>survival</em> on the bottom row.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Table of Percents</h2>
+  </hgroup>
+  <article>
+    <pre><code class="r">prop.table(table(titanic$pclass, titanic$survived)) * 100
+</code></pre>
+
+<pre><code>
+             No    Yes
+  First   9.396 15.279
+  Second 12.070  9.091
+  Third  40.336 13.827
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Conditional Distributions</h2>
+  </hgroup>
+  <article>
+    <p>You need to be careful how you define the percentages. Do the sum of all cells equal 100, or the sum of each column, or the sum of each row.</p>
+
+<pre><code class="r">prop.table(table(titanic$pclass, titanic$survived), 1) * 100
+</code></pre>
+
+<pre><code>
+            No   Yes
+  First  38.08 61.92
+  Second 57.04 42.96
+  Third  74.47 25.53
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Pie Charts</h2>
+  </hgroup>
+  <article>
+    <p><p><q>There is no data that can be displayed in a pie chart, that cannot be displayed BETTER in some other type of chart.</q></p> -- John Tukey</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Example of a Bad Pie Chart</h2>
+  </hgroup>
+  <article>
+    <p><center><img src="Figures/Class02-PieChart.jpg" alt="Pie Chart"></center></p>
+
+<p>Three of the categories have the same proportions (11%), the other two are 44% and 22%!</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h2>Bar Charts</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li>A bar chart displays the frequency or relative frequency of each category.</li>
+<li>All bars must have the same width.</li>
+<li>The y-axis should begin at zero.</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <pre><code class="r">plot(titanic$pclass)
+</code></pre>
+
+<p><img src="Figures/Class02-barchar.png" alt="plot of chunk barchar"> </p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Likert Items</h2>
+  </hgroup>
+  <article>
+    <pre><code class="r">require(likert)
+l &lt;- likert(mass[, 2:ncol(mass)])
+plot(l, wrap = 30)
+</code></pre>
+
+<p><img src="Figures/Class02-mathanxiety.png" alt="plot of chunk mathanxiety"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>Grouped Likert Results</h2>
+  </hgroup>
+  <article>
+    <p><center>
+<img src="Figures/Class02-mathanxietygrouped.png" alt="plot of chunk mathanxietygrouped"> </p>
+
+<p><center></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Simpson&#39;s Paradox</h2>
+  </hgroup>
+  <article>
+    <h4>Berkeley gender bias case</h4>
+
+<table><thead>
+<tr>
+<th>Gender</th>
+<th align="right">Applicants</th>
+<th align="right">Admitted</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Men</td>
+<td align="right">8442</td>
+<td align="right">44%</td>
+</tr>
+<tr>
+<td>Women</td>
+<td align="right">4321</td>
+<td align="right">35%</td>
+</tr>
+</tbody></table>
+
+<p>In the above table it appears there is a bias against women. However, including department it appears the bias against women disappears, and in fact there are several advantages for women.</p>
+
+<table><thead>
+<tr>
+<th>Department</th>
+<th align="right">Men</th>
+<th align="right">Men</th>
+<th align="right">Women</th>
+<th align="right">Women</th>
+</tr>
+</thead><tbody>
+<tr>
+<td></td>
+<td align="right">Applicants</td>
+<td align="right">Admitted</td>
+<td align="right">Applicants</td>
+<td align="right">Admitted</td>
+</tr>
+<tr>
+<td>A</td>
+<td align="right">825</td>
+<td align="right">62%</td>
+<td align="right">108</td>
+<td align="right">82%</td>
+</tr>
+<tr>
+<td>B</td>
+<td align="right">560</td>
+<td align="right">63%</td>
+<td align="right">25</td>
+<td align="right">68%</td>
+</tr>
+<tr>
+<td>C</td>
+<td align="right">325</td>
+<td align="right">37%</td>
+<td align="right">593</td>
+<td align="right">34%</td>
+</tr>
+<tr>
+<td>D</td>
+<td align="right">417</td>
+<td align="right">33%</td>
+<td align="right">375</td>
+<td align="right">35%</td>
+</tr>
+<tr>
+<td>E</td>
+<td align="right">191</td>
+<td align="right">28%</td>
+<td align="right">393</td>
+<td align="right">24%</td>
+</tr>
+<tr>
+<td>F</td>
+<td align="right">272</td>
+<td align="right">6%</td>
+<td align="right">341</td>
+<td align="right">7%</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h2>Simpson&#39;s Paradox</h2>
+  </hgroup>
+  <article>
+    <h4>Teacher salary&#39;s and SAT Scores</h4>
+
+  
+    <div class='left' style='float:left;width:48%'>
+     <p>SAT data including:</p>
+
+<ul>
+<li><code>state</code> - the state whose SAT score is used.</li>
+<li><code>salary</code> - estimated average annual salary of teachers in public schools in 1994-95 school year (in thousands of dollars).</li>
+<li><code>frac</code> - the faction of eligible students taking the SAT in 1994-95.</li>
+</ul>
+
+<p>Guber, D.L. (1999), Getting what you pay for: the debate over equity in public school expenditures, <i>Journal of Statistics Education 7</i>(2).</p>
+
+<p>See also <code>?SAT</code> for more information.</p>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="Figures/Class02-simpsonparadox.png" alt="plot of chunk simpsonparadox"> </p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="">
+  <hgroup>
+    <h2>Simpson&#39;s Paradox</h2>
+  </hgroup>
+  <article>
+    <p>Let&#39;s now include the fraction of eligible students who took the SAT.</p>
+
+  
+    <div class='left' style='float:left;width:48%'>
+     <p><img src="Figures/Class02-simpsonparadox1.png" alt="plot of chunk simpsonparadox1"> </p>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="Figures/Class02-simpsonparadox2.png" alt="plot of chunk simpsonparadox2"> </p>
+
+    </div>
+  </article>
+</slide>
+    <slide class="backdrop"></slide>
+  </slides>
+
+  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+<!-- Grab CDN jQuery, fall back to local if offline -->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery-1.7.min.js"><\/script>')</script>
+<!-- Load Javascripts for Widgets -->
+<!-- Google Prettify -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+<script src='libraries/highlighters/prettify/js/lang-r.js'></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint ";
+  }
+  prettyPrint();
+</script>
+<!-- End Google Prettify --></html>
