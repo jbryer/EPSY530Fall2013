@@ -28,7 +28,7 @@ Aug-26 | Introduction / Variables | [HTML](https://rawgithub.com/jbryer/EPSY530F
 Aug-28 | Displaying and Describing Categorical Data | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class02.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class02.pdf?raw=true), [Source](Slides/Class02.Rmd) | 2
 Sep-02 | NO CLASS - Labour Day |  | 
 Sep-04 | NO CLASS - Rosh Hashanah |  | 
-Sep-09 | Lab - Intro to R | |  
+Sep-09 | Lab - Intro to R |  |  
 Sep-11 | Displaying Quantitative Data | |  3
 Sep-16 | Distrubutions |  | 4
 Sep-18 | Standard Deviation and Normality |  | 5
@@ -76,12 +76,12 @@ You can find a lot of the material in *R in Action* on Kabacoff's website, [stat
 
 ### Homework Assignments
 
-* Chapter 1: 9, 10, and 12.
+* Chapter 1: 9, 10, 12.
 * Chapter 2: 1, 6, 7, 10
-* Chapter 3: 
-* Chapter 4: 
-* Chapter 5: 
-* Chapter 6: 
+* Chapter 3: 1, 2, 4, 9, 10 (include link or copyof article), 20
+* Chapter 4: 3, 6, 12, 17, 18, 34
+* Chapter 5: 1, 2, 8, 12, 41
+* Chapter 6: 3, 6, 7, 14, 19
 * Chapter 7: 
 * Chapter 8: 
 * Chapter 9: 
