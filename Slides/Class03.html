@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Introduction to R</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Introduction to R">
+  <meta name="author" content="Jason Bryer (jason@bryer.org)">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+    <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+    <!-- END LOGO SLIDE -->
+    
+
+    <!-- TITLE SLIDE -->
+    <!-- Should I move this to a Local Layout File? -->
+    <slide class="title-slide segue nobackground">
+      <hgroup class="auto-fadein">
+        <h1>Introduction to R</h1>
+        <h2>September 9, 2013</h2>
+        <p>Jason Bryer (jason@bryer.org)<br/>epsy530.bryer.org</p>
+      </hgroup>
+          </slide>
+
+    <!-- SLIDES -->
+      <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>What is R?</h2>
+  </hgroup>
+  <article>
+    <p>R is a language and environment for statistical computing and graphics. It is a GNU project which is similar to the S language and environment which was developed at Bell Laboratories (formerly AT&amp;T, now Lucent Technologies) by John Chambers and colleagues...</p>
+
+<p>R provides a wide variety of statistical (linear and non linear modeling, classical statistical tests, time-series analysis, classifcation, clustering, ...) and graphical techniques, and is highly extensible. The S language is often the vehicle of choice for research in statistical methodology, and R provides an Open Source route to participation in that activity. (R-project.org)</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Pros</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>FREE! R is available as Free Software under the terms of the Free Software Foundation’s GNU General Public License in source code form. It compiles and runs on a wide variety of UNIX platforms and similar systems (including FreeBSD and Linux), Windows and MacOS.</li>
+<li>Available for multiple platforms (i.e. Windows, Mac, Linux).</li>
+<li>Easily extensible with (currently) over 2,000 packages listed on CRAN. Scriptable.</li>
+<li>Publication grade graphics.</li>
+<li>Multiple ways of doing the same thing.</li>
+<li>Quickly becoming the de facto standard among statistician.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Cons</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Has a steeper learning curve.</li>
+<li>Multiple ways of doing the same thing.</li>
+<li>Can have difficulty with very large datasets.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>R’s Roots... S</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>S is a language that was developed by John Chambers and others at Bell Labs.</li>
+<li>S was initiated in 1976 as an internal statistical analysis environment - originally implemented as Fortran libraries.</li>
+<li>Early versions of the language did not contain functions for statistical modeling.</li>
+<li>In 1988 the system was rewritten in C and began to resemble the system that we have today (this was Version 3 of the language). The book Statistical Models in S by Chambers and Hastie (the blue book) documents the statistical analysis functionality.</li>
+<li>Version 4 of the S language was released in 1998 and is the version we use today. The book Programming with Data by John Chambers (the green book) documents this version of the language.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>History of S</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>In 1993 Bell Labs gave StatSci (now Insightful Corp.) an exclusive license to develop and sell the S language.</li>
+<li>In 2004 Insightful purchased the S language from Lucent for $2 million and is the current owner.</li>
+<li>In 2006, Alcatel purchased Lucent Technologies and is now called Alcatel-Lucent.</li>
+<li>Insightful sells its implementation of the S language under the product name S-PLUS and has built a number of fancy features (GUIs, mostly) on top of it-hence the ”PLUS”.</li>
+<li>In 2008 Insightful is acquired by TIBCO for $25 million; future of S-PLUS is uncertain.</li>
+<li>The S language itself has not changed dramatically since 1998.</li>
+<li>In 1998, S won the Association for Computing Machinery’s Software System Award.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <article>
+    <p><q>[W]e wanted users to be able to begin in an interactive environment, where they did not consciously think of themselves as programming. Then as their needs became clearer and their sophistication increased, they should be able to slide gradually into programming, when the language and system aspects would become more important.</q></p>
+
+<p>John Chambers, <a href="http://www.stat.bell-labs.com/S/history.html">Stages in the Evolution of S</a></p>
+
+  </article>
+</slide>
+      <slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>History of R</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>1991: Created in New Zealand by Ross Ihaka and Robert Gentleman. Their experience developing R is documented in a 1996 JCGS paper.</li>
+<li>1993: First announcement of R to the public.</li>
+<li>1995: Martin M?achler convinces Ross and Robert to use the GNU General Public License to make R free software.</li>
+<li>1996: A public mailing list is created (R-help and R-devel)</li>
+<li>1997: The R Core Group is formed (containing some people associated with S-PLUS). The core group controls the source code for R.</li>
+<li>2000: R version 1.0.0 is released.</li>
+<li>2012: R version 2.15.2 is released on October 31, 2012. There are now over 4,000 packages listed on CRAN.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Installing R</h2>
+  </hgroup>
+  <article>
+    <p>The latest version of R can be obtained from <a href="http://cran.r-project.org">http://cran.r-project.org</a>. 
+For Windows the following should also be installed:</p>
+
+<ul>
+<li>RTools <a href="http://cran.r-project.org/bin/windows/Rtools/">http://cran.r-project.org/bin/windows/Rtools/</a></li>
+</ul>
+
+<p>For Mac the following should also be installed which are available from
+<a href="http://cran.r-project.org/bin/macosx/tools">http://cran.r-project.org/bin/macosx/tools</a></p>
+
+<ul>
+<li>gfortran-4.2.3</li>
+<li>tcl/tk 8.5.5</li>
+</ul>
+
+<p>Download RStudio <a href="http://www.rstudio.com/">http://www.rstudio.com/</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>R Version</h2>
+  </hgroup>
+  <article>
+    <p>The version of R I am running is:</p>
+
+<pre><code class="r">R.version$version.string
+</code></pre>
+
+<pre><code>[1] &quot;R version 3.0.0 (2013-04-03)&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>R is a big calculator</h2>
+  </hgroup>
+  <article>
+    <pre><code class="r">&gt; 2 + 2
+</code></pre>
+
+<pre><code>[1] 4
+</code></pre>
+
+<pre><code class="r">&gt; 1 + sin(9)
+</code></pre>
+
+<pre><code>[1] 1.412
+</code></pre>
+
+<pre><code class="r">&gt; 23.76 * log(8)/(23 + atan(9))
+</code></pre>
+
+<pre><code>[1] 2.02
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>R Packages</h2>
+  </hgroup>
+  <article>
+    <p>R Packages are what make R so popular. A package is a collection of R functions, data, and documentation to peform some task. There are currenlty over 4,000 packages! </p>
+
+<p>You can install packages in RStudio from the <code>Packages</code> tab. Or you can use the <code>install.packages</code> function.</p>
+
+<pre><code class="r">install.packages(c(&quot;ggplot2&quot;, &quot;foreign&quot;, &quot;psych&quot;))
+</code></pre>
+
+<p>You can update installed packages using the <code>update.packages</code> function.</p>
+
+<pre><code class="r">update.packages(ask = FALSE)
+</code></pre>
+
+<p>The <code>library</code> function will return a list of installed packages.</p>
+
+<pre><code class="r">library()
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Loading R Packages</h2>
+  </hgroup>
+  <article>
+    <p>Installed packages are not automatically loaded. To load a package, use the <code>require</code> function.</p>
+
+<pre><code class="r">require(ggplot2)
+require(foreign)
+</code></pre>
+
+<p>The <code>search</code> function will return a list of loaded packages.</p>
+
+<pre><code class="r">search()
+</code></pre>
+
+<pre><code> [1] &quot;.GlobalEnv&quot;               &quot;package:foreign&quot;          &quot;package:reshape&quot;         
+ [4] &quot;package:plyr&quot;             &quot;package:gdata&quot;            &quot;package:slidifyLibraries&quot;
+ [7] &quot;package:slidify&quot;          &quot;tools:rstudio&quot;            &quot;package:graphics&quot;        
+[10] &quot;package:grDevices&quot;        &quot;package:utils&quot;            &quot;package:datasets&quot;        
+[13] &quot;package:ggplot2&quot;          &quot;package:stats&quot;            &quot;package:methods&quot;         
+[16] &quot;Autoloads&quot;                &quot;package:base&quot;            
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>What&#39;s in a package?</h2>
+  </hgroup>
+  <article>
+    <h3>Functions</h3>
+
+<p>The <code>ls(package=&#39;packagename&#39;)</code> function will return a list of functions that are available in a package. See the results of <code>ls()</code> for what the <code>package</code> parameter should be.</p>
+
+<pre><code class="r">ls(&quot;package:foreign&quot;)
+</code></pre>
+
+<pre><code> [1] &quot;data.restore&quot;  &quot;lookup.xport&quot;  &quot;read.arff&quot;     &quot;read.dbf&quot;      &quot;read.dta&quot;     
+ [6] &quot;read.epiinfo&quot;  &quot;read.mtp&quot;      &quot;read.octave&quot;   &quot;read.S&quot;        &quot;read.spss&quot;    
+[11] &quot;read.ssd&quot;      &quot;read.systat&quot;   &quot;read.xport&quot;    &quot;write.arff&quot;    &quot;write.dbf&quot;    
+[16] &quot;write.dta&quot;     &quot;write.foreign&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>What&#39;s in a package?</h2>
+  </hgroup>
+  <article>
+    <h3>Data</h3>
+
+<p>The <code>data()</code> function will return all data available in all installed packages. Or, specify the <code>package</code> parameter to limit the results to one package.</p>
+
+<pre><code class="r">data(package = &quot;ggplot2&quot;)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>What&#39;s in a package?</h2>
+  </hgroup>
+  <article>
+    <h3>Vignettes</h3>
+
+<p>The <code>vignette()</code> function will return all vignettes (package documentation, usually a PDF) for all installed packages. Or, specify the <code>package</code> parameter to limit teh results to one package.</p>
+
+<pre><code class="r">vignette(package = &quot;psych&quot;)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Getting Help</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li><p>R provides extensive documentation and help. The help.start() function will launch a webpage with links to:</p>
+
+<ul>
+<li><a href="http://cran.r-project.org/manuals.html">The R manuals</a></li>
+<li><a href="http://cran.r-project.org/doc/FAQ/R-FAQ.html">The R FAQ</a></li>
+<li><a href="http://statmethods.net">StatMethods</a></li>
+<li><a href="http://r-bloggers.com/">R-Blogger</a></li>
+<li>and many other useful sites</li>
+</ul></li>
+<li><p>The help.search() function will search the help file for a particular word or phrase. For example:</p></li>
+</ul>
+
+<pre><code class="r">help.search(&quot;cross tabs&quot;)
+</code></pre>
+
+<ul>
+<li>To get documentation on a specific function, the <code>help()</code> function, or simply <code>?functionName</code> will open the documentation page in the web browser.</li>
+<li>Lastly, to search the R mailing lists, use the <code>RSiteSearch()</code> function.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h2>Reading Excel Files</h2>
+  </hgroup>
+  <article>
+    <pre><code class="r">require(gdata)
+mathAnxiety &lt;- read.xls(&quot;../Data/MathAnxiety.xls&quot;, sheet = 1)
+names(mathAnxiety)
+</code></pre>
+
+<pre><code> [1] &quot;Gender&quot; &quot;q1&quot;     &quot;q2&quot;     &quot;q3&quot;     &quot;q4&quot;     &quot;q5&quot;     &quot;q6&quot;     &quot;q7&quot;     &quot;q8&quot;     &quot;q9&quot;    
+[11] &quot;q10&quot;    &quot;q11&quot;    &quot;q12&quot;    &quot;q13&quot;    &quot;q14&quot;   
+</code></pre>
+
+<pre><code class="r">nrow(mathAnxiety)
+</code></pre>
+
+<pre><code>[1] 20
+</code></pre>
+
+<pre><code class="r">ncol(mathAnxiety)
+</code></pre>
+
+<pre><code>[1] 15
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h2>Reading SPSS Files</h2>
+  </hgroup>
+  <article>
+    <p>The foreign package provides a function to read SPSS files.</p>
+
+<pre><code class="r">shy = read.spss(&quot;../Data/Exercise2.sav&quot;, use.value.labels = FALSE, to.data.frame = TRUE)
+</code></pre>
+
+<pre><code>re-encoding from latin1
+</code></pre>
+
+<pre><code class="r">names(shy)
+</code></pre>
+
+<pre><code>[1] &quot;rowtype_&quot;  &quot;varname_&quot;  &quot;age&quot;       &quot;technical&quot; &quot;social&quot;    &quot;frequency&quot;
+</code></pre>
+
+<p>This data file contains six columns: social anxiety (soax), restricted emotionality (reemo), restricted affectionate behavior (reaff), intimate self-disclosure (isd), a single degree-of-freedom continuous measure of shyness (shy), and a three-group experimental structural variable (group).</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h2>Reading CSV Files</h2>
+  </hgroup>
+  <article>
+    <p>R can read virtually any type of plain text file with the read.table function. For convenience, the read.csv will provide a quick way of reading comma-separated values (CSV) files. For example:</p>
+
+<pre><code class="r">titanic &lt;- read.csv(&quot;../Data/titanic.csv&quot;)
+</code></pre>
+
+<p>But <code>read.csv</code> is really just a wrapper to the <code>read.table</code> function that can read virtually any plain text format.</p>
+
+<pre><code class="r">titanic &lt;- read.table(&quot;../Data/titanic.csv&quot;, header = TRUE, sep = &quot;,&quot;, quote = &quot;\&quot;&quot;)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>Data Frames</h2>
+  </hgroup>
+  <article>
+    <pre><code class="r">class(titanic)
+</code></pre>
+
+<pre><code>[1] &quot;data.frame&quot;
+</code></pre>
+
+<pre><code class="r">head(titanic, n = 3)
+</code></pre>
+
+<pre><code>  pclass survived                           name    sex   age sibsp parch ticket  fare   cabin
+1      1        1  Allen, Miss. Elisabeth Walton female 29.00     0     0  24160 211.3      B5
+2      1        1 Allison, Master. Hudson Trevor   male  0.92     1     2 113781 151.6 C22 C26
+3      1        0   Allison, Miss. Helen Loraine female  2.00     1     2 113781 151.6 C22 C26
+  embarked boat body                       home.dest
+1        S    2   NA                    St Louis, MO
+2        S   11   NA Montreal, PQ / Chesterville, ON
+3        S        NA Montreal, PQ / Chesterville, ON
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>Structure</h2>
+  </hgroup>
+  <article>
+    <p>The <code>str</code> (short for structure) is arguably the most useful function in R. It will give you information about the structure of an object (variable) in R relevant to it&#39;s type.</p>
+
+<pre><code class="r">str(titanic)
+</code></pre>
+
+<pre><code>&#39;data.frame&#39;:   1309 obs. of  14 variables:
+ $ pclass   : int  1 1 1 1 1 1 1 1 1 1 ...
+ $ survived : int  1 1 0 0 0 1 1 0 1 0 ...
+ $ name     : Factor w/ 1307 levels &quot;Abbing, Mr. Anthony&quot;,..: 22 24 25 26 27 31 46 47 51 55 ...
+ $ sex      : Factor w/ 2 levels &quot;female&quot;,&quot;male&quot;: 1 2 1 2 1 2 1 2 1 2 ...
+ $ age      : num  29 0.92 2 30 25 48 63 39 53 71 ...
+ $ sibsp    : int  0 1 1 1 1 0 1 0 2 0 ...
+ $ parch    : int  0 2 2 2 2 0 0 0 0 0 ...
+ $ ticket   : Factor w/ 929 levels &quot;110152&quot;,&quot;110413&quot;,..: 188 50 50 50 50 125 93 16 77 826 ...
+ $ fare     : num  211 152 152 152 152 ...
+ $ cabin    : Factor w/ 187 levels &quot;&quot;,&quot;A10&quot;,&quot;A11&quot;,..: 45 81 81 81 81 151 147 17 63 1 ...
+ $ embarked : Factor w/ 4 levels &quot;&quot;,&quot;C&quot;,&quot;Q&quot;,&quot;S&quot;: 4 4 4 4 4 4 4 4 4 2 ...
+ $ boat     : Factor w/ 28 levels &quot;&quot;,&quot;1&quot;,&quot;10&quot;,&quot;11&quot;,..: 13 4 1 1 1 14 3 1 28 1 ...
+ $ body     : int  NA NA NA 135 NA NA NA NA NA 22 ...
+ $ home.dest: Factor w/ 370 levels &quot;&quot;,&quot;?Havana, Cuba&quot;,..: 310 232 232 232 232 238 163 25 23 230 ...
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-22" style="background:;">
+  <hgroup>
+    <h2>NA versus NULL</h2>
+  </hgroup>
+  <article>
+    <p>R is just as much a programming language as it is a statistical software package. As such it represents null differently for programming (using NULL) than for data (using NA).</p>
+
+<ul>
+<li><p>NULL represents the null object in R: it is a reserved word. NULL is often returned by expressions and functions whose values are undefined.</p></li>
+<li><p>NA is a logical constant of length 1 which contains a missing value indicator. NA can be freely coerced to any other vector type except raw. There are also constants NA integer , NA real , NA complex and NA character of the other atomic vector types which support missing values: all of these are reserved words in the R language.</p></li>
+</ul>
+
+<p>For more details, see <a href="http://opendatagroup.com/2010/04/25/r-na-v-null/">http://opendatagroup.com/2010/04/25/r-na-v-null/</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+
+  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+<!-- Grab CDN jQuery, fall back to local if offline -->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery-1.7.min.js"><\/script>')</script>
+<!-- Load Javascripts for Widgets -->
+<!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+</html>

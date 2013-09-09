@@ -1,0 +1,287 @@
+---
+title       : Introduction to R
+subtitle    : September 9, 2013
+author      : Jason Bryer (jason@bryer.org)
+job         : epsy530.bryer.org
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+---
+
+```{r setup, echo=FALSE, results='hide'}
+require(ggplot2)
+require(gdata)
+options(digits=4, width=95)
+opts_chunk$set(fig.path='Figures/Class03-')
+opts_chunk$set(comment=NA)
+source('../R/contingency.table.R')
+```
+
+## What is R?
+
+R is a language and environment for statistical computing and graphics. It is a GNU project which is similar to the S language and environment which was developed at Bell Laboratories (formerly AT&T, now Lucent Technologies) by John Chambers and colleagues...
+
+R provides a wide variety of statistical (linear and non linear modeling, classical statistical tests, time-series analysis, classifcation, clustering, ...) and graphical techniques, and is highly extensible. The S language is often the vehicle of choice for research in statistical methodology, and R provides an Open Source route to participation in that activity. (R-project.org)
+
+--- 
+
+## Pros
+
+* FREE! R is available as Free Software under the terms of the Free Software Foundation’s GNU General Public License in source code form. It compiles and runs on a wide variety of UNIX platforms and similar systems (including FreeBSD and Linux), Windows and MacOS.
+* Available for multiple platforms (i.e. Windows, Mac, Linux).
+* Easily extensible with (currently) over 2,000 packages listed on CRAN. Scriptable.
+* Publication grade graphics.
+* Multiple ways of doing the same thing.
+* Quickly becoming the de facto standard among statistician.
+
+---
+
+## Cons
+
+* Has a steeper learning curve.
+* Multiple ways of doing the same thing.
+* Can have difficulty with very large datasets.
+
+---
+
+## R’s Roots... S
+
+* S is a language that was developed by John Chambers and others at Bell Labs.
+* S was initiated in 1976 as an internal statistical analysis environment - originally implemented as Fortran libraries.
+* Early versions of the language did not contain functions for statistical modeling.
+* In 1988 the system was rewritten in C and began to resemble the system that we have today (this was Version 3 of the language). The book Statistical Models in S by Chambers and Hastie (the blue book) documents the statistical analysis functionality.
+* Version 4 of the S language was released in 1998 and is the version we use today. The book Programming with Data by John Chambers (the green book) documents this version of the language.
+
+---
+
+## History of S
+
+* In 1993 Bell Labs gave StatSci (now Insightful Corp.) an exclusive license to develop and sell the S language.
+* In 2004 Insightful purchased the S language from Lucent for $2 million and is the current owner.
+* In 2006, Alcatel purchased Lucent Technologies and is now called Alcatel-Lucent.
+* Insightful sells its implementation of the S language under the product name S-PLUS and has built a number of fancy features (GUIs, mostly) on top of it-hence the ”PLUS”.
+* In 2008 Insightful is acquired by TIBCO for $25 million; future of S-PLUS is uncertain.
+* The S language itself has not changed dramatically since 1998.
+* In 1998, S won the Association for Computing Machinery’s Software System Award.
+
+--- &notitle
+
+<q>[W]e wanted users to be able to begin in an interactive environment, where they did not consciously think of themselves as programming. Then as their needs became clearer and their sophistication increased, they should be able to slide gradually into programming, when the language and system aspects would become more important.</q>
+
+John Chambers, [Stages in the Evolution of S](http://www.stat.bell-labs.com/S/history.html)
+
+--- 
+
+## History of R
+
+* 1991: Created in New Zealand by Ross Ihaka and Robert Gentleman. Their experience developing R is documented in a 1996 JCGS paper.
+* 1993: First announcement of R to the public.
+* 1995: Martin M?achler convinces Ross and Robert to use the GNU General Public License to make R free software.
+* 1996: A public mailing list is created (R-help and R-devel)
+* 1997: The R Core Group is formed (containing some people associated with S-PLUS). The core group controls the source code for R.
+* 2000: R version 1.0.0 is released.
+* 2012: R version 2.15.2 is released on October 31, 2012. There are now over 4,000 packages listed on CRAN.
+
+---
+
+## Installing R
+
+The latest version of R can be obtained from http://cran.r-project.org. 
+For Windows the following should also be installed:
+* RTools http://cran.r-project.org/bin/windows/Rtools/
+
+For Mac the following should also be installed which are available from
+http://cran.r-project.org/bin/macosx/tools
+
+* gfortran-4.2.3
+* tcl/tk 8.5.5
+
+Download RStudio http://www.rstudio.com/
+
+---
+
+## R Version
+
+The version of R I am running is:
+
+```{r}
+R.version$version.string
+```
+
+---
+
+## R is a big calculator
+
+```{r,prompt=TRUE}
+2+2
+1 + sin(9)
+23.76 * log(8)/(23+atan(9))
+```
+
+--- 
+
+## R Packages
+
+R Packages are what make R so popular. A package is a collection of R functions, data, and documentation to peform some task. There are currenlty over 4,000 packages! 
+
+You can install packages in RStudio from the `Packages` tab. Or you can use the `install.packages` function.
+
+```{r, eval=FALSE}
+install.packages(c('ggplot2', 'foreign', 'psych'))
+```
+
+You can update installed packages using the `update.packages` function.
+
+```{r, eval=FALSE}
+update.packages(ask=FALSE)
+```
+
+The `library` function will return a list of installed packages.
+
+```{r eval=FALSE}
+library()
+```
+
+---
+
+## Loading R Packages
+
+Installed packages are not automatically loaded. To load a package, use the `require` function.
+
+```{r, results='hide'}
+require(ggplot2)
+require(foreign)
+```
+
+The `search` function will return a list of loaded packages.
+
+```{r}
+search()
+```
+
+---
+
+## What's in a package?
+### Functions
+
+The `ls(package='packagename')` function will return a list of functions that are available in a package. See the results of `ls()` for what the `package` parameter should be.
+
+```{r}
+ls('package:foreign')
+```
+
+---
+
+## What's in a package?
+### Data
+
+The `data()` function will return all data available in all installed packages. Or, specify the `package` parameter to limit the results to one package.
+```{r, eval=FALSE}
+data(package='ggplot2')
+```
+
+---
+
+## What's in a package?
+### Vignettes
+
+The `vignette()` function will return all vignettes (package documentation, usually a PDF) for all installed packages. Or, specify the `package` parameter to limit teh results to one package.
+
+```{r, eval=FALSE}
+vignette(package='psych')
+```
+
+
+--- 
+
+## Getting Help
+
+* R provides extensive documentation and help. The help.start() function will launch a webpage with links to:
+	* [The R manuals](http://cran.r-project.org/manuals.html)
+	* [The R FAQ](http://cran.r-project.org/doc/FAQ/R-FAQ.html)
+	* [StatMethods](http://statmethods.net)
+	* [R-Blogger](http://r-bloggers.com/)
+	* and many other useful sites
+
+* The help.search() function will search the help file for a particular word or phrase. For example:
+```{r, eval=FALSE}
+help.search('cross tabs')
+```
+
+* To get documentation on a specific function, the `help()` function, or simply `?functionName` will open the documentation page in the web browser.
+* Lastly, to search the R mailing lists, use the `RSiteSearch()` function.
+
+---
+
+## Reading Excel Files
+
+```{r}
+require(gdata)
+mathAnxiety <- read.xls('../Data/MathAnxiety.xls', sheet=1)
+names(mathAnxiety)
+nrow(mathAnxiety)
+ncol(mathAnxiety)
+```
+
+---
+
+## Reading SPSS Files
+
+The foreign package provides a function to read SPSS files.
+```{r}
+shy = read.spss("../Data/Exercise2.sav", use.value.labels=FALSE, to.data.frame=TRUE)
+names(shy)
+```
+				
+This data file contains six columns: social anxiety (soax), restricted emotionality (reemo), restricted affectionate behavior (reaff), intimate self-disclosure (isd), a single degree-of-freedom continuous measure of shyness (shy), and a three-group experimental structural variable (group).
+
+---
+
+## Reading CSV Files
+
+R can read virtually any type of plain text file with the read.table function. For convenience, the read.csv will provide a quick way of reading comma-separated values (CSV) files. For example:
+
+```{r, eval=TRUE}
+titanic <- read.csv('../Data/titanic.csv')
+```
+
+But `read.csv` is really just a wrapper to the `read.table` function that can read virtually any plain text format.
+
+```{r, eval=FALSE}
+titanic <- read.table('../Data/titanic.csv', header=TRUE, sep=',', quote='\"')
+```
+
+---
+
+## Data Frames
+
+```{r}
+class(titanic)
+head(titanic, n=3)
+```
+
+---
+
+## Structure
+
+The `str` (short for structure) is arguably the most useful function in R. It will give you information about the structure of an object (variable) in R relevant to it's type.
+
+```{r}
+str(titanic)
+```
+
+---
+
+## NA versus NULL
+
+R is just as much a programming language as it is a statistical software package. As such it represents null differently for programming (using NULL) than for data (using NA).
+
+* NULL represents the null object in R: it is a reserved word. NULL is often returned by expressions and functions whose values are undefined.
+
+* NA is a logical constant of length 1 which contains a missing value indicator. NA can be freely coerced to any other vector type except raw. There are also constants NA integer , NA real , NA complex and NA character of the other atomic vector types which support missing values: all of these are reserved words in the R language.
+
+For more details, see http://opendatagroup.com/2010/04/25/r-na-v-null/
+
+
