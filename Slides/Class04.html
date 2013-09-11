@@ -46,7 +46,12 @@
   <article>
       
     <div class='left' style='float:left;width:48%'>
-     
+     <ul>
+<li>First introduced by Karl Pearson, a histogram is a graphical representation of the distribution of data.</li>
+<li>The interval of data are divided into bins (on the x-axis) and the y-axis is simply a count of data points within that bin.</li>
+</ul>
+
+
     </div>    
     <div class='right' style='float:right;width:48%'>
      <pre><code class="r">hist(movies$Running.Time)
@@ -74,20 +79,32 @@
   <!-- Presenter Notes -->
 </slide>
 
-      <slide class="" id="slide-3" style="background:;">
+      <slide class="" id="">
   <hgroup>
     <h2>Histograms (with ggplot2): Binwidths</h2>
   </hgroup>
   <article>
-    <pre><code class="r">ggplot(movies, aes(x = Running.Time)) + geom_histogram(binwidth = 15)
+      
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li>Different bin widths tell different stories.</li>
+<li>Choose the width that best shows the important features.</li>
+<li>Presentations can feature two histograms that present the same data in different ways.</li>
+<li>A gap in the histogram means that there were no occurrences in that range.</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <pre><code class="r">ggplot(movies, aes(x=Running.Time)) + 
+    geom_histogram(binwidth=15)
 </code></pre>
 
 <p><img src="Figures/Class03-unnamed-chunk-3.png" alt="plot of chunk unnamed-chunk-3"> </p>
 
+    </div>
   </article>
-  <!-- Presenter Notes -->
 </slide>
-
       <slide class="" id="slide-4" style="background:;">
   <hgroup>
     <h2>Outliers</h2>

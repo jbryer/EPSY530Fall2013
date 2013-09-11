@@ -27,7 +27,8 @@ movies <- read.csv('../Data/Textbook/Chapter_3/movie_lengths_2010.csv', stringsA
 
 *** left
 
-
+* First introduced by Karl Pearson, a histogram is a graphical representation of the distribution of data.
+* The interval of data are divided into bins (on the x-axis) and the y-axis is simply a count of data points within that bin.
 
 *** right
 
@@ -43,12 +44,23 @@ hist(movies$Running.Time)
 ggplot(movies, aes(x=Running.Time)) + geom_histogram()
 ```
 
----
+--- &twocol
 
 ## Histograms (with ggplot2): Binwidths
 
-```{r, fig.width=10, fig.height=6}
-ggplot(movies, aes(x=Running.Time)) + geom_histogram(binwidth=15)
+*** left
+
+* Different bin widths tell different stories.
+* Choose the width that best shows the important features.
+* Presentations can feature two histograms that present the same data in different ways.
+* A gap in the histogram means that there were no occurrences in that range.
+
+
+*** right
+
+```{r, fig.width=5, fig.height=6, tidy=FALSE}
+ggplot(movies, aes(x=Running.Time)) + 
+	geom_histogram(binwidth=15)
 ```
 
 ---
