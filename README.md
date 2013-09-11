@@ -29,7 +29,7 @@ Aug-28 | Displaying and Describing Categorical Data | [HTML](https://rawgithub.c
 Sep-02 | NO CLASS - Labour Day |  | 
 Sep-04 | NO CLASS - Rosh Hashanah |  | 
 Sep-09 | Lab - Intro to R | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class03.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class03.pdf?raw=true), [Source](Slides/Class03.Rmd) |  
-Sep-11 | Displaying Quantitative Data | |  3
+Sep-11 | Displaying Quantitative Data | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class04.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class04.pdf?raw=true), [Source](Slides/Class04.Rmd) |  3
 Sep-16 | Distrubutions |  | 4
 Sep-18 | Standard Deviation and Normality |  | 5
 Sep-23 | Scatterplots, Association, Correlation |  | 6

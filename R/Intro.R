@@ -29,6 +29,7 @@ library()
 # Working directory
 getwd()
 #setwd("C:/")
+setwd("~/Dropbox/School/Teaching/EPSY530 2013 Fall")
 
 # What functions are in the foreign package?
 ls("package:foreign")
@@ -45,7 +46,7 @@ help.search("cross tabs")
 ?describe
 
 # Read a CSV file
-titanic <- read.csv("titanic.csv")
+titanic <- read.csv("Data/titanic.csv")
 
 # Some useful functions for a data frame
 head(titanic)

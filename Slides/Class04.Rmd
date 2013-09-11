@@ -1,0 +1,261 @@
+---
+title       : Displaying Quantitative Data
+subtitle    : September 11, 2013
+author      : Jason Bryer (jason@bryer.org)
+job         : epsy530.bryer.org
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+--- &twocol
+
+```{r setup, echo=FALSE, results='hide'}
+require(ggplot2)
+require(gdata)
+options(digits=4, width=95)
+opts_chunk$set(fig.path='Figures/Class03-')
+opts_chunk$set(comment=NA)
+source('../R/contingency.table.R')
+
+
+load('../Data/titanic.Rda')
+movies <- read.csv('../Data/Textbook/Chapter_3/movie_lengths_2010.csv', stringsAsFactors=FALSE)
+```
+
+## Histograms
+
+*** left
+
+
+
+*** right
+
+```{r, fig.width=6, fig.height=5}
+hist(movies$Running.Time)
+```
+
+---
+
+## Histograms (with ggplot2)
+
+```{r, fig.width=10, fig.height=5}
+ggplot(movies, aes(x=Running.Time)) + geom_histogram()
+```
+
+---
+
+## Histograms (with ggplot2): Binwidths
+
+```{r, fig.width=10, fig.height=6}
+ggplot(movies, aes(x=Running.Time)) + geom_histogram(binwidth=15)
+```
+
+---
+
+## Outliers
+
+```{r}
+movies[movies$Running.Time < 50, ]
+```
+
+--- 
+
+## Stem and Leaf Plot
+
+```{r}
+stem(movies$Running.Time)
+```
+
+## Modes
+
+A Mode of a histogram is a hump or high-frequency bin.
+* One mode → Unimodal
+* Two modes → Bimodal
+* 3 or more → Multimodal
+
+<table border=0 width='100%'><tr><td>
+<img src='Figures/Class04-unimodal.png' width='300'>
+</td><td>
+<img src='Figures/Class04-bimodal.png' width='300'>
+</td><td>
+<img src='Figures/Class04-multimodal.png' width='300'>
+</td></tr></table>
+
+---
+
+## Uniform Distributions
+
+* Uniform Distribution: All the bins have the same frequency, or at least close to the same frequency.
+* The histogram for a uniform distribution will be flat.
+
+<center><img src='Figures/Class04-uniform.png' width='500'></center>
+
+---
+
+## Symmetry
+
+The histogram for a symmetric distribution will look the same on the left and the right of its center.
+
+<table border=0 width='100%'><tr><td>
+<img src='Figures/Class04-Symmetric.png' width='300'>
+</td><td>
+<img src='Figures/Class04-NotSymmetric.png' width='300'>
+</td><td>
+<img src='Figures/Class04-Symmetric2.png' width='300'>
+</td></tr></table>
+
+--- &twocol
+
+## Skewness
+
+*** left
+
+A histogram is skewed left if the longer tail is on the left side of the mode.
+
+Negatively Skewed
+
+<img src='Figures/Class04-SkewLeft.png' width=400>
+
+*** right
+
+A histogram is skewed right if the longer tail is on the right side of the mode.
+
+Positively Skewed
+
+<img src='Figures/Class04-SkewRight.png' width=400>
+
+---
+
+## Center: Median
+
+* Median: The center of the data values 
+* Half of the data values are to the left of the median and half are to the right of the median.
+
+```{r, fig.height=2, fig.width=12, tidy=FALSE}
+(mediantime <- median(movies$Running.Time))
+ggplot(movies, aes(x=Running.Time, y='Length')) + geom_point() + 
+	geom_vline(xintercept=mediantime, color='blue')
+```
+
+---
+
+## Center: Mean
+
+* The Mean is what most people think of as the average.
+
+$$ \overline { y } =\frac { \sum { y }  }{ n } $$
+
+```{r, fig.height=2, fig.width=12, tidy=FALSE}
+(meantime <- mean(movies$Running.Time))
+ggplot(movies, aes(x=Running.Time, y='Length')) + geom_point() + 
+	geom_vline(xintercept=mediantime, color='blue') + geom_vline(xintercept=meantime, color='red')
+```
+
+---
+
+## Median vs. Mean
+
+* For symmetric distributions, the mean and the median are equal.
+* The balancing point is at the center.
+* The tail "pulls" the mean towards it more than it does to the median.
+* The mean is more sensitive to outliers than the median.
+* The mean is larger than the median since it is "pulled" to the right by the outlier
+* The median is a better measure of the center for data that is skewed.
+
+Why Use the Mean?
+
+* Although the median is a better measure of the center, the mean weighs in large and small values better.
+* The mean is easier to work with.
+* For symmetric data, statisticians would rather use the mean.
+* It is always ok to report both the mean and the median.
+
+---
+
+## Spread
+
+* Locating the center is only part of the story
+* Are the data all near the center or are they spread out?
+* Is the highest value much higher than the lowest value?
+* To describe data, we must discuss both the <i>center</i> and the <i>spread</i>.
+
+## Range
+
+* The range is the difference between the maximum and minimum values. Range = Maximum – Minimum
+* The range is sensitive to outliers.  A single high or low value will affect the range significantly.
+
+---
+
+## Percentiles and Quartiles
+
+* Percentiles divide the data in one hundred groups.
+* The <b>nth percentile</b> is the data value such that n percent of the data lies below that value.
+* For large data sets, the median is the 50th percentile.
+* The median of the lower half of the data is the <b>25th percentile</b> and is called the <b>first quartile</b> (Q1).
+* The median of the upper half of the data is the <b>75th percentile</b> and is called the <b>third quartile</b> (Q3).
+* The <b>Interquartile Range</b> (IQR) is the difference between    the upper quartile and the lower quartile: IQR = Q3 – Q1
+
+```{r}
+summary(movies$Running.Time)
+```
+
+--- &twocol
+
+## Boxplots
+
+*** left
+
+* A Boxplot is a chart that displays the 5-Point Summary and the outliers.
+* The Box shows the Interquartile Range.
+* The dashed lines are called fences, outside the fences lie the outliers.
+* Above and below the box are the whiskers that display the most extreme data values within the fences.
+* The line inside the box shows the median.
+
+
+*** right
+
+```{r, fig.width=4, fig.height=6}
+boxplot(movies$Running.Time)
+```
+
+---
+
+## Boxplots
+
+```{r, fig.width=4, fig.height=6}
+ggplot(movies, aes(x='Movie', y=Running.Time)) + geom_boxplot()
+```
+
+---
+
+## Boxplots
+
+```{r, fig.width=4, fig.height=6, warning=FALSE}
+ggplot(titanic, aes(x=survived, y=age)) + geom_boxplot()
+```
+
+---
+
+## Variance
+
+$$ { S }^{ 2 }=\frac { \sum { \left( y-\overline { y }  \right)  }  }{ n-1 } $$
+
+* The variance is a measure of how far the data is spread out from the mean.
+* The difference from the mean is: $y - \overline{y}$
+* To make it positive, square it.
+* Then find the average of all of these distances, except instead of dividing by n, divide by n – 1.
+* Use ${S}^{2}$ to represent the variance.
+* The variance will mostly be used to find the standard deviation s which is the square root of the variance.
+
+--- 
+
+## Standard Deviation
+
+$$ { S }^{ 2 }=\sqrt { \frac { \sum { \left( y-\overline { y }  \right)  }  }{ n-1 }  } $$
+
+* The variance’s units are the square of the original units.
+* Taking the square root of the variance gives the standard deviation, which will have the same units as y.
+* The standard deviation is a number that is close to the average distances that the y values are from the mean.
+* If data values are close to the mean (less spread out), then the standard deviation will be small.
+* If data values are far from the mean (more spread out), then the standard deviation will be large.
+

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Displaying Quantitative Data</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Displaying Quantitative Data">
+  <meta name="author" content="Jason Bryer (jason@bryer.org)">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+    <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+    <!-- END LOGO SLIDE -->
+    
+
+    <!-- TITLE SLIDE -->
+    <!-- Should I move this to a Local Layout File? -->
+    <slide class="title-slide segue nobackground">
+      <hgroup class="auto-fadein">
+        <h1>Displaying Quantitative Data</h1>
+        <h2>September 11, 2013</h2>
+        <p>Jason Bryer (jason@bryer.org)<br/>epsy530.bryer.org</p>
+      </hgroup>
+          </slide>
+
+    <!-- SLIDES -->
+      <slide class="" id="">
+  <hgroup>
+    <h2>Histograms</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <pre><code class="r">hist(movies$Running.Time)
+</code></pre>
+
+<p><img src="Figures/Class03-unnamed-chunk-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Histograms (with ggplot2)</h2>
+  </hgroup>
+  <article>
+    <pre><code class="r">ggplot(movies, aes(x = Running.Time)) + geom_histogram()
+</code></pre>
+
+<pre><code>stat_bin: binwidth defaulted to range/30. Use &#39;binwidth = x&#39; to adjust this.
+</code></pre>
+
+<p><img src="Figures/Class03-unnamed-chunk-2.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Histograms (with ggplot2): Binwidths</h2>
+  </hgroup>
+  <article>
+    <pre><code class="r">ggplot(movies, aes(x = Running.Time)) + geom_histogram(binwidth = 15)
+</code></pre>
+
+<p><img src="Figures/Class03-unnamed-chunk-3.png" alt="plot of chunk unnamed-chunk-3"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Outliers</h2>
+  </hgroup>
+  <article>
+    <pre><code class="r">movies[movies$Running.Time &lt; 50, ]
+</code></pre>
+
+<pre><code>       Title Running.Time
+97 Hubble 3D           43
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Stem and Leaf Plot</h2>
+  </hgroup>
+  <article>
+    <pre><code class="r">stem(movies$Running.Time)
+</code></pre>
+
+<pre><code>
+  The decimal point is 1 digit(s) to the right of the |
+
+   4 | 3
+   5 | 
+   6 | 
+   7 | 9
+   8 | 00122578889
+   9 | 00000011122223345556777888888899
+  10 | 0000000000000011222223333334445555666777777888999
+  11 | 00011112222233455566777888
+  12 | 000001234557778899
+  13 | 0338
+  14 | 07888
+  15 | 02
+  16 | 0
+</code></pre>
+
+<h2>Modes</h2>
+
+<p>A Mode of a histogram is a hump or high-frequency bin.</p>
+
+<ul>
+<li>One mode → Unimodal</li>
+<li>Two modes → Bimodal</li>
+<li>3 or more → Multimodal</li>
+</ul>
+
+<table border=0 width='100%'><tr><td>
+<img src='Figures/Class04-unimodal.png' width='300'>
+</td><td>
+<img src='Figures/Class04-bimodal.png' width='300'>
+</td><td>
+<img src='Figures/Class04-multimodal.png' width='300'>
+</td></tr></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Uniform Distributions</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Uniform Distribution: All the bins have the same frequency, or at least close to the same frequency.</li>
+<li>The histogram for a uniform distribution will be flat.</li>
+</ul>
+
+<p><center><img src='Figures/Class04-uniform.png' width='500'></center></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Symmetry</h2>
+  </hgroup>
+  <article>
+    <p>The histogram for a symmetric distribution will look the same on the left and the right of its center.</p>
+
+<table border=0 width='100%'><tr><td>
+<img src='Figures/Class04-Symmetric.png' width='300'>
+</td><td>
+<img src='Figures/Class04-NotSymmetric.png' width='300'>
+</td><td>
+<img src='Figures/Class04-Symmetric2.png' width='300'>
+</td></tr></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h2>Skewness</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <p>A histogram is skewed left if the longer tail is on the left side of the mode.</p>
+
+<p>Negatively Skewed</p>
+
+<p><img src='Figures/Class04-SkewLeft.png' width=400></p>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p>A histogram is skewed right if the longer tail is on the right side of the mode.</p>
+
+<p>Positively Skewed</p>
+
+<p><img src='Figures/Class04-SkewRight.png' width=400></p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Center: Median</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Median: The center of the data values </li>
+<li>Half of the data values are to the left of the median and half are to the right of the median.</li>
+</ul>
+
+<pre><code class="r">(mediantime &lt;- median(movies$Running.Time))
+</code></pre>
+
+<pre><code>[1] 104.5
+</code></pre>
+
+<pre><code class="r">ggplot(movies, aes(x=Running.Time, y=&#39;Length&#39;)) + geom_point() + 
+    geom_vline(xintercept=mediantime, color=&#39;blue&#39;)
+</code></pre>
+
+<p><img src="Figures/Class03-unnamed-chunk-6.png" alt="plot of chunk unnamed-chunk-6"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Center: Mean</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>The Mean is what most people think of as the average.</li>
+</ul>
+
+<p>\[ \overline { y } =\frac { \sum { y }  }{ n } \]</p>
+
+<pre><code class="r">(meantime &lt;- mean(movies$Running.Time))
+</code></pre>
+
+<pre><code>[1] 107.1
+</code></pre>
+
+<pre><code class="r">ggplot(movies, aes(x=Running.Time, y=&#39;Length&#39;)) + geom_point() + 
+    geom_vline(xintercept=mediantime, color=&#39;blue&#39;) + geom_vline(xintercept=meantime, color=&#39;red&#39;)
+</code></pre>
+
+<p><img src="Figures/Class03-unnamed-chunk-7.png" alt="plot of chunk unnamed-chunk-7"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>Median vs. Mean</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>For symmetric distributions, the mean and the median are equal.</li>
+<li>The balancing point is at the center.</li>
+<li>The tail &quot;pulls&quot; the mean towards it more than it does to the median.</li>
+<li>The mean is more sensitive to outliers than the median.</li>
+<li>The mean is larger than the median since it is &quot;pulled&quot; to the right by the outlier</li>
+<li>The median is a better measure of the center for data that is skewed.</li>
+</ul>
+
+<p>Why Use the Mean?</p>
+
+<ul>
+<li>Although the median is a better measure of the center, the mean weighs in large and small values better.</li>
+<li>The mean is easier to work with.</li>
+<li>For symmetric data, statisticians would rather use the mean.</li>
+<li>It is always ok to report both the mean and the median.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Spread</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Locating the center is only part of the story</li>
+<li>Are the data all near the center or are they spread out?</li>
+<li>Is the highest value much higher than the lowest value?</li>
+<li>To describe data, we must discuss both the <i>center</i> and the <i>spread</i>.</li>
+</ul>
+
+<h2>Range</h2>
+
+<ul>
+<li>The range is the difference between the maximum and minimum values. Range = Maximum – Minimum</li>
+<li>The range is sensitive to outliers.  A single high or low value will affect the range significantly.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Percentiles and Quartiles</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Percentiles divide the data in one hundred groups.</li>
+<li>The <b>nth percentile</b> is the data value such that n percent of the data lies below that value.</li>
+<li>For large data sets, the median is the 50th percentile.</li>
+<li>The median of the lower half of the data is the <b>25th percentile</b> and is called the <b>first quartile</b> (Q1).</li>
+<li>The median of the upper half of the data is the <b>75th percentile</b> and is called the <b>third quartile</b> (Q3).</li>
+<li>The <b>Interquartile Range</b> (IQR) is the difference between    the upper quartile and the lower quartile: IQR = Q3 – Q1</li>
+</ul>
+
+<pre><code class="r">summary(movies$Running.Time)
+</code></pre>
+
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+     43      98     104     107     116     160 
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h2>Boxplots</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li>A Boxplot is a chart that displays the 5-Point Summary and the outliers.</li>
+<li>The Box shows the Interquartile Range.</li>
+<li>The dashed lines are called fences, outside the fences lie the outliers.</li>
+<li>Above and below the box are the whiskers that display the most extreme data values within the fences.</li>
+<li>The line inside the box shows the median.</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <pre><code class="r">boxplot(movies$Running.Time)
+</code></pre>
+
+<p><img src="Figures/Class03-unnamed-chunk-9.png" alt="plot of chunk unnamed-chunk-9"> </p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>Boxplots</h2>
+  </hgroup>
+  <article>
+    <pre><code class="r">ggplot(movies, aes(x = &quot;Movie&quot;, y = Running.Time)) + geom_boxplot()
+</code></pre>
+
+<p><img src="Figures/Class03-unnamed-chunk-10.png" alt="plot of chunk unnamed-chunk-10"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Boxplots</h2>
+  </hgroup>
+  <article>
+    <pre><code class="r">ggplot(titanic, aes(x = survived, y = age)) + geom_boxplot()
+</code></pre>
+
+<p><img src="Figures/Class03-unnamed-chunk-11.png" alt="plot of chunk unnamed-chunk-11"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h2>Variance</h2>
+  </hgroup>
+  <article>
+    <p>\[ { S }^{ 2 }=\frac { \sum { \left( y-\overline { y }  \right)  }  }{ n-1 } \]</p>
+
+<ul>
+<li>The variance is a measure of how far the data is spread out from the mean.</li>
+<li>The difference from the mean is: \(y - \overline{y}\)</li>
+<li>To make it positive, square it.</li>
+<li>Then find the average of all of these distances, except instead of dividing by n, divide by n – 1.</li>
+<li>Use \({S}^{2}\) to represent the variance.</li>
+<li>The variance will mostly be used to find the standard deviation s which is the square root of the variance.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h2>Standard Deviation</h2>
+  </hgroup>
+  <article>
+    <p>\[ { S }^{ 2 }=\sqrt { \frac { \sum { \left( y-\overline { y }  \right)  }  }{ n-1 }  } \]</p>
+
+<ul>
+<li>The variance’s units are the square of the original units.</li>
+<li>Taking the square root of the variance gives the standard deviation, which will have the same units as y.</li>
+<li>The standard deviation is a number that is close to the average distances that the y values are from the mean.</li>
+<li>If data values are close to the mean (less spread out), then the standard deviation will be small.</li>
+<li>If data values are far from the mean (more spread out), then the standard deviation will be large.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+
+  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+<!-- Grab CDN jQuery, fall back to local if offline -->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery-1.7.min.js"><\/script>')</script>
+<!-- Load Javascripts for Widgets -->
+<!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->
+<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+</html>
