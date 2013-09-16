@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Distributions</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Distributions">
+  <meta name="author" content="Jason Bryer (jason@bryer.org)">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+    <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+    <!-- END LOGO SLIDE -->
+    
+
+    <!-- TITLE SLIDE -->
+    <!-- Should I move this to a Local Layout File? -->
+    <slide class="title-slide segue nobackground">
+      <hgroup class="auto-fadein">
+        <h1>Distributions</h1>
+        <h2>September 16, 2013</h2>
+        <p>Jason Bryer (jason@bryer.org)<br/>epsy530.bryer.org</p>
+      </hgroup>
+          </slide>
+
+    <!-- SLIDES -->
+      <slide class="" id="">
+  <hgroup>
+    <h2>Timeplots</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li>Timeplots display every data value on a timeline.</li>
+<li>Great for spotting trends</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <pre><code class="r">ggplot(temp, aes(x=Year, y=meansF)) + 
+    geom_point()
+</code></pre>
+
+<p><img src="Figures/Class03-unnamed-chunk-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="">
+  <hgroup>
+    <h2>Connecting the Dots</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li>Connecting the dots of a timeplot can sometimes better illustrate the trends.</li>
+<li>This example has so many dots that this graph is busy and not that illustrative.</li>
+<li>Connecting the dots is better for either fewer data values or data with less variation.</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <pre><code class="r">ggplot(temp, aes(x=Year, y=meansF)) + 
+    geom_point(alpha=.5) + 
+    geom_line()
+</code></pre>
+
+<p><img src="Figures/Class03-unnamed-chunk-2.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="">
+  <hgroup>
+    <h2>Smoothing the Data</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li>Drawing a curve of typical values in the neighborhood can sometimes tell the story better.</li>
+<li>There are many ways of doing this and a computer can be used to create this curve.</li>
+<li>The curve, called the lowess (or loess) curve, helps the eye follow the main trend and spot the outliers.</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <pre><code class="r">ggplot(temp, aes(x=Year, y=meansF)) + 
+    geom_point(alpha=.5) + 
+    geom_line(alpha=.5) + 
+    geom_smooth()
+</code></pre>
+
+<p><img src="Figures/Class03-unnamed-chunk-3.png" alt="plot of chunk unnamed-chunk-3"> </p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Boxplots</h2>
+  </hgroup>
+  <article>
+    <pre><code class="r">ggplot(ozone, aes(x = factor(Month), y = Ozone)) + geom_boxplot()
+</code></pre>
+
+<p><img src="Figures/Class03-unnamed-chunk-4.png" alt="plot of chunk unnamed-chunk-4"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Outliers</h2>
+  </hgroup>
+  <article>
+    <p>How to Approach Outliers</p>
+
+<ul>
+<li>Check to see if there may have been an error in the data collection or data input.
+
+<ul>
+<li>If the reported heights of students includes a student that is 170 inches tall (14 feet), maybe that student was measured in centimeters.</li>
+</ul></li>
+<li>Check to see if there was an extraordinary outcome.
+
+<ul>
+<li>The median number of daily customers at the Punxsutawney, PA, gift store may be 42 with an IQR of 12, but on February 2, there were 831 customers.</li>
+</ul></li>
+</ul>
+
+<h3>Common Errors Causing an Outlier</h3>
+
+<ul>
+<li>Transposing the digits</li>
+<li>A respondent not understanding the survey question</li>
+<li>Misreading results</li>
+<li>Confusion about units</li>
+<li>Cheating</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>However, Outliers Can be the Most Interesting Data Values</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Income Data: The CEO</li>
+<li>Student Height: The basketball team’s center</li>
+<li>Snowfall: The great blizzard of ’98</li>
+<li>Exam Score:  The curve breaker</li>
+<li>Milk Purchased:  Octomom!</li>
+</ul>
+
+<h3>Always comment on the outliers.</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Transforming Data</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>When data is skewed it becomes difficult to interpret measures of center and spread.</li>
+<li>Transforming data is an approach to make skewed data more symmetric.</li>
+</ul>
+
+<h3>Common Transformations</h3>
+
+<ul>
+<li>Skewed Right: Use log, ln, or \(\frac{1}{x}\)</li>
+<li>Skewed Left: Use \({ x }^{ 2 }\)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Example: World GDP and Life Expectancy</h2>
+  </hgroup>
+  <article>
+    <pre><code class="r">ggplot(worldData3, aes(x=GDP, y=Life.Expectancy)) + 
+    geom_point(stat=&#39;identity&#39;, alpha=.6) + 
+    xlab(&#39;Gross Domestic Product (billions)&#39;) + 
+    ylab(&#39;Life Expectancy at birth (years)&#39;)
+</code></pre>
+
+<p><img src="Figures/Class03-unnamed-chunk-5.png" alt="plot of chunk unnamed-chunk-5"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Example: (log of) World GDP and Life Expectancy</h2>
+  </hgroup>
+  <article>
+    <h2>Transforming Data</h2>
+
+<pre><code class="r">ggplot(worldData3, aes(x=log(GDP), y=Life.Expectancy)) + 
+    geom_point(stat=&#39;identity&#39;, alpha=.6) + 
+    xlab(&#39;Gross Domestic Product (billions)&#39;) + 
+    ylab(&#39;Life Expectancy at birth (years)&#39;)
+</code></pre>
+
+<p><img src="Figures/Class03-unnamed-chunk-6.png" alt="plot of chunk unnamed-chunk-6"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>On Comparing Distributions</h2>
+  </hgroup>
+  <article>
+    <h3>Choose the right tool.</h3>
+
+<ul>
+<li>Use histograms to compare two or three groups.</li>
+<li>Use boxplots to compare many groups.</li>
+</ul>
+
+<h3>Treat outliers with attention and care.</h3>
+
+<ul>
+<li>Local or global, especially in a time series</li>
+<li>Investigate if the outliers are errors or remarkable.</li>
+<li>Use a timeplot to track trends over time.</li>
+</ul>
+
+<h3>Re-express or transform data for better understanding.</h3>
+
+<ul>
+<li>Can transform skewed distributions to symmetric ones</li>
+<li>Can help to compare spreads of different groups</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+
+  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+<!-- Grab CDN jQuery, fall back to local if offline -->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery-1.7.min.js"><\/script>')</script>
+<!-- Load Javascripts for Widgets -->
+<!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->
+<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+</html>

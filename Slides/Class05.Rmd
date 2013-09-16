@@ -1,0 +1,196 @@
+---
+title       : Distributions
+subtitle    : September 16, 2013
+author      : Jason Bryer (jason@bryer.org)
+job         : epsy530.bryer.org
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+--- &twocol
+
+```{r setup, echo=FALSE, results='hide', warning=FALSE}
+require(ggplot2)
+require(gdata)
+options(digits=4, width=95)
+opts_chunk$set(fig.path='Figures/Class03-')
+opts_chunk$set(comment=NA)
+source('../R/contingency.table.R')
+
+
+load('../Data/titanic.Rda')
+movies <- read.csv('../Data/Textbook/Chapter_3/movie_lengths_2010.csv', stringsAsFactors=FALSE)
+ozone <- read.csv('../Data/Textbook/Chapter_4/Ozone.csv', stringsAsFactors=FALSE)
+ozone$Ozone <- as.numeric(ozone$Ozone)
+ozone <- ozone[!is.na(ozone$Ozone),]
+
+# See http://data.giss.nasa.gov/gistemp/tabledata_v3/GLB.Ts+dSST.txt
+temp <- read.table('../Data/GlobalTemp.txt', header=TRUE, strip.white=TRUE)
+temp$means <- rowMeans(aggregate(temp[,c("DJF","MAM","JJA","SON")], by=list(temp$Year), FUN="mean")[,2:5])
+temp$meansF <- temp$means / 100 * 1.8
+
+# temp2 <- melt(temp[,1:13], id='Year')
+# temp2$value <- temp2$value / 100 * 1.8
+# ggplot(temp2, aes(x=variable, y=value)) + geom_boxplot()
+
+# World data
+countries = read.csv('../Data/WDI_GDF_Country.csv', strip.white=TRUE)
+worldData = read.csv('../Data/WDI_GDF_Data.csv', strip.white=TRUE)
+worldData2 = worldData[which(worldData$Series.Code %in% c('NY.GDP.MKTP.KD', 'SE.XPD.TOTL.GD.ZS', 'SP.DYN.LE00.IN', 'SP.POP.TOTL')), c('Series.Code', 'Series.Name', 'Country.Name', 'Country.Code', 'X2008')]
+worldData2 = merge(worldData2, countries[,c('Country.Code', 'Region')], by='Country.Code')
+worldData2 = worldData2[which(worldData2$Region != 'Aggregates'),]
+worldData2$Series.Name = as.factor(as.character(worldData2$Series.Name))
+worldData2$Region = as.factor(as.character(worldData2$Region))
+worldData3 = cast(worldData2, Country.Name + Region ~ Series.Name, mean, value='X2008')
+names(worldData3) = c('Country', 'Region', 'GDP', 'Life.Expectancy', 'Population', 'Education')
+worldData3$GDP.log = log(worldData3$GDP)
+worldData3$GDP = worldData3$GDP / 1000000000 #Billions
+worldData3$Population = worldData3$Population / 1000000 #Millions
+
+```
+
+## Timeplots
+
+*** left
+* Timeplots display every data value on a timeline.
+* Great for spotting trends
+
+*** right
+
+```{r, warning=FALSE, fig.width=6, fig.height=5,tidy=FALSE}
+ggplot(temp, aes(x=Year, y=meansF)) + 
+	geom_point()
+```
+
+--- &twocol
+
+## Connecting the Dots
+
+*** left
+
+* Connecting the dots of a timeplot can sometimes better illustrate the trends.
+* This example has so many dots that this graph is busy and not that illustrative.
+* Connecting the dots is better for either fewer data values or data with less variation.
+
+*** right
+
+```{r, warning=FALSE, fig.width=6, fig.height=5,tidy=FALSE}
+ggplot(temp, aes(x=Year, y=meansF)) + 
+	geom_point(alpha=.5) + 
+	geom_line()
+```
+
+--- &twocol
+
+## Smoothing the Data
+
+*** left
+
+* Drawing a curve of typical values in the neighborhood can sometimes tell the story better.
+* There are many ways of doing this and a computer can be used to create this curve.
+* The curve, called the lowess (or loess) curve, helps the eye follow the main trend and spot the outliers.
+
+
+*** right
+
+```{r, warning=FALSE, fig.width=6, fig.height=5, message=FALSE,tidy=FALSE}
+ggplot(temp, aes(x=Year, y=meansF)) + 
+	geom_point(alpha=.5) + 
+	geom_line(alpha=.5) + 
+	geom_smooth()
+```
+
+---
+
+## Boxplots
+
+```{r, warning=FALSE, fig.width=10, fig.height=5}
+ggplot(ozone, aes(x=factor(Month), y=Ozone)) + geom_boxplot()
+```
+
+---
+
+## Outliers
+
+How to Approach Outliers
+
+* Check to see if there may have been an error in the data collection or data input.
+	* If the reported heights of students includes a student that is 170 inches tall (14 feet), maybe that student was measured in centimeters.
+* Check to see if there was an extraordinary outcome.
+	* The median number of daily customers at the Punxsutawney, PA, gift store may be 42 with an IQR of 12, but on February 2, there were 831 customers.
+
+### Common Errors Causing an Outlier
+
+* Transposing the digits
+* A respondent not understanding the survey question
+* Misreading results
+* Confusion about units
+* Cheating
+
+---
+
+## However, Outliers Can be the Most Interesting Data Values
+
+* Income Data: The CEO
+* Student Height: The basketball team’s center
+* Snowfall: The great blizzard of ’98
+* Exam Score:  The curve breaker
+* Milk Purchased:  Octomom!
+
+### Always comment on the outliers.
+
+---
+
+## Transforming Data
+
+* When data is skewed it becomes difficult to interpret measures of center and spread.
+* Transforming data is an approach to make skewed data more symmetric.
+
+### Common Transformations
+
+* Skewed Right: Use log, ln, or $\frac{1}{x}$
+* Skewed Left: Use ${ x }^{ 2 }$
+
+
+---
+
+## Example: World GDP and Life Expectancy
+
+```{r, warning=FALSE, fig.width=10, fig.height=5, message=FALSE,tidy=FALSE}
+ggplot(worldData3, aes(x=GDP, y=Life.Expectancy)) + 
+	geom_point(stat='identity', alpha=.6) + 
+	xlab('Gross Domestic Product (billions)') + 
+	ylab('Life Expectancy at birth (years)')
+```
+
+---
+
+## Example: (log of) World GDP and Life Expectancy
+
+## Transforming Data
+```{r, warning=FALSE, fig.width=10, fig.height=5, message=FALSE,tidy=FALSE}
+ggplot(worldData3, aes(x=log(GDP), y=Life.Expectancy)) + 
+	geom_point(stat='identity', alpha=.6) + 
+	xlab('Gross Domestic Product (billions)') + 
+	ylab('Life Expectancy at birth (years)')
+```
+
+---
+
+## On Comparing Distributions
+
+### Choose the right tool.
+* Use histograms to compare two or three groups.
+* Use boxplots to compare many groups.
+
+### Treat outliers with attention and care.
+* Local or global, especially in a time series
+* Investigate if the outliers are errors or remarkable.
+* Use a timeplot to track trends over time.
+
+### Re-express or transform data for better understanding.
+* Can transform skewed distributions to symmetric ones
+* Can help to compare spreads of different groups
+
+

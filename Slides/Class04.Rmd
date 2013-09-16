@@ -263,7 +263,7 @@ $$ { S }^{ 2 }=\frac { \sum { \left( y-\overline { y }  \right)  }  }{ n-1 } $$
 
 ## Standard Deviation
 
-$$ { S }^{ 2 }=\sqrt { \frac { \sum { \left( y-\overline { y }  \right)  }  }{ n-1 }  } $$
+$$ S=\sqrt { \frac { \sum { \left( y-\overline { y }  \right)  }  }{ n-1 }  } $$
 
 * The variance’s units are the square of the original units.
 * Taking the square root of the variance gives the standard deviation, which will have the same units as y.
