@@ -33,12 +33,26 @@
     <slide class="title-slide segue nobackground">
       <hgroup class="auto-fadein">
         <h1>Distributions</h1>
-        <h2>September 16, 2013</h2>
+        <h2>September 18, 2013</h2>
         <p>Jason Bryer (jason@bryer.org)<br/>epsy530.bryer.org</p>
       </hgroup>
           </slide>
 
     <!-- SLIDES -->
+      <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Comparing Histograms</h2>
+  </hgroup>
+  <article>
+    <pre><code class="r">ggplot(titanic, aes(x=age)) + geom_histogram() + facet_wrap(~ pclass, ncol=1)
+</code></pre>
+
+<p><img src="Figures/Class05-unnamed-chunk-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
       <slide class="" id="">
   <hgroup>
     <h2>Timeplots</h2>
@@ -58,7 +72,7 @@
     geom_point()
 </code></pre>
 
-<p><img src="Figures/Class05-unnamed-chunk-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+<p><img src="Figures/Class05-unnamed-chunk-2.png" alt="plot of chunk unnamed-chunk-2"> </p>
 
     </div>
   </article>
@@ -84,7 +98,7 @@
     geom_line()
 </code></pre>
 
-<p><img src="Figures/Class05-unnamed-chunk-2.png" alt="plot of chunk unnamed-chunk-2"> </p>
+<p><img src="Figures/Class05-unnamed-chunk-3.png" alt="plot of chunk unnamed-chunk-3"> </p>
 
     </div>
   </article>
@@ -111,12 +125,12 @@
     geom_smooth()
 </code></pre>
 
-<p><img src="Figures/Class05-unnamed-chunk-3.png" alt="plot of chunk unnamed-chunk-3"> </p>
+<p><img src="Figures/Class05-unnamed-chunk-4.png" alt="plot of chunk unnamed-chunk-4"> </p>
 
     </div>
   </article>
 </slide>
-      <slide class="" id="slide-4" style="background:;">
+      <slide class="" id="slide-5" style="background:;">
   <hgroup>
     <h2>Boxplots</h2>
   </hgroup>
@@ -124,13 +138,13 @@
     <pre><code class="r">ggplot(ozone, aes(x = factor(Month), y = Ozone)) + geom_boxplot()
 </code></pre>
 
-<p><img src="Figures/Class05-unnamed-chunk-4.png" alt="plot of chunk unnamed-chunk-4"> </p>
+<p><img src="Figures/Class05-unnamed-chunk-5.png" alt="plot of chunk unnamed-chunk-5"> </p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-      <slide class="" id="slide-5" style="background:;">
+      <slide class="" id="slide-6" style="background:;">
   <hgroup>
     <h2>Outliers</h2>
   </hgroup>
@@ -164,7 +178,7 @@
   <!-- Presenter Notes -->
 </slide>
 
-      <slide class="" id="slide-6" style="background:;">
+      <slide class="" id="slide-7" style="background:;">
   <hgroup>
     <h2>However, Outliers Can be the Most Interesting Data Values</h2>
   </hgroup>
@@ -183,7 +197,7 @@
   <!-- Presenter Notes -->
 </slide>
 
-      <slide class="" id="slide-7" style="background:;">
+      <slide class="" id="slide-8" style="background:;">
   <hgroup>
     <h2>Transforming Data</h2>
   </hgroup>
@@ -204,31 +218,12 @@
   <!-- Presenter Notes -->
 </slide>
 
-      <slide class="" id="slide-8" style="background:;">
+      <slide class="" id="slide-9" style="background:;">
   <hgroup>
     <h2>Example: World GDP and Life Expectancy</h2>
   </hgroup>
   <article>
     <pre><code class="r">ggplot(worldData3, aes(x=GDP, y=Life.Expectancy)) + 
-    geom_point(stat=&#39;identity&#39;, alpha=.6) + 
-    xlab(&#39;Gross Domestic Product (billions)&#39;) + 
-    ylab(&#39;Life Expectancy at birth (years)&#39;)
-</code></pre>
-
-<p><img src="Figures/Class05-unnamed-chunk-5.png" alt="plot of chunk unnamed-chunk-5"> </p>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-      <slide class="" id="slide-9" style="background:;">
-  <hgroup>
-    <h2>Example: (log of) World GDP and Life Expectancy</h2>
-  </hgroup>
-  <article>
-    <h2>Transforming Data</h2>
-
-<pre><code class="r">ggplot(worldData3, aes(x=log(GDP), y=Life.Expectancy)) + 
     geom_point(stat=&#39;identity&#39;, alpha=.6) + 
     xlab(&#39;Gross Domestic Product (billions)&#39;) + 
     ylab(&#39;Life Expectancy at birth (years)&#39;)
@@ -241,6 +236,23 @@
 </slide>
 
       <slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Example: (log of) World GDP and Life Expectancy</h2>
+  </hgroup>
+  <article>
+    <pre><code class="r">ggplot(worldData3, aes(x=log(GDP), y=Life.Expectancy)) + 
+    geom_point(stat=&#39;identity&#39;, alpha=.6) + 
+    xlab(&#39;Gross Domestic Product (billions)&#39;) + 
+    ylab(&#39;Life Expectancy at birth (years)&#39;)
+</code></pre>
+
+<p><img src="Figures/Class05-unnamed-chunk-7.png" alt="plot of chunk unnamed-chunk-7"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-11" style="background:;">
   <hgroup>
     <h2>On Comparing Distributions</h2>
   </hgroup>

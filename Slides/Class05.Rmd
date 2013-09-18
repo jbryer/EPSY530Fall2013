@@ -1,6 +1,6 @@
 ---
 title       : Distributions
-subtitle    : September 16, 2013
+subtitle    : September 18, 2013
 author      : Jason Bryer (jason@bryer.org)
 job         : epsy530.bryer.org
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
@@ -8,7 +8,7 @@ highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
---- &twocol
+--- 
 
 ```{r setup, echo=FALSE, results='hide', warning=FALSE}
 require(ggplot2)
@@ -49,6 +49,14 @@ worldData3$GDP = worldData3$GDP / 1000000000 #Billions
 worldData3$Population = worldData3$Population / 1000000 #Millions
 
 ```
+
+## Comparing Histograms
+
+```{r, warning=FALSE, fig.width=10, fig.height=6,tidy=FALSE, message=FALSE}
+ggplot(titanic, aes(x=age)) + geom_histogram() + facet_wrap(~ pclass, ncol=1)
+```
+
+--- &twocol
 
 ## Timeplots
 
@@ -168,7 +176,6 @@ ggplot(worldData3, aes(x=GDP, y=Life.Expectancy)) +
 
 ## Example: (log of) World GDP and Life Expectancy
 
-## Transforming Data
 ```{r, warning=FALSE, fig.width=10, fig.height=5, message=FALSE,tidy=FALSE}
 ggplot(worldData3, aes(x=log(GDP), y=Life.Expectancy)) + 
 	geom_point(stat='identity', alpha=.6) + 
