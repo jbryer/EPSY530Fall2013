@@ -71,7 +71,7 @@ The textbook should be available in the book store or on [Amazon](http://www.ama
 Kabacoff, R.I. (2011). *R in Action*. Manning Publications.  
 ![R in Action](http://www.manning.com/kabacoff/kabacoff_cover150.jpg)
 
-You can find a lot of the material in *R in Action* on Kabacoff's website, [statmethods.net](http:http://statmethods.net/). You can receive 38% off using the ria38 promo code when ordering from [here](http://www.manning.com/kabacoff/).
+You can find a lot of the material in *R in Action* on Kabacoff's website, [statmethods.net](http://statmethods.net/). You can receive 38% off using the ria38 promo code when ordering from [here](http://www.manning.com/kabacoff/).
 
 
 ### Homework Assignments
