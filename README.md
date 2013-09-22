@@ -24,14 +24,14 @@ Descriptive statistics including measures of central tendency and variability, c
 
 Date   | Topic | Resources | Chapter
 -------|:------|:----------|:--------:
-Aug-26 | Introduction / Variables | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class01.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class01.pdf?raw=true), [Source](Slides/Class01.Rmd) [R](Slides/Class01.R) | 1
-Aug-28 | Displaying and Describing Categorical Data | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class02.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class02.pdf?raw=true), [Source](Slides/Class02.Rmd) | 2
+Aug-26 | Introduction / Variables | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class01.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class01.pdf?raw=true), [Source](Slides/Class01.Rmd) | 1
+Aug-28 | Displaying and Describing Categorical Data | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class02.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class02.pdf?raw=true), [Source](Slides/Class02.Rmd), [R](Slides/Class02.R) | 2
 Sep-02 | NO CLASS - Labour Day |  | 
 Sep-04 | NO CLASS - Rosh Hashanah |  | 
-Sep-09 | Lab - Intro to R | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class03.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class03.pdf?raw=true), [Source](Slides/Class03.Rmd) |  
-Sep-11 | Displaying Quantitative Data | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class04.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class04.pdf?raw=true), [Source](Slides/Class04.Rmd) |  3
+Sep-09 | Lab - Intro to R | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class03.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class03.pdf?raw=true), [Source](Slides/Class03.Rmd), [R](Slides/Class03.R) |  
+Sep-11 | Displaying Quantitative Data | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class04.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class04.pdf?raw=true), [Source](Slides/Class04.Rmd), [R](Slides/Class04.R) |  3
 Sep-16 | Lab
-Sep-18 | Distrubutions | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class05.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class05.pdf?raw=true), [Source](Slides/Class05.Rmd) | 4
+Sep-18 | Distrubutions | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class05.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class05.pdf?raw=true), [Source](Slides/Class05.Rmd), [R](Slides/Class05.R) | 4
 Sep-23 | Standard Deviation and Normality |  | 5
 Sep-25 | Scatterplots, Association, Correlation |  | 6
 Sep-30 | Linear Regression |  | 7
