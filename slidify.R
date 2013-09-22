@@ -1,6 +1,6 @@
-if(!require(slidify) | !require(slidifyLibraries)) {
+if(!require(slidify) | !require(slidifyLibraries) | !require(knitr)) {
 	if(!require(devtools)) {
-		install.packages('devtools')
+		install.packages('devtools','knitr')
 		require(devtools)
 	}
 	install_github("slidify", "ramnathv")
@@ -61,6 +61,9 @@ slidify <- function(dir, file, ...) {
 	} else {
 		oldwd <- setwd(dir)
 		tryCatch({
+			knit(input=paste0(file, '.Rmd'),
+				 output=paste0(file, '.R'),
+				 tangle=TRUE)
 			slidify::slidify(inputFile=paste0(file, '.Rmd'), 
 							 outputFile=paste0(file, '.html'))
 			unlink(paste0(file, '.md'))

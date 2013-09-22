@@ -184,7 +184,7 @@ For Windows the following should also be installed:</p>
 <pre><code class="r">R.version$version.string
 </code></pre>
 
-<pre><code>[1] &quot;R version 3.0.0 (2013-04-03)&quot;
+<pre><code>[1] &quot;R version 3.0.2 RC (2013-09-17 r63944)&quot;
 </code></pre>
 
   </article>
@@ -255,17 +255,22 @@ For Windows the following should also be installed:</p>
 require(foreign)
 </code></pre>
 
+<pre><code>Loading required package: foreign
+</code></pre>
+
 <p>The <code>search</code> function will return a list of loaded packages.</p>
 
 <pre><code class="r">search()
 </code></pre>
 
-<pre><code> [1] &quot;.GlobalEnv&quot;               &quot;package:foreign&quot;          &quot;package:reshape&quot;         
- [4] &quot;package:plyr&quot;             &quot;package:gdata&quot;            &quot;package:slidifyLibraries&quot;
- [7] &quot;package:slidify&quot;          &quot;tools:rstudio&quot;            &quot;package:graphics&quot;        
-[10] &quot;package:grDevices&quot;        &quot;package:utils&quot;            &quot;package:datasets&quot;        
-[13] &quot;package:ggplot2&quot;          &quot;package:stats&quot;            &quot;package:methods&quot;         
-[16] &quot;Autoloads&quot;                &quot;package:base&quot;            
+<pre><code> [1] &quot;.GlobalEnv&quot;               &quot;package:foreign&quot;          &quot;package:mosaic&quot;          
+ [4] &quot;package:lattice&quot;          &quot;package:likert&quot;           &quot;package:xtable&quot;          
+ [7] &quot;package:gridExtra&quot;        &quot;package:grid&quot;             &quot;package:knitr&quot;           
+[10] &quot;package:reshape&quot;          &quot;package:plyr&quot;             &quot;package:gdata&quot;           
+[13] &quot;package:slidifyLibraries&quot; &quot;package:slidify&quot;          &quot;tools:rstudio&quot;           
+[16] &quot;package:graphics&quot;         &quot;package:grDevices&quot;        &quot;package:utils&quot;           
+[19] &quot;package:datasets&quot;         &quot;package:ggplot2&quot;          &quot;package:stats&quot;           
+[22] &quot;package:methods&quot;          &quot;Autoloads&quot;                &quot;package:base&quot;            
 </code></pre>
 
   </article>
@@ -363,23 +368,31 @@ require(foreign)
   <article>
     <pre><code class="r">require(gdata)
 mathAnxiety &lt;- read.xls(&quot;../Data/MathAnxiety.xls&quot;, sheet = 1)
-names(mathAnxiety)
 </code></pre>
 
-<pre><code> [1] &quot;Gender&quot; &quot;q1&quot;     &quot;q2&quot;     &quot;q3&quot;     &quot;q4&quot;     &quot;q5&quot;     &quot;q6&quot;     &quot;q7&quot;     &quot;q8&quot;     &quot;q9&quot;    
-[11] &quot;q10&quot;    &quot;q11&quot;    &quot;q12&quot;    &quot;q13&quot;    &quot;q14&quot;   
+<pre><code>Error: Intermediate file
+&#39;/var/folders/68/1b6hk5t941gc2p97nsvkslpw0000gn/T//RtmpTvp6FB/file9cef35d162e1.csv&#39; missing!
+</code></pre>
+
+<pre><code>Error: invalid &#39;file&#39; argument
+</code></pre>
+
+<pre><code class="r">names(mathAnxiety)
+</code></pre>
+
+<pre><code>Error: object &#39;mathAnxiety&#39; not found
 </code></pre>
 
 <pre><code class="r">nrow(mathAnxiety)
 </code></pre>
 
-<pre><code>[1] 20
+<pre><code>Error: object &#39;mathAnxiety&#39; not found
 </code></pre>
 
 <pre><code class="r">ncol(mathAnxiety)
 </code></pre>
 
-<pre><code>[1] 15
+<pre><code>Error: object &#39;mathAnxiety&#39; not found
 </code></pre>
 
   </article>
