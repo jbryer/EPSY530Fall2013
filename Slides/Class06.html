@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Standard Deviation and Normality</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Standard Deviation and Normality">
+  <meta name="author" content="Jason Bryer">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+    <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+    <!-- END LOGO SLIDE -->
+    
+
+    <!-- TITLE SLIDE -->
+    <!-- Should I move this to a Local Layout File? -->
+    <slide class="title-slide segue nobackground">
+      <hgroup class="auto-fadein">
+        <h1>Standard Deviation and Normality</h1>
+        <h2>September 23, 2013</h2>
+        <p>Jason Bryer<br/>epsy530.bryer.org</p>
+      </hgroup>
+          </slide>
+
+    <!-- SLIDES -->
+      <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Comparing Students</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li><p>Student A takes the SAT and scores 600 on the math component, 100 points higher than the average student.</p></li>
+<li><p>Student B takes the ACT and scores 27 on the math component, 9 points higher than the average student.</p></li>
+<li><p>Which student performed better?</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>How many standard deviations?</h2>
+  </hgroup>
+  <article>
+    <table><thead>
+<tr>
+<th></th>
+<th>SAT</th>
+<th>ACT</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Mean</td>
+<td>500</td>
+<td>18</td>
+</tr>
+<tr>
+<td>SD</td>
+<td>100</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Student</td>
+<td>600</td>
+<td>27</td>
+</tr>
+</tbody></table>
+
+<h3>The standard deviation helps compare two different metrics.</h3>
+
+<ul>
+<li>SAT: 600 - 500 = 100 (or 1 standard deviation)</li>
+<li>ACT: 27 - 18 = 9 (or 1.5 standard devations)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>The z-Score (or standard score)</h2>
+  </hgroup>
+  <article>
+    <p>\[ z=\frac { y-\overline { y }  }{ s } \]</p>
+
+<ul>
+<li>The z-score measures the distance of the value from the mean in standard deviations.</li>
+<li>A positive z-score indicates the value is above the mean.</li>
+<li>A negative z-score indicates the value is below the mean.</li>
+<li>A small z-score indicates the value is close to the mean when compared to the rest of the data values.</li>
+<li>A large z-score indicates the value is far from the mean when compared to the rest of the data values.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h2>z-Scores for our Students</h2>
+  </hgroup>
+  <article>
+    <table><thead>
+<tr>
+<th></th>
+<th>SAT</th>
+<th>ACT</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Mean</td>
+<td>500</td>
+<td>18</td>
+</tr>
+<tr>
+<td>SD</td>
+<td>100</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Student</td>
+<td>600</td>
+<td>27</td>
+</tr>
+</tbody></table>
+
+  
+    <div class='left' style='float:left;width:48%'>
+     <h3>SAT</h3>
+
+<p>\[ z=\frac { 600 - 500  }{ 100 } = 1 \]</p>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <h3>ACT</h3>
+
+<p>\[ z=\frac { 27 - 18 }{ 6 } = 1.5 \]</p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="">
+  <hgroup>
+    <h2>Shifting</h2>
+  </hgroup>
+  <article>
+    <p>If the same number is subtracted or added to all data values, then:</p>
+
+<ul>
+<li>The measures of the spread - standard deviation, range, and IQR - are all unaffected.</li>
+<li>The measures of position - mean, median, and mode - are all changed by that number.</li>
+</ul>
+
+  
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">ggplot(pisausa, aes(x=Math)) + 
+geom_histogram()
+</code></pre>
+
+<p><img src="Figures/Class06-unnamed-chunk-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <pre><code class="r">ggplot(pisausa, aes(x=Math - 500)) + 
+geom_histogram()
+</code></pre>
+
+<p><img src="Figures/Class06-unnamed-chunk-2.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="">
+  <hgroup>
+    <h2>Scaling</h2>
+  </hgroup>
+  <article>
+    <p>If we multiply all data values by the same number, what happens to the position and spread?</p>
+
+<p>When we multiply (or divide) all the data values by a  constant, all measures of position and all measures of  spread are multiplied (or divided) by that same constant.</p>
+
+  
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">ggplot(speeds, aes(x=variable, y=value)) + 
+geom_boxplot()
+</code></pre>
+
+<p><img src="Figures/Class06-unnamed-chunk-4.png" alt="plot of chunk unnamed-chunk-4"> </p>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <pre><code class="r">ggplot(speeds, aes(x=value)) + 
+geom_histogram() + 
+facet_wrap(~ variable, ncol=1)
+</code></pre>
+
+<p><img src="Figures/Class06-unnamed-chunk-5.png" alt="plot of chunk unnamed-chunk-5"> </p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Models</h2>
+  </hgroup>
+  <article>
+    <p><q>All models are wrong, but some are useful.</q> - George Box</p>
+
+<ul>
+<li>−1 &lt; z &lt; 1:  Not uncommon</li>
+<li>z = ±3:  Rare</li>
+<li>z = 6:  Shouts out for attention!</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>The Normal Model</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Bell Shaped:  unimodal, symmetric</li>
+<li>A Normal model for every mean and standard deviation.
+
+<ul>
+<li>\(\mu\) (read “mew”) represents the population mean.</li>
+<li>\(\sigma\)  (read “sigma”) represents the population standard deviation.</li>
+<li>\(N(\mu, \sigma)\) represents a Normal model with mean m and standard deviation s. </li>
+</ul></li>
+</ul>
+
+<p>\[f(x)\quad =\quad \frac { 1 }{ \sigma \sqrt { 2\pi  }  } { e }^{ -\frac { { \left( x-\mu  \right)  }^{ 2 } }{ { 2\sigma  }^{ 2 } }  }\]</p>
+
+<ul>
+<li>Parameters:  Numbers that help specify the model (i.e. \(\mu\), \(\sigma\))</li>
+<li>Statistics:  Numbers that summarize the data (e.g. \(\overline{y}\), \(s\), median, mode)</li>
+<li>\(N(0, 1)\) is called the standard Normal model, or the standard Normal distribution.</li>
+<li>The Normal model should only be used if the data is approximately symmetric and unimodal.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>The 68-95-99.7 Rule</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>68% of the values fall within 1 standard deviation of the mean.</li>
+<li>95% of the values fall within 2 standard deviations of the mean.</li>
+<li>99.7% of the values fall within 3 standard deviations of the mean.</li>
+</ul>
+
+<p><img src='Figures/NormalCurve.png' alt='Normal Curve' width='90%'></p>
+
+<p>Finding percentiles: <a href='http://shiny.albany.edu/stat/stdnormal/' target='_blank'><a href="http://shiny.albany.edu/stat/stdnormal/">http://shiny.albany.edu/stat/stdnormal/</a></a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Checking Normality</h2>
+  </hgroup>
+  <article>
+    <p>At a minimum, plot a histogram.</p>
+
+<pre><code class="r">ggplot(pisausa, aes(x=Math)) + geom_histogram()
+</code></pre>
+
+<p><img src="Figures/Class06-unnamed-chunk-7.png" alt="plot of chunk unnamed-chunk-7"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h2>Normal Probability Plots: PISA Math</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li>Plots each value against the z-score that would be expected had the distribution been perfectly normal.</li>
+<li>If the plot shows a line or is nearly straight, then the Normal model works.</li>
+<li>If the plot strays from being a line, then the Normal model is not a good model.</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <pre><code class="r">qqnorm(pisausa$Math)
+</code></pre>
+
+<p><img src="Figures/Class06-unnamed-chunk-8.png" alt="plot of chunk unnamed-chunk-8"> </p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="">
+  <hgroup>
+    <h2>Histograms: GDP</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">hist(worldData3$GDP)
+</code></pre>
+
+<p><img src="Figures/Class06-unnamed-chunk-9.png" alt="plot of chunk unnamed-chunk-9"> </p>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <pre><code class="r">hist(worldData3$GDP.log)
+</code></pre>
+
+<p><img src="Figures/Class06-unnamed-chunk-10.png" alt="plot of chunk unnamed-chunk-10"> </p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="">
+  <hgroup>
+    <h2>Normal Probability Plots: GDP</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">qqnorm(worldData3$GDP)
+</code></pre>
+
+<p><img src="Figures/Class06-unnamed-chunk-11.png" alt="plot of chunk unnamed-chunk-11"> </p>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <pre><code class="r">qqnorm(worldData3$GDP.log)
+</code></pre>
+
+<p><img src="Figures/Class06-unnamed-chunk-12.png" alt="plot of chunk unnamed-chunk-12"> </p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>What can go wrong?</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Don’t use the Normal model when the distribution is not unimodal and symmetric.<br></li>
+<li>Always look at the picture first.</li>
+<li>Don’t use the mean and standard deviation when outliers are present.</li>
+<li>Check by making a picture.</li>
+<li>Don’t round your results in the middle of the calculation.</li>
+<li>Always wait until the end to round.</li>
+<li>Don’t worry about minor differences in results.</li>
+<li>Different rounding can produce slightly different results.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+
+  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+<!-- Grab CDN jQuery, fall back to local if offline -->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery-1.7.min.js"><\/script>')</script>
+<!-- Load Javascripts for Widgets -->
+<!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->
+<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+</html>

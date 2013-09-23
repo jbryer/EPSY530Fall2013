@@ -32,7 +32,7 @@ Sep-09 | Lab - Intro to R | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/
 Sep-11 | Displaying Quantitative Data | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class04.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class04.pdf?raw=true), [Source](Slides/Class04.Rmd), [R](Slides/Class04.R) |  3
 Sep-16 | Lab
 Sep-18 | Distrubutions | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class05.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class05.pdf?raw=true), [Source](Slides/Class05.Rmd), [R](Slides/Class05.R) | 4
-Sep-23 | Standard Deviation and Normality |  | 5
+Sep-23 | Standard Deviation and Normality | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class06.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class06.pdf?raw=true), [Source](Slides/Class06.Rmd), [R](Slides/Class06.R) | 5
 Sep-25 | Scatterplots, Association, Correlation |  | 6
 Sep-30 | Linear Regression |  | 7
 Oct-02 | Regression cont. |  | 8
