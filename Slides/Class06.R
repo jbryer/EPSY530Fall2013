@@ -69,10 +69,10 @@ facet_wrap(~ variable, ncol=1)
 
 
 
-require(multilevelPSA)
-pisausa <- pisana[pisana$CNT == 'USA',c('CNT','ST04Q01','PV1MATH')]
-names(pisausa) <- c('CNT','Gender','Math')
-pisausa <- pisausa[complete.cases(pisausa),]
+## require(multilevelPSA)
+## pisausa <- pisana[pisana$CNT == 'USA',c('CNT','ST04Q01','PV1MATH')]
+## names(pisausa) <- c('CNT','Gender','Math')
+## pisausa <- pisausa[complete.cases(pisausa),]
 
 
 
