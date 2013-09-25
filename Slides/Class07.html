@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scatterplots, Association, Correlation</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Scatterplots, Association, Correlation">
+  <meta name="author" content="Jason Bryer">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+    <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+    <!-- END LOGO SLIDE -->
+    
+
+    <!-- TITLE SLIDE -->
+    <!-- Should I move this to a Local Layout File? -->
+    <slide class="title-slide segue nobackground">
+      <hgroup class="auto-fadein">
+        <h1>Scatterplots, Association, Correlation</h1>
+        <h2>September 25, 2013</h2>
+        <p>Jason Bryer<br/>epsy530.bryer.org</p>
+      </hgroup>
+          </slide>
+
+    <!-- SLIDES -->
+      <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Scatterplots</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Scatterplots exhibit the relationship between two variables.</li>
+<li>Used for detecting patterns, trends, relationships, and extraordinary values.</li>
+</ul>
+
+<pre><code class="r">ggplot(temp, aes(x=Year, y=means)) + geom_point()
+</code></pre>
+
+<p><img src="Figures/Class06-unnamed-chunk-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+<p>-- &amp;twocol</p>
+
+<h2>Scatterplots</h2>
+
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Direction of Association</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Negative Direction: As one goes up, the other goes down.<br>
+<img src='Figures/scatter-negative.png' width=100></li>
+<li>Positive Direction: As one goes up, the other goes up also.<br>
+<img src='Figures/scatter-positive.png' width=100></li>
+<li>No Direction<br>
+<img src='Figures/scatter-none.png' width=100></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Form</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Linear:  The points cluster near a line.<br>
+<img src='Figures/scatter-linear.png' width=100></li>
+<li>Gently curves in a direction. May be able to straighten with a transformation.<br>
+<img src='Figures/scatter-curved1.png' width=100></li>
+<li>Curves up and down.  Difficult to straighten<br>
+<img src='Figures/scatter-curved2.png' width=100></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Strength of Relationship</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Strong linear relationship<br>
+<img src='Figures/scatter-strong.png' width=100></li>
+<li>Moderate linear relationship<br>
+<img src='Figures/scatter-moderate.png' width=100></li>
+<li>No linear relationship<br>
+<img src='Figures/scatter-none.png' width=100></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Variables</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li><b>Response Variable</b> (y): The variable of interest.  It is what we want to predict.</li>
+<li><b>Explanatory or Predictor Variable</b> (x): The variable that we use to provide information or a prediction of the response variable.</li>
+<li>Choosing the response variable and the explanatory variable depends on how we think about the problem.<br></li>
+</ul>
+
+<p>For example:</p>
+
+<ul>
+<li>Do baseball teams that score more runs also sell more tickets?<br>
+Tickets = Response (y), Runs = Explanatory (x)</li>
+<li>Do students with higher SAT scores get better grades?<br>
+Grades = Response (y), SAT score = Explanatory (x)</li>
+<li>Can we estimate a person’s BMI by measuring their wrist size?<br>
+BMI = Response (y), Wrist Size = Explanatory (x)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h2>Correlation</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li>How strong is the relationship between SAT scores and full-time retention?</li>
+<li>For the green dots: z-scores have the same sign, so multiplying the z-scores produces a positive value.<br></li>
+<li>For the red dots:  z-scores have opposite signs, so multiplying the z-scores produces a negative value.</li>
+<li>Define the correlation coefficient by an almost average product of the z-scores:</li>
+</ul>
+
+<p>\[ r=\frac { \sum { { z }_{ x }{ z }_{ y } }  }{ n-1 } \]</p>
+
+<pre><code class="r">meanSAT = mean(ipedsSAT$SATTotal)
+meanRetention = mean(ipedsSAT$Retention)
+</code></pre>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <pre><code class="r">ggplot(ipedsSAT, aes(x=SATTotal, 
+    y=Retention, color=Association)) + 
+    geom_vline(xintercept=meanSAT) +
+    geom_hline(yintercept=meanRetention) +
+    geom_point()
+</code></pre>
+
+<p><img src="Figures/Class06-unnamed-chunk-6.png" alt="plot of chunk unnamed-chunk-6"> </p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Assumptions and Conditions for Correlation</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>To use r, there must be a true underlying <i>linear relationship</i> between the two variables.</li>
+<li>The variables must be <i>quantitative</i>.</li>
+<li>The pattern for the points of the scatterplot must be <i>reasonably straight</i>.</li>
+<li>Outliers can strongly affect the correlation.  Look at the scatterplot to make sure that there are <i>no strong outliers</i>. </li>
+</ul>
+
+<h2>Calculating correlation in R</h2>
+
+<pre><code class="r">cor(ipedsSAT$SATTotal, ipedsSAT$Retention)
+</code></pre>
+
+<pre><code>[1] 0.7909
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Properites of Correlation</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>r &gt; 0 → positive association</li>
+<li>r &lt; 0 → negative association</li>
+<li>−1 &lt; r &lt; 1, with r = − 1 only if the points all lie exactly on a negatively sloped line and r = 1 only if the points all lie exactly on a positively sloped line.</li>
+<li>Interchanging x and y does not change the correlation.</li>
+<li>r has no units.<br></li>
+<li>Changing the units of x or y does not affect r.</li>
+<li>Measuring in dollars, cents, or Euros will all produce the same correlation.</li>
+<li>Correlation measures the strength of the linear association between the two variables.</li>
+<li>Correlation is sensitive to outliers.  An extreme outlier can cause a dramatic change in r.</li>
+<li>The adjectives weak, moderate, and strong can describe correlation, but there are no agreed upon boundaries.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Correlation DOES NOT mean causation</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Causation is a possibility, but more must be done to prove causation.</li>
+<li>The causation could be in reverse (y causes x)</li>
+<li>A lurking variable may cause both.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Guidelines for Re-Expressions</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Scatterplot bends downwards → \(y^{2}\)</li>
+<li>Scatterplot is linear → No change</li>
+<li>For data that is a count → \(y^{\frac{1}{y}}\)</li>
+<li>For data that is always positive → \(log(y)\)</li>
+<li>If nothing else seems to work try → \(y^{-\frac{1}{2}}\)</li>
+<li>For ratios such as miles per gallon → \(\frac{1}{y}\)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+
+  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+<!-- Grab CDN jQuery, fall back to local if offline -->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery-1.7.min.js"><\/script>')</script>
+<!-- Load Javascripts for Widgets -->
+<!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->
+<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+</html>
