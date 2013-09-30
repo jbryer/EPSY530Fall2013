@@ -13,4 +13,4 @@ slidify(dir='Slides', file='Class04', options=slideOptions)
 slidify(dir='Slides', file='Class05', options=slideOptions)
 slidify(dir='Slides', file='Class06', options=slideOptions)
 slidify(dir='Slides', file='Class07', options=slideOptions)
-
+slidify(dir='Slides', file='Class08', options=slideOptions)

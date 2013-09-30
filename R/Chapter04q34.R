@@ -11,6 +11,7 @@ qqnorm(vine$Acres^2)
 qqnorm(sqrt(vine$Acres))
 
 ### Log transform example
+log(0)
 log(1)
 log(2)
 log(10)
