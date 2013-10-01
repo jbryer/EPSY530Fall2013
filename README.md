@@ -82,8 +82,8 @@ You can find a lot of the material in *R in Action* on Kabacoff's website, [stat
 * Chapter 4: 3, 6, 12, 17, 18, 34
 * Chapter 5: 1, 2, 8, 12, 41
 * Chapter 6: 3, 6, 7, 14, 19
-* Chapter 7: 
-* Chapter 8: 
+* Chapter 7: 1, 3, 4, 5, 7, 9, 11, 28, 36, 54
+* Chapter 8: 2, 4, 6, 9, 12, 15, 22, 25
 * Chapter 9: 
 * Chapter 10:  
 * Chapter 11: 
