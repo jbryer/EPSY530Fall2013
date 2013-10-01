@@ -11,6 +11,13 @@ mode        : selfcontained # {standalone, draft}
 --- &twocol
 
 ```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+require(ggplot2)
+require(gdata)
+options(digits=4, width=95)
+opts_chunk$set(fig.path='Figures/Class06-')
+opts_chunk$set(comment=NA)
+source('../R/contingency.table.R')
+
 sat <- read.csv('../Data/Textbook/Chapter_7/SAT_scores.csv', stringsAsFactors=FALSE)
 sat$Verbal.SAT <- as.integer(sat$Verbal.SAT)
 sat$Math.SAT <- as.integer(sat$Math.SAT)
@@ -33,9 +40,11 @@ cor(sat$Math.SAT, sat$Verbal.SAT)
 sat.lm <- lm(Math.SAT ~ Verbal.SAT, data=sat)
 summary(sat.lm)
 ggplot(sat, aes(x=Verbal.SAT, y=Math.SAT)) + 
-	geom_point(color='blue') + 
+	geom_point(color='black') + 
 	geom_abline(slope=sat.lm$coefficients[2], intercept=sat.lm$coefficients[1],
-				color='red')
+				color='red', size=2) +
+	geom_hline(yintercept=mean(sat$Math.SAT), color='blue', size=1) +
+	geom_vline(xintercept=mean(sat$Verbal.SAT), color='blue', size=1)
 ```
 
 --- &twocol
@@ -75,8 +84,8 @@ Line of best fit:
 (sat.lm = lm(Math.SAT ~ Verbal.SAT, data=sat))
 ```
 
-* ${b}_{0} = 0.675$ (slope) - for each 1-point increase in Verbal SAT, we expect the Math SAT score to increase by 0.675.
-* ${b}_{1} = 210$ (y-intercept)
+* ${b}_{1} = 0.675$ (slope) - for each 1-point increase in Verbal SAT, we expect the Math SAT score to increase by 0.675.
+* ${b}_{0} = 210$ (y-intercept)
 
 ---
 
@@ -97,7 +106,7 @@ $$\overline{y} = {b}_{0} + {b}_{1} \overline{x} $$
 * The point corresponding to the mean of x and y will always fall on the line of best fit.
 * Given the mean of x, the mean of y, and the slope, we can find the y-intercept.
 
-$${b}_{0} = {b}_{1} \overline{x} - \overline{y} $$
+$${b}_{0} = \overline{y} - {b}_{1} \overline{x} $$
 
 ---
 

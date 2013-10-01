@@ -51,13 +51,13 @@
 <pre><code class="r">cor(sat$Math.SAT, sat$Verbal.SAT)
 </code></pre>
 
-<pre><code>## [1] 0.6846
+<pre><code>[1] 0.6846
 </code></pre>
 
 
     </div>    
     <div class='right' style='float:right;width:48%'>
-     <p><img src="figure/unnamed-chunk-3.png" alt="plot of chunk unnamed-chunk-3"> </p>
+     <p><img src="Figures/Class06-unnamed-chunk-3.png" alt="plot of chunk unnamed-chunk-3"> </p>
 
     </div>
   </article>
@@ -117,18 +117,18 @@
     <pre><code class="r">(sat.lm = lm(Math.SAT ~ Verbal.SAT, data = sat))
 </code></pre>
 
-<pre><code>## 
-## Call:
-## lm(formula = Math.SAT ~ Verbal.SAT, data = sat)
-## 
-## Coefficients:
-## (Intercept)   Verbal.SAT  
-##     209.554        0.675
+<pre><code>
+Call:
+lm(formula = Math.SAT ~ Verbal.SAT, data = sat)
+
+Coefficients:
+(Intercept)   Verbal.SAT  
+    209.554        0.675  
 </code></pre>
 
 <ul>
-<li>\({b}_{0} = 0.675\) (slope) - for each 1-point increase in Verbal SAT, we expect the Math SAT score to increase by 0.675.</li>
-<li>\({b}_{1} = 210\) (y-intercept)</li>
+<li>\({b}_{1} = 0.675\) (slope) - for each 1-point increase in Verbal SAT, we expect the Math SAT score to increase by 0.675.</li>
+<li>\({b}_{0} = 210\) (y-intercept)</li>
 </ul>
 
   </article>
@@ -164,7 +164,7 @@
 <li>Given the mean of x, the mean of y, and the slope, we can find the y-intercept.</li>
 </ul>
 
-<p>\[{b}_{0} = {b}_{1} \overline{x} - \overline{y} \]</p>
+<p>\[{b}_{0} = \overline{y} - {b}_{1} \overline{x} \]</p>
 
   </article>
   <!-- Presenter Notes -->
@@ -250,7 +250,7 @@ Best guess for height would not change.</li>
 plot(sat$Verbal.SAT, sat.residual)
 </code></pre>
 
-<p><img src="figure/residualplot.png" alt="plot of chunk residualplot"> </p>
+<p><img src="Figures/Class06-residualplot.png" alt="plot of chunk residualplot"> </p>
 
     </div>
   </article>
@@ -273,7 +273,7 @@ plot(sat$Verbal.SAT, sat.residual)
      <pre><code class="r">hist(sat.residual)
 </code></pre>
 
-<p><img src="figure/unnamed-chunk-5.png" alt="plot of chunk unnamed-chunk-5"> </p>
+<p><img src="Figures/Class06-unnamed-chunk-5.png" alt="plot of chunk unnamed-chunk-5"> </p>
 
     </div>
   </article>
@@ -320,10 +320,10 @@ plot(sat$Verbal.SAT, sat.residual)
      <pre><code class="r">cor(sat$Verbal.SAT, sat$Math.SAT)^2
 </code></pre>
 
-<pre><code>## [1] 0.4687
+<pre><code>[1] 0.4687
 </code></pre>
 
-<p><img src="figure/unnamed-chunk-7.png" alt="plot of chunk unnamed-chunk-7"> </p>
+<p><img src="Figures/Class06-unnamed-chunk-7.png" alt="plot of chunk unnamed-chunk-7"> </p>
 
     </div>
   </article>
