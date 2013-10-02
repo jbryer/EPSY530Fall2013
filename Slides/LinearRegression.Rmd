@@ -323,6 +323,43 @@ sat.lm$coefficients[2] ^ 2
 sat.lm2$coefficients[2] ^ 2
 ```
 
+## More outliers
+
+For the following two examples, we will add outliers to examine how they would effect our models. In the first example, we will add an outlier that is close to our fitted model (i.e. a small residual) but lies far away from the cluster of points. As we can see below, this single point increases our $R^2$ by more than 5%.
+```{r scatteroutlier1, tidy=FALSE, fig.width=9, fig.height=6}
+outX <- 1200
+outY <- 1150
+sat.outlier <- rbind(sat[,c('Verbal','Math')], c(Verbal=outX, Math=outY))
+(sat.lm <- lm(Math ~ Verbal, data=sat))
+(sat.lm2 <- lm(Math ~ Verbal, data=sat.outlier))
+ggplot(sat.outlier, aes(x=Verbal, y=Math)) + 
+	geom_point(size=2.5) +
+	geom_point(x=outX, y=outY, color='red', size=2.5, shape=17) +
+	geom_abline(intercept=b, slope=m, color='red', size=2, alpha=.5) +
+	geom_abline(intercept=sat.lm2$coefficients[1], slope=sat.lm2$coefficients[2], 
+				size=2, alpha=.5)
+unname(sat.lm$coefficients[2] ^ 2)
+unname(sat.lm2$coefficients[2] ^ 2)
+```
+
+Outliers can have the opposite effect too. In this example, our $R^2$ is decreased by almost 16%.
+
+```{r scatteroutlier1=2, tidy=FALSE, fig.width=9, fig.height=6}
+outX <- 300
+outY <- 1150
+sat.outlier <- rbind(sat[,c('Verbal','Math')], c(Verbal=outX, Math=outY))
+(sat.lm <- lm(Math ~ Verbal, data=sat))
+(sat.lm2 <- lm(Math ~ Verbal, data=sat.outlier))
+ggplot(sat.outlier, aes(x=Verbal, y=Math)) + 
+	geom_point(size=2.5) +
+	geom_point(x=outX, y=outY, color='red', size=2.5, shape=17) +
+	geom_abline(intercept=b, slope=m, color='red', size=2, alpha=.5) +
+	geom_abline(intercept=sat.lm2$coefficients[1], slope=sat.lm2$coefficients[2], 
+				size=2, alpha=.5)
+unname(sat.lm$coefficients[2] ^ 2)
+unname(sat.lm2$coefficients[2] ^ 2)
+```
+
 
 <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
 <script type="text/x-mathjax-config">

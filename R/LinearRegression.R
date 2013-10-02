@@ -193,3 +193,34 @@ ggplot(sat, aes(x=Verbal, y=Math)) +
 # And the R^2
 sat.lm$coefficients[2] ^ 2
 sat.lm2$coefficients[2] ^ 2
+
+
+# More outliers
+outX <- 1200
+outY <- 1150
+sat.outlier <- rbind(sat[,c('Verbal','Math')], c(Verbal=outX, Math=outY))
+(sat.lm <- lm(Math ~ Verbal, data=sat))
+(sat.lm2 <- lm(Math ~ Verbal, data=sat.outlier))
+ggplot(sat.outlier, aes(x=Verbal, y=Math)) + 
+	geom_point(size=2.5) +
+	geom_point(x=outX, y=outY, color='red', size=2.5, shape=17) +
+	geom_abline(intercept=b, slope=m, color='red', size=2, alpha=.5) +
+	geom_abline(intercept=sat.lm2$coefficients[1], slope=sat.lm2$coefficients[2], 
+				size=2, alpha=.5)
+unname(sat.lm$coefficients[2] ^ 2)
+unname(sat.lm2$coefficients[2] ^ 2)
+
+# Even more outliers
+outX <- 300
+outY <- 1150
+sat.outlier <- rbind(sat[,c('Verbal','Math')], c(Verbal=outX, Math=outY))
+(sat.lm <- lm(Math ~ Verbal, data=sat))
+(sat.lm2 <- lm(Math ~ Verbal, data=sat.outlier))
+ggplot(sat.outlier, aes(x=Verbal, y=Math)) + 
+	geom_point(size=2.5) +
+	geom_point(x=outX, y=outY, color='red', size=2.5, shape=17) +
+	geom_abline(intercept=b, slope=m, color='red', size=2, alpha=.5) +
+	geom_abline(intercept=sat.lm2$coefficients[1], slope=sat.lm2$coefficients[2], 
+				size=2, alpha=.5)
+unname(sat.lm$coefficients[2] ^ 2)
+unname(sat.lm2$coefficients[2] ^ 2)
