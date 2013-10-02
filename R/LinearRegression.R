@@ -51,7 +51,8 @@ b
 ggplot(sat, aes(x=Verbal, y=Math)) + geom_point(color='black', size=2.5) +
 	geom_vline(xintercept=verbalMean, color='darkmagenta') +
 	geom_hline(yintercept=mathMean, color='darkmagenta') +
-	geom_abline(intercept=b, slope=m, color='red', size=2, alpha=.5)
+	geom_abline(intercept=b, slope=m, color='red', size=2, alpha=.5) +
+	xlim(c(0,800)) + ylim(c(0,800)) + geom_vline(xintercept=0)
 
 # Calculate the predicted values of y (Math scores in this example)
 sat$Math.predicted <- m * sat$Verbal + b
@@ -158,6 +159,9 @@ sat.female.lm <- lm(Math ~ Verbal, data=sat.female)
 sat.male.lm
 sat.female.lm
 
+summary(sat.male.lm)
+summary(sat.female.lm)
+
 ggplot(sat, aes(x=Verbal, y=Math, color=Sex)) + 
 	geom_point(size=2.5) +
 	geom_vline(xintercept=male.verbal.mean, color='blue') +
@@ -191,8 +195,8 @@ ggplot(sat, aes(x=Verbal, y=Math)) +
 (sat.lm2 <- lm(Math ~ Verbal, data=sat[sat$residual < 200,]))
 
 # And the R^2
-sat.lm$coefficients[2] ^ 2
-sat.lm2$coefficients[2] ^ 2
+unname(sat.lm$coefficients[2] ^ 2)
+unname(sat.lm2$coefficients[2] ^ 2)
 
 
 # More outliers

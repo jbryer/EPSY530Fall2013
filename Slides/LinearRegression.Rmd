@@ -30,7 +30,7 @@ sat <- sat[complete.cases(sat),]
 
 The first step is to draw a scatter plot. We see that the relationship appears to be fairly linear.
 
-```{r scatterplot, tidy=FALSE, fig.width=9, fig.height=6}
+```{r scatterplot, tidy=FALSE, fig.width=9, fig.height=6, echo=TRUE}
 ggplot(sat, aes(x=Verbal, y=Math)) + geom_point(color='black')
 ```
 
@@ -54,7 +54,7 @@ head(sat)
 ```
 
 Scatter plot of z-scores. Note that the pattern is the same but the scales on the x- and y-axes are different.
-```{r scatterzscores, tidy=FALSE, fig.width=9, fig.height=6}
+```{r scatterzscores, tidy=FALSE, fig.width=9, fig.height=6, echo=TRUE}
 ggplot(sat, aes(x=Verbal.z, y=Math.z)) + geom_point(color='black')
 ```
 
@@ -86,7 +86,7 @@ m
 ```
 
 Calculate the intercept (recall that the point where the mean of x and mean of y intersect will be on the line of best fit). Therefore,
-$$b = \overline{x} - m \overline{y} = \overline{SAT_{math}} - m \overline{SAT_{verbal}}$$
+$$b = \overline{y} - m \overline{x} = \overline{SAT_{math}} - m \overline{SAT_{verbal}}$$
 
 ```{r intercept}
 b <- mathMean - m * verbalMean
@@ -94,7 +94,7 @@ b
 ```
 
 We can now add the regression line to the scatter plot. The vertical and horizontal lines represent the mean Verbal and Math SAT scores, respectively.
-```{r scatterwithregressionline, tidy=FALSE, fig.width=9, fig.height=6}
+```{r scatterwithregressionline, tidy=FALSE, fig.width=9, fig.height=6, echo=TRUE}
 ggplot(sat, aes(x=Verbal, y=Math)) + geom_point(color='black') +
 	geom_vline(xintercept=verbalMean, color='darkmagenta') +
 	geom_hline(yintercept=mathMean, color='darkmagenta') +
@@ -116,7 +116,7 @@ head(sat)
 ```
 
 Plot our regression line with lines representing the residuals. The line of best fit minimizes the residuals.
-```{r scatterwithresiduals, tidy=FALSE, fig.width=9, fig.height=6}
+```{r scatterwithresiduals, tidy=FALSE, fig.width=9, fig.height=6, echo=TRUE}
 ggplot(sat, aes(x=Verbal, y=Math)) + geom_point(color='black') +
 	geom_abline(intercept=b, slope=m, color='red', size=2, alpha=.5) +
 	geom_segment(aes(xend=Verbal, yend=Math.predicted, color=abs(residual))) +
@@ -140,17 +140,19 @@ for(i in 1:nrow(results)) {
 ```
 
 Plot the sum of squared residuals for different slopes (i.e. r's). The vertical line corresponds to the r (slope) calcluated above and the horizontal line corresponds the sum of squared residuals for that r. This should have the smallest sum of squared residuals.
-```{r sumofsquares, tidy=FALSE, fig.width=9, fig.height=6}
+```{r sumofsquares, tidy=FALSE, fig.width=9, fig.height=6, echo=TRUE}
 ggplot(results, aes(x=r, y=sumsquares)) + geom_point() + 
 	geom_vline(xintercept=r, color='blue') +
 	geom_hline(yintercept=sum(sat$residual^2), color='magenta')
 ```
 
 To exemplify how the residuals change, the following scatter plot picks one of the "bad" models and plot that regression line with the original, best fitting line. Take particular note how the residuals would be less if they ended on the red line (i.e. the better fitting model). This is particularly evident on the far left and far right, but is true across the entire range of values.
-```{r scatterbadmodel, tidy=FALSE, fig.width=9, fig.height=6}
+```{r}
 b.bad <- results[1,]$b
 m.bad <- results[1,]$m
 sat$predicted.bad <- m.bad * sat$Verbal + b.bad
+```
+```{r scatterbadmodel, tidy=FALSE, fig.width=9, fig.height=6, echo=TRUE}
 ggplot(sat, aes(x=Verbal, y=Math)) + geom_point(color='black') +
 	geom_abline(intercept=b, slope=m, color='red', size=2, alpha=.2) +
 	geom_abline(intercept=b.bad, slope=m.bad, color='black', size=2, alpha=.5) +
@@ -158,12 +160,12 @@ ggplot(sat, aes(x=Verbal, y=Math)) + geom_point(color='black') +
 ```
 
 Next, we'll plot the residuals with the independent variable. In this plot we expect to see no pattern, bending, or clustering if the model fits well. The rug plot on the right and top given an indication of the distribution. Below, we will also examine the histogram of residuals.
-```{r residualplot, tidy=FALSE, fig.width=9, fig.height=6}
+```{r residualplot, tidy=FALSE, fig.width=9, fig.height=6, echo=TRUE}
 ggplot(sat, aes(x=Verbal, y=residual)) + geom_point() + geom_rug(sides='rt')
 ```
 
 In an attempt to show the relationship between the predicted value and the residuals, this figures combines both the basic scatter plot with the residuals. Each Math score is connected with the corresponding residual point.
-```{r residualplot2, tidy=FALSE, fig.width=9, fig.height=6}
+```{r residualplot2, tidy=FALSE, fig.width=9, fig.height=6, echo=TRUE}
 ggplot(sat, aes(x=Verbal, y=Math)) + geom_point(color='black', size=3) +
 	geom_point(aes(x=Verbal, y=residual), color='blue', size=3) +
 	geom_abline(intercept=b, slope=m, color='red', size=2, alpha=.5) +
@@ -172,7 +174,7 @@ ggplot(sat, aes(x=Verbal, y=Math)) + geom_point(color='black', size=3) +
 ```
 
 Histogram of residuals.
-```{r histogramofresiduals, tidy=FALSE, fig.width=9, fig.height=4}
+```{r histogramofresiduals, tidy=FALSE, fig.width=9, fig.height=4, echo=TRUE}
 ggplot(sat, aes(x=residual)) + geom_histogram(alpha=.5, binwidth=25)
 ```
 
@@ -182,9 +184,11 @@ r ^ 2
 ```
 
 Now we can predict Math scores from new Verbal.
-```{r predictnew, tidy=FALSE, fig.width=9, fig.height=6}
+```{r}
 newX <- 550
 (newY <- newX * m + b)
+```
+```{r predictnew, tidy=FALSE, fig.width=9, fig.height=6, echo=TRUE}
 ggplot(sat, aes(x=Verbal, y=Math)) + geom_point(color='black') +
 	geom_abline(intercept=b, slope=m, color='red', size=2, alpha=.5) +
 	geom_point(x=newX, y=newY, shape=17, color='darkgreen', size=8)
@@ -215,7 +219,7 @@ head(cbind(sat.lm.residuals, sat$residual))
 
 First, let's look at the scatter plot but with a gender indicator.
 
-```{r scattergender, tidy=FALSE, fig.width=9, fig.height=6}
+```{r scattergender, tidy=FALSE, fig.width=9, fig.height=6, echo=TRUE}
 ggplot(sat, aes(x=Verbal, y=Math, color=Sex, shape=Sex)) + 
 	geom_point(size=2.5) + 
 	scale_color_manual(limits=c('M','F'), values=c('blue','maroon')) +
@@ -224,7 +228,7 @@ ggplot(sat, aes(x=Verbal, y=Math, color=Sex, shape=Sex)) +
 
 And also the residual plot with an indicator for gender.
 
-```{r residualgender, tidy=FALSE, fig.width=9, fig.height=6}
+```{r residualgender, tidy=FALSE, fig.width=9, fig.height=6, echo=TRUE}
 ggplot(sat) + 
 	geom_point(aes(x=Verbal, y=residual, color=Sex, shape=Sex), size=2.5) + 
 	scale_color_manual(limits=c('M','F'), values=c('blue','maroon')) +
@@ -234,7 +238,7 @@ ggplot(sat) +
 ```
 
 The histograms also show that the distribution are different across gender.
-```{r residualhistogramgender, tidy=FALSE, fig.width=9, fig.height=6}
+```{r residualhistogramgender, tidy=FALSE, fig.width=9, fig.height=6, echo=TRUE}
 ggplot(sat, aes(x=residual)) + geom_histogram(binwidth=25, alpha=.5) + facet_wrap(~ Sex, ncol=1)
 ```
 
@@ -267,7 +271,7 @@ sat.female.lm
 
 We do in fact find that the intercepts and slopes are both fairly different. The figure below adds the regression lines to the scatter plot.
 
-```{r scattergenderregression, tidy=FALSE, fig.width=9, fig.height=6}
+```{r scattergenderregression, tidy=FALSE, fig.width=9, fig.height=6, echo=TRUE}
 ggplot(sat, aes(x=Verbal, y=Math, color=Sex)) + 
 	geom_point(size=2.5) +
 	geom_vline(xintercept=male.verbal.mean, color='blue') +
@@ -296,7 +300,7 @@ The $R^2$ for the full model accounts for approximately 46.9% of the variance. B
 
 Re-examining the histogram of residuals, there is one data point with a residual higher than the rest. This is a possible outlier. In this section we'll examine how that outlier may impact our linear model.
 
-```{r histogramoutlier, tidy=FALSE, fig.width=9, fig.height=4}
+```{r histogramoutlier, tidy=FALSE, fig.width=9, fig.height=4, echo=TRUE}
 ggplot(sat, aes(x=residual, fill=residual > 200)) + 
 	geom_histogram(alpha=.5, binwidth=25) +
 	scale_fill_manual(limits=c(TRUE, FALSE), values=c('red','black'))
@@ -304,10 +308,11 @@ ggplot(sat, aes(x=residual, fill=residual > 200)) +
 
 We can extract that record from our data frame. We can also highlight that point on the scatter plot.
 
-```{r scatteroutlier, tidy=FALSE, fig.width=9, fig.height=6}
+```{r}
 sat.outlier <- sat[sat$residual > 200,]
 sat.outlier
-
+```
+```{r scatteroutlier, tidy=FALSE, fig.width=9, fig.height=6, echo=TRUE}
 ggplot(sat, aes(x=Verbal, y=Math)) + 
 	geom_point(size=2.5) +
 	geom_point(x=sat.outlier$Verbal, y=sat.outlier$Math, color='red', size=2.5, shape=17) +
@@ -326,30 +331,35 @@ sat.lm2$coefficients[2] ^ 2
 ## More outliers
 
 For the following two examples, we will add outliers to examine how they would effect our models. In the first example, we will add an outlier that is close to our fitted model (i.e. a small residual) but lies far away from the cluster of points. As we can see below, this single point increases our $R^2$ by more than 5%.
-```{r scatteroutlier1, tidy=FALSE, fig.width=9, fig.height=6}
+```{r}
 outX <- 1200
 outY <- 1150
 sat.outlier <- rbind(sat[,c('Verbal','Math')], c(Verbal=outX, Math=outY))
 (sat.lm <- lm(Math ~ Verbal, data=sat))
 (sat.lm2 <- lm(Math ~ Verbal, data=sat.outlier))
+```
+```{r scatteroutlier1, tidy=FALSE, fig.width=9, fig.height=6, echo=TRUE}
 ggplot(sat.outlier, aes(x=Verbal, y=Math)) + 
 	geom_point(size=2.5) +
 	geom_point(x=outX, y=outY, color='red', size=2.5, shape=17) +
 	geom_abline(intercept=b, slope=m, color='red', size=2, alpha=.5) +
 	geom_abline(intercept=sat.lm2$coefficients[1], slope=sat.lm2$coefficients[2], 
 				size=2, alpha=.5)
+```
+```{r}
 unname(sat.lm$coefficients[2] ^ 2)
 unname(sat.lm2$coefficients[2] ^ 2)
 ```
 
 Outliers can have the opposite effect too. In this example, our $R^2$ is decreased by almost 16%.
-
-```{r scatteroutlier1=2, tidy=FALSE, fig.width=9, fig.height=6}
+```{r}
 outX <- 300
 outY <- 1150
 sat.outlier <- rbind(sat[,c('Verbal','Math')], c(Verbal=outX, Math=outY))
 (sat.lm <- lm(Math ~ Verbal, data=sat))
 (sat.lm2 <- lm(Math ~ Verbal, data=sat.outlier))
+```
+```{r scatteroutlier1=2, tidy=FALSE, fig.width=9, fig.height=6, echo=TRUE}
 ggplot(sat.outlier, aes(x=Verbal, y=Math)) + 
 	geom_point(size=2.5) +
 	geom_point(x=outX, y=outY, color='red', size=2.5, shape=17) +
