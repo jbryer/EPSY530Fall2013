@@ -35,7 +35,7 @@ Sep-18 | Distrubutions | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/mas
 Sep-23 | Standard Deviation and Normality | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class06.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class06.pdf?raw=true), [Source](Slides/Class06.Rmd), [R](Slides/Class06.R) | 5
 Sep-25 | Scatterplots, Association, Correlation | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class07.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class07.pdf?raw=true), [Source](Slides/Class07.Rmd), [R](Slides/Class07.R) | 6
 Sep-30 | Linear Regression | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class08.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class08.pdf?raw=true), [Source](Slides/Class08.Rmd), [R](Slides/Class08.R) | 7
-Oct-02 | Regression cont. |  | 8
+Oct-02 | Regression cont. | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/LinearRegression.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/LinearRegression.pdf?raw=true), [Source](Slides/LinearRegression.Rmd), [R](R/LinearRegression.R) | 8
 Oct-07 | Review |  | 
 Oct-09 | MIDTERM |  | 
 Oct-14 | NO CLASS - Columbus Day |  | 
