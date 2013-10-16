@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Understanding Randomness</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Understanding Randomness">
+  <meta name="author" content="Jason Bryer">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+    <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+    <!-- END LOGO SLIDE -->
+    
+
+    <!-- TITLE SLIDE -->
+    <!-- Should I move this to a Local Layout File? -->
+    <slide class="title-slide segue nobackground">
+      <hgroup class="auto-fadein">
+        <h1>Understanding Randomness</h1>
+        <h2>October 16	, 2013</h2>
+        <p>Jason Bryer<br/>epsy530.bryer.org</p>
+      </hgroup>
+          </slide>
+
+    <!-- SLIDES -->
+      <slide class="" id="">
+  <hgroup>
+    <h2>Random?</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li>Pick a number between 1 and 4. Is this random?</li>
+<li>How to pick a random number:
+
+<ul>
+<li>Pick a card from deck of cards.</li>
+<li>Flip a coin.</li>
+<li>Roll a dice.</li>
+<li>Number out of a hat.</li>
+<li>Use a computer.</li>
+</ul></li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <pre><code class="r">sample(1:4, size = 1)
+</code></pre>
+
+<pre><code>[1] 1
+</code></pre>
+
+<pre><code class="r">sample(1:4, size = 10, replace = TRUE)
+</code></pre>
+
+<pre><code> [1] 2 1 4 3 2 1 2 1 4 4
+</code></pre>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Simulation</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>A cerial box contains one of three cards with the following chances: 20% for Walter White, 30% for Jesse Pinkman, or 50% for Hank Schrader.</li>
+<li>How many boxes would you expect to buy to get one of each?</li>
+<li>We can answer this using simulation.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Steps for Simulation</h2>
+  </hgroup>
+  <article>
+    <p>Specify how to model a component outcome using equally likely random digits:</p>
+
+<ol>
+<li><p>Identify the component to be repeated: Opening a cereal box</p></li>
+<li><p>Explain how you will model the experiment’s outcome.<br>
+Assign outcomes to the equally likely random digits  0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+0 or 1 → Walt
+2, 3, or 4 → Jesse
+5, 6, 7, 8, or 9 → Hank</p></li>
+</ol>
+
+<p>Specify how to simulate trials:</p>
+
+<ol>
+<li><p>Explain how you will combine the components to model the trial. Look at each digit until all three types are found.</p></li>
+<li><p>State clearly what the response variable is. We want to find the number of boxes it takes to get all three pictures.</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    
+  </hgroup>
+  <article>
+    <p>Put it all together to run the simulation:</p>
+
+<ol>
+<li>Run several trials</li>
+</ol>
+
+<pre><code class="r">cards &lt;- c(rep(&quot;Walt&quot;, 2), rep(&quot;Jesse&quot;, 3), rep(&quot;Hank&quot;, 5))
+cards
+</code></pre>
+
+<pre><code> [1] &quot;Walt&quot;  &quot;Walt&quot;  &quot;Jesse&quot; &quot;Jesse&quot; &quot;Jesse&quot; &quot;Hank&quot;  &quot;Hank&quot;  &quot;Hank&quot;  &quot;Hank&quot;  &quot;Hank&quot; 
+</code></pre>
+
+<p>Trial 1:</p>
+
+<pre><code class="r">sample(cards, 8)
+</code></pre>
+
+<pre><code>[1] &quot;Jesse&quot; &quot;Jesse&quot; &quot;Hank&quot;  &quot;Hank&quot;  &quot;Jesse&quot; &quot;Walt&quot;  &quot;Walt&quot;  &quot;Hank&quot; 
+</code></pre>
+
+<p>Trial 2:</p>
+
+<pre><code class="r">sample(cards, 8)
+</code></pre>
+
+<pre><code>[1] &quot;Hank&quot;  &quot;Jesse&quot; &quot;Hank&quot;  &quot;Jesse&quot; &quot;Hank&quot;  &quot;Walt&quot;  &quot;Hank&quot;  &quot;Hank&quot; 
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h2>Putting all together</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">nboxes &lt;- integer()
+for (i in 1:100) {
+    test &lt;- rep(FALSE, length(unique(cards)))
+    names(test) &lt;- unique(cards)
+    counter &lt;- 0
+    while (any(!test)) {
+        counter &lt;- counter + 1
+        test[sample(cards, 1)] &lt;- TRUE
+    }
+    nboxes[i] &lt;- counter
+}
+summary(nboxes)
+</code></pre>
+
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   3.00    4.00    5.00    6.33    8.00   25.00 
+</code></pre>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <pre><code class="r">boxplot(nboxes)
+</code></pre>
+
+<p><img src="Figures/Class09-unnamed-chunk-7.png" alt="plot of chunk unnamed-chunk-7"> </p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>More simulations</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li><p>Simulating coin flips and dice rolls.<br>
+<a href='http://spark.rstudio.com/jbryer/gambler/' target='_blank'><a href="http://spark.rstudio.com/jbryer/gambler/">http://spark.rstudio.com/jbryer/gambler/</a></a></p></li>
+<li><p>Simulating lottery ticket purchaes.<br>
+<a href='http://spark.rstudio.com/jbryer/gambler/' target='_blank'><a href="http://spark.rstudio.com/jbryer/gambler/">http://spark.rstudio.com/jbryer/gambler/</a></a></p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Summary</h2>
+  </hgroup>
+  <article>
+    <p>Don’t Overstate Your Case<br>
+    * Simulation is not reality, it only indicates probability.</p>
+
+<p>Model Outcome Chances Accurately<br>
+    * What would be wrong with generating random numbers 0, 1, 2, 3 to indicate the number of team members?
+    * There is not a 25% chance of each. They are not equally likely.</p>
+
+<p>Run Enough Trials<br>
+    * Don’t just do a few trials.  Err on the side of a large number of trials.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+
+  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+<!-- Grab CDN jQuery, fall back to local if offline -->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery-1.7.min.js"><\/script>')</script>
+<!-- Load Javascripts for Widgets -->
+<!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->
+<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+</html>

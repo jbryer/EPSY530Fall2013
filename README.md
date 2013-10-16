@@ -18,6 +18,18 @@ Descriptive statistics including measures of central tendency and variability, c
 * Homework (20%)
 * Project (30%) - The project can be completed individually or in pairs. If you choose to work with a partner you are required to provide a statment that indicates you participated equally and that you understand one grade will be given for the project for both participants. The project will involve analyzing and presenting analysis of a dataset of your choosing. A list of datasets will be provided but other datasets may be used if approved by the instructor.
 
+#### Grade Distribution
+
+A = 93+
+A- = 90-92
+B+ = 87-89
+B = 84-86 
+B- = 80-83 
+C+ = 75-79
+C = 70-74
+D = 65-69
+E = <65
+
 ### Schedule
 
 *NOTE: Tentative. Subject to change*
@@ -39,7 +51,7 @@ Oct-02 | Regression cont. | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/
 Oct-07 | Review |  | 
 Oct-09 | MIDTERM |  | 
 Oct-14 | NO CLASS - Columbus Day |  | 
-Oct-16 | Understanding Randomness |  | 9
+Oct-16 | Understanding Randomness | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class09.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class09.pdf?raw=true), [Source](Slides/Class09.Rmd), [R](Slides/Class09.R) | 9
 Oct-21 | Sample Surveys |  | 10
 Oct-23 | NO CLASS |  | 
 Oct-28 | Experiments and Observational Studies |  | 11

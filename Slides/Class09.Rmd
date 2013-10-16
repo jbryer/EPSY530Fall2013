@@ -1,0 +1,139 @@
+---
+title       : Understanding Randomness
+subtitle    : October 16	, 2013
+author      : Jason Bryer
+job         : epsy530.bryer.org
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+--- &twocol
+```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+require(ggplot2)
+require(gdata)
+options(digits=4, width=95)
+opts_chunk$set(fig.path='Figures/Class09-')
+opts_chunk$set(comment=NA)
+```
+
+## Random?
+
+*** left
+
+* Pick a number between 1 and 4. Is this random?
+* How to pick a random number:
+	* Pick a card from deck of cards.
+	* Flip a coin.
+	* Roll a dice.
+	* Number out of a hat.
+	* Use a computer.
+
+*** right
+```{r}
+sample(1:4, size=1)
+sample(1:4, size=10, replace=TRUE)
+```
+
+--- 
+
+## Simulation
+
+* A cerial box contains one of three cards with the following chances: 20% for Walter White, 30% for Jesse Pinkman, or 50% for Hank Schrader.
+* How many boxes would you expect to buy to get one of each?
+* We can answer this using simulation.
+
+---
+
+## Steps for Simulation
+
+Specify how to model a component outcome using equally likely random digits:
+
+1. Identify the component to be repeated: Opening a cereal box
+
+2. Explain how you will model the experiment’s outcome.  
+	Assign outcomes to the equally likely random digits  0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+	0 or 1 → Walt
+	2, 3, or 4 → Jesse
+	5, 6, 7, 8, or 9 → Hank
+
+Specify how to simulate trials:
+
+3. Explain how you will combine the components to model the trial. Look at each digit until all three types are found.
+
+4. State clearly what the response variable is. We want to find the number of boxes it takes to get all three pictures.
+
+---
+
+Put it all together to run the simulation:
+
+5. Run several trials
+
+```{r}
+cards <- c(rep('Walt', 2),
+		   rep('Jesse', 3),
+		   rep('Hank', 5))
+cards
+```
+
+Trial 1:
+
+```{r}
+sample(cards, 8)
+```
+
+Trial 2:
+```{r}
+sample(cards, 8)
+```
+
+--- &twocol
+
+## Putting all together
+
+*** left
+
+```{r}
+nboxes <- integer()
+for(i in 1:100) {
+	test <- rep(FALSE, length(unique(cards)))
+	names(test) <- unique(cards)
+	counter <- 0
+	while(any(!test)) {
+		counter <- counter + 1
+		test[sample(cards, 1)] <- TRUE
+	}
+	nboxes[i] <- counter
+}
+summary(nboxes)
+```
+
+*** right
+
+```{r, fig.width=3, fig.height=6}
+boxplot(nboxes)
+```
+
+---
+
+## More simulations
+
+* Simulating coin flips and dice rolls.  
+	<a href='http://spark.rstudio.com/jbryer/gambler/' target='_blank'>http://spark.rstudio.com/jbryer/gambler/</a>
+
+* Simulating lottery ticket purchaes.  
+	<a href='http://spark.rstudio.com/jbryer/gambler/' target='_blank'>http://spark.rstudio.com/jbryer/gambler/</a>
+
+---
+
+## Summary
+
+Don’t Overstate Your Case  
+	* Simulation is not reality, it only indicates probability.
+
+Model Outcome Chances Accurately  
+	* What would be wrong with generating random numbers 0, 1, 2, 3 to indicate the number of team members?
+	* There is not a 25% chance of each. They are not equally likely.
+
+Run Enough Trials  
+	* Don’t just do a few trials.  Err on the side of a large number of trials.
