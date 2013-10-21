@@ -2,6 +2,11 @@
 
 require(ggplot2)
 require(gdata)
+require(likert)
+data(pisana)
+pisausa <- pisana[pisana$CNT == 'USA',]
+pisausa$Math <- pisausa$PV1MATH
+
 options(digits=4, width=95)
 opts_chunk$set(fig.path='Figures/Class06-')
 opts_chunk$set(comment=NA)
@@ -42,12 +47,12 @@ worldData3 <- worldData3[!is.nan(worldData3$GDP),]
 
 
 ggplot(pisausa, aes(x=Math)) + 
-geom_histogram()
+geom_histogram(binwidth=20)
 
 
 
 ggplot(pisausa, aes(x=Math - 500)) + 
-geom_histogram()
+geom_histogram(binwidth=20)
 
 
 
