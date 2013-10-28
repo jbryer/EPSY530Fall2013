@@ -89,6 +89,8 @@ for(i in unique(pisa$CNT)) {
 	rm(list=paste0('pisa.', cnt))
 }
 
+write.csv(pisa.countries[pisa.countries$Country %in% pisa$CNT,], 
+		  file='Project/Countries.csv', row.names=FALSE)
 
 
 pisa.usa <- pisa[pisa$CNT == 'United States',]

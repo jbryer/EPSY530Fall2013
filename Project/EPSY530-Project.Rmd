@@ -17,14 +17,14 @@ EPSY 530 Research Project - Prograamm of International Student Assessment
 
 ### Describe Variables
 
-Question 28: Reading attitude
-Question 29: How often do you read these materials because you want to?
-
 ```{r}
 ```
 
 
 ### Visualize Categorical Data
+
+Question 28: Reading attitude
+Question 29: How often do you read these materials because you want to?
 
 ```{r}
 ```
@@ -59,7 +59,9 @@ Describe the distrubition of the reading, math, and science scores.
 ```
 
 
-### Student t-tests
+### Comparing groups
+
+The `PUBPRIV` variable indicates whether a student attended a public or private school.
 
 ```{r}
 ```
