@@ -64,7 +64,7 @@ Nov-18 | Confidence Intervals for Proportions |  | 16
 Nov-20 | Inferences About Means |  | 18
 Nov-25 | Comparing Groups |  | 20
 Nov-27 | NO CLASS - Thanksgiving |  | 
-Dec-02 | Paired Smaples and Block |  | 21
+Dec-02 | Paired Samples and Block |  | 21
 Dec-04 | Review |  | 
 Dec-09 | FINAL EXAM |  | 	
 
