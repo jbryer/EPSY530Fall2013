@@ -4,7 +4,7 @@ source('slidify.R')
 
 slideOptions <- list(framework='deck.js', theme='swiss', transition='horizontal-slide')
 
-author(deckdir='Slides', file='Class10') # Only once per deck!
+author(deckdir='Slides', file='Class11') # Only once per deck!
 
 slidify(dir='Slides', file='Class01', options=slideOptions)
 slidify(dir='Slides', file='Class02', options=slideOptions)
@@ -16,3 +16,4 @@ slidify(dir='Slides', file='Class07', options=slideOptions)
 slidify(dir='Slides', file='Class08', options=slideOptions)
 slidify(dir='Slides', file='Class09', options=slideOptions)
 slidify(dir='Slides', file='Class10', options=slideOptions)
+slidify(dir='Slides', file='Class11', options=slideOptions)

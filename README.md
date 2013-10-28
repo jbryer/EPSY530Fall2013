@@ -54,7 +54,7 @@ Oct-14 | NO CLASS - Columbus Day |  |
 Oct-16 | Understanding Randomness | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class09.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class09.pdf?raw=true), [Source](Slides/Class09.Rmd), [R](Slides/Class09.R) | 9
 Oct-21 | Sample Surveys | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class10.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class10.pdf?raw=true), [Source](Slides/Class10.Rmd), [R](Slides/Class10.R) | 10
 Oct-23 | NO CLASS |  | 
-Oct-28 | Experiments and Observational Studies |  | 11
+Oct-28 | Experiments and Observational Studies | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class11.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class11.pdf?raw=true), [Source](Slides/Class11.Rmd) | 11
 Oct-30 | From Randomness to Probability |  | 12
 Nov-04 | Probability Rules |  | 13
 Nov-06 | Random Variables and Probability Models |  | 14
