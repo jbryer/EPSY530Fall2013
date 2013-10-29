@@ -98,9 +98,9 @@ You can find a lot of the material in *R in Action* on Kabacoff's website, [stat
 * Chapter 8: 2, 4, 6, 9, 12, 15, 22, 25
 * Chapter 9: 1, 2, 4, 15
 * Chapter 10: 2, 4, 6, 10, 16, 18
-* Chapter 11: 
-* Chapter 12: 
-* Chapter 13: 
+* Chapter 11: 15, 18, 21, 22, 47
+* Chapter 12: 9, 16, 25, 28, 33
+* Chapter 13: 16, 19, 20, 26, 40
 * Chapter 14: 
 * Chapter 15: 
 * Chapter 16:  
