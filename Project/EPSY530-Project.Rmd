@@ -1,11 +1,6 @@
 EPSY 530 Research Project - Prograamm of International Student Assessment
 ========================================================
 
-
-
-[Click here to download the codebook](Codebook_Stu09_Dec10.pdf).
-
-
 **NOTE:** The data used for this project has been simplified so inferences made with these data may not reflect what the full dataset may suggest. For example, any student records with any missing data were removed. Also, PISA uses a complex survey design where survey weights and multiple plausible values are provided for the outcome scores (i.e. math, reading, and science). The scores provided are simple means of the five possible values for simplicity.
 
 
@@ -20,34 +15,53 @@ EPSY 530 Research Project - Prograamm of International Student Assessment
 ```{r}
 ```
 
+* `ST04Q01` - Sex. Qualitative. Values are Male or Female.
+* `ST06Q01` - Age. Quantitative.
+* `ST10Q01` - Mother's education level.
 
-### Visualize Categorical Data
-
-Question 28: Reading attitude
-Question 29: How often do you read these materials because you want to?
+### Descriptive Statistics for Qualitiatve Variables
 
 ```{r}
 ```
+
+
+### Descriptive Statistics for Quantiative Variables
+
+For the quantitative variables, calculate the mean, median, standard deviation, interquartile range.
+
+```{r}
+```
+
+
+### Visualize Qualitative Variables
+
+For the qualitiative variables, create a barplot.
+
+```{r}
+```
+
 
 ### Visualize Quantitative Variables
 
+For the quantitative variables, create a boxplot and histogram.
+
 ```{r}
 ```
 
 
-### Descriptive Statistics
+### Distributions for the response variables.
 
-Mean, median, standard deviation, interquartile range.
+```{r}
+```
 
-### Distributions
-
-Describe the distrubition of the reading, math, and science scores.
-
+For the response varaibles (i.e. math, reading, and science), describe the distributions by gender.
 ```{r}
 ```
 
 
 ### Correlation
+
+What is the correlation between reading time and reading score?
 
 ```{r}
 ```
@@ -55,6 +69,17 @@ Describe the distrubition of the reading, math, and science scores.
 
 ### Linear Regression
 
+Scatter plot.
+
+```{r}
+```
+
+Predict reading score from reading time.
+
+```{r}
+```
+
+Residual plot.
 ```{r}
 ```
 
