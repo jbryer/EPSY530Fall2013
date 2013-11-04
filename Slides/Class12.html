@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>From Randomness to Probability</title>
+  <meta charset="utf-8">
+  <meta name="description" content="From Randomness to Probability">
+  <meta name="author" content="Jason Bryer">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+    <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+    <!-- END LOGO SLIDE -->
+    
+
+    <!-- TITLE SLIDE -->
+    <!-- Should I move this to a Local Layout File? -->
+    <slide class="title-slide segue nobackground">
+      <hgroup class="auto-fadein">
+        <h1>From Randomness to Probability</h1>
+        <h2>November 4, 2013</h2>
+        <p>Jason Bryer<br/>epsy530.bryer.org</p>
+      </hgroup>
+          </slide>
+
+    <!-- SLIDES -->
+      <slide class="" id="">
+  <hgroup>
+    <h2>Red Light, Green Light</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <p>Each day you drive through an intersection and check if the light is red, green, or yellow. </p>
+
+<ul>
+<li>Day 1:  red</li>
+<li>Day 2:  green</li>
+<li>Day 3:  red</li>
+</ul>
+
+<p>Before you begin, you know:</p>
+
+<ul>
+<li>The possible outcomes</li>
+<li>An outcome will occur.</li>
+</ul>
+
+<p>After you finish, you know:</p>
+
+<ul>
+<li>The outcomes that occurred</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <pre><code class="r">flips &lt;- sample(c(0,1,0), 100, replace=TRUE)
+df &lt;- data.frame(day=1:100, 
+    PercentGreen=cumsum(flips) / 1:100)
+ggplot(df, aes(x=day, y=PercentGreen)) + 
+    geom_path() + ylim(c(0,1))
+</code></pre>
+
+<p><img src="Figures/Class12-cumsum.png" alt="plot of chunk cumsum"> </p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Random Phenomena Vocabulary</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Trial: Each occasion which we observe a random phenomena</li>
+<li>Outcome: The value of the trial for the random phenomena</li>
+<li>Event: The combination of the trial’s outcomes</li>
+<li>Sample Space: The collection of all possible outcomes</li>
+</ul>
+
+<h3>For example, flipping two coins:</h3>
+
+<ul>
+<li>Trial: The flipping of the two coins</li>
+<li>Outcome: Heads or tails for each flip</li>
+<li>Event: HT, for example</li>
+<li>Sample Space: S  =  {HH, HT, TH, TT}</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>The Law of Large Numbers</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>If you flip a coin once, you will either get 100% heads or 0% heads.</li>
+<li>If you flip a coin 1000 times, you will probably get close to 50% heads.</li>
+</ul>
+
+<p>The Law of Large Numbers states that for many trials, the proportion of times an event occurs settles down to one number.</p>
+
+<ul>
+<li>This number is called the <b>empirical probability</b>.</li>
+</ul>
+
+<h3>Requirements:</h3>
+
+<ul>
+<li>Identical Probabilities: The probabilities for each event must remain the same for each trial.</li>
+<li>Independence: The outcome of a trial is not influenced by the outcomes of the previous trials.</li>
+</ul>
+
+<p>Empirical probability: $P(A)=\frac { num \quad times\quad A\quad occurs }{ num \quad of\quad trials } $ (in the long run)</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h3>Red Light, Green Light:  The Law of Large Numbers</h3>
+  </hgroup>
+  <article>
+    <ul>
+<li>After many days, the proportion of green lights encountered is approximately 0.34.</li>
+<li>P(green) = 0.34.</li>
+<li>If we recorded more days, the probability would still be about 0.34.</li>
+</ul>
+
+  
+    <div class='left' style='float:left;width:48%'>
+     <p><img src="Figures/Class12-cumsum2.png" alt="plot of chunk cumsum2"> </p>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="Figures/Class12-cumsum3.png" alt="plot of chunk cumsum3"> </p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h3>The Nonexistent Law of Averages</h3>
+  </hgroup>
+  <article>
+    <p><b>Wrong</b></p>
+
+<ul>
+<li>If you flip a coin 5 times and get five tails, then you are due for a head on the next flip.</li>
+<li><p>You put 10 quarters in the slot machine and lose each time.  You are just a bad luck person, so you have a smaller chance of winning on the 11th try.</p></li>
+<li><p>There is no such thing as the Law of Averages for short runs.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h3>Theoretical Probability</h3>
+  </hgroup>
+  <article>
+    <p>American Roulette</p>
+
+<ul>
+<li>18 Red, 18 Black, 2 Green</li>
+<li>If you bet on Red, what is the probability of winning?</li>
+</ul>
+
+<p>Theoretical Probability</p>
+
+<p>\[P(A)=\frac { num \quad times\quad A\quad occurs }{ num \quad of\quad trials } \]
+\[P(red)=\frac{18}{38}\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h3>Heads or Tails</h3>
+  </hgroup>
+  <article>
+    <p>Flip 2 coins.  Find P(HH)</p>
+
+<ul>
+<li>List the sample space:<br>
+S = {HH, HT, TH, TT}</li>
+<li>\(P(HH) = \frac{1}{4}\)</li>
+</ul>
+
+<p>Flip 100 coins.  Find the probability of all heads.
+The sample space would involve 1,267,650,600,228,229,401,496,703,205,376 different outcomes.
+Later, we will see a better way.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h3>Equally Likely?</h3>
+  </hgroup>
+  <article>
+    <p>What’s wrong with this logic?</p>
+
+<ul>
+<li>Randomly pick two people.</li>
+<li>Find the probability that both are left-handed.</li>
+<li>Sample Space<br>
+S = {LL, LR, RL, RR}</li>
+<li>\(P(LL) =\frac{1}{4}\)</li>
+</ul>
+
+<p>Since left-handed and right-handed are not equally likely, this method does not work.  </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h3>Personal Probability</h3>
+  </hgroup>
+  <article>
+    <p>What’s your chance of getting an A in statistics?</p>
+
+<ul>
+<li>You cannot base this on your long-run experience.</li>
+<li>There is no sample space of events with equal probabilities to list.</li>
+<li>You can only base your answer on personal experience and guesswork.</li>
+<li>Probabilities based on personal experience rather than long-run relative frequencies or equally likely events are called personal probabilities.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h3>Rules 1 and 2</h3>
+  </hgroup>
+  <article>
+    <p>Rule 1:  0 ≤ P(A) ≤ 1</p>
+
+<ul>
+<li>You can’t have a −25% chance of winning.</li>
+<li>A 120% chance also makes no sense.</li>
+<li>Note:  Probabilities are (generally) written in decimals.
+
+<ul>
+<li>45% chance → P(A) = 0.45</li>
+</ul></li>
+</ul>
+
+<p>Rule 2:  P(S) = 1</p>
+
+<ul>
+<li>The set of all possible outcomes has probability 1.</li>
+<li>There is a 100% chance that you will get a head or a tail.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h3>Rule 3: The Complement Rule</h3>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <p>Complements</p>
+
+<ul>
+<li>Define \(A^C\) as the complement of A.</li>
+<li>\(A^C\) is the event of A not happening.</li>
+<li>If A is the event of rolling a 5 on a six sided die, then AC is the event of not rolling a 5: {1, 2, 3, 4, 6}</li>
+<li>\(P(A) = 1/6\); \(P(A^C) = ?\)</li>
+<li>\(P(A^C) = 5/6 = 1 – 1/6\)</li>
+</ul>
+
+<p>The Rule of Complements:  \(P(A^C) = 1 – P(A)\)</p>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p><img src='Figures/Class12-Complement.png' width='45%'></p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h3>Red Light Green Light and Complements</h3>
+  </hgroup>
+  <article>
+    <p>We know that P(green) = 0.34. Find P(not green):</p>
+
+<ul>
+<li>Not green is the complement of green.</li>
+<li>Use the rule of complements:<br>
+\(P(not green) =  P(green^C)\)<br>
+P(not green) = 1 – P(green)<br>
+P(not green) = 1 – 0.34<br>
+P(not green) = 0.66<br></li>
+</ul>
+
+<p>The probability of the light not being green is 0.66.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h3>Rule 4:  The Addition Rule</h3>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <p>Suppose<br>
+    P(sophomore) = 0.2 and P(junior) = 0.3</p>
+
+<p>Find P(sophomore OR junior)<br>
+    Solution:  0.2 + 0.3  =  0.5</p>
+
+<p>This works because sophomore and junior are disjoint  events. They have no outcomes in common.</p>
+
+<p>The Addition Rule</p>
+
+<ul>
+<li>If A and B are disjoint events, then</li>
+</ul>
+
+<p>\[P(A\quad OR\quad B)  =  P(A) + P(B)\]</p>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p><img src='Figures/Class12-AdditionRule.png' width='45%'></p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h3>Red Light, Green Light, Yellow Light</h3>
+  </hgroup>
+  <article>
+    <p>Given that P(green) = 0.35 and P(yellow) = 0.04</p>
+
+<ul>
+<li>Find P(red).</li>
+</ul>
+
+<p>Solution:  Use the Rule of Complements and the Addition Rule.</p>
+
+<p>\(P(red) = 1 – P(red^C)\)<br>
+\(P(red) = 1 – P(green OR yellow)\)<br>
+\(P(red) = 1 – [P(green) + P(yellow)]\)<br>
+\(P(red) = 1 – [0.35 + 0.04]\)<br>
+\(P(red) = 1 – 0.39\)<br>
+\(P(red) = 0.61\)  </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h3>The Sum of Probabilities</h3>
+  </hgroup>
+  <article>
+    <p>The sum of all the probabilities of every disjoint event must equal 1.  </p>
+
+<p>What’s wrong with the following statement?</p>
+
+<ul>
+<li>Probabilities for freshmen, sophomore, junior, senior are:  0.25, 0.23, 0.22, 0.20.<br>
+0.25 + 0.23 + 0.22 + 0.20 = 0.90</li>
+<li>Since they do not add to 1, something is wrong.</li>
+</ul>
+
+<p>How about the following?</p>
+
+<ul>
+<li>P(owning a smartphone) = 0.5 and </li>
+<li>P(owning a computer) = 0.9</li>
+<li>This is fine, since they are not disjoint.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h3>Rule 5:  The Multiplication Rule</h3>
+  </hgroup>
+  <article>
+    <p>The probability that an Atlanta to Houston flight is on time is 0.85.</p>
+
+<ul>
+<li>If you have to fly every Monday, find the probability that your first two Monday flights will be on time.</li>
+</ul>
+
+<p>Multiplication Rule:  For independent events A and B:
+        \[P(A\quad AND\quad B)  =  P(A) × P(B)\]</p>
+
+<p>P(1st on time AND 2nd on time) =  P(1st on time) × P(2nd on time)<br>
+P(1st on time AND 2nd on time) = 0.85 × 0.85<br>
+P(1st on time AND 2nd on time) = 0.7225</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h3>Red Light AND Green Light AND Yellow Light</h3>
+  </hgroup>
+  <article>
+    <p>Find the probability that the light will be red on Monday, green on Tuesday, and yellow on Wednesday.</p>
+
+<ul>
+<li>The multiplication rule works for more than 2 events.</li>
+<li>P(red Mon. AND green Tues. AND yellow Wed.) =<br>
+    P(red Mon.) × P(green Tues.) × P(yellow Wed.) =<br>
+    0.61 × 0.35 × 0.04 =<br>
+    0.00854</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h3>At Least One Red Light</h3>
+  </hgroup>
+  <article>
+    <p>Find the probability that the light will be red at least one time during the week.</p>
+
+<p>Use the Complement Rule</p>
+
+<p>P(at least 1 red) = 1 – P(no reds)<br>
+= 1 – (0.39 × 0.39 × 0.39 × 0.39 × 0.39 × 0.39 × 0.39)<br>
+≈ 0.9986</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h3>M&amp;Ms: 38% Pink, 36% Teal, 16% Purple</h3>
+  </hgroup>
+  <article>
+    <ul>
+<li>First notice that 0.38 + 0.36 + 0.16 = 0.9 ≠ 1</li>
+<li>There must be other colors.</li>
+</ul>
+
+  
+    <div class='left' style='float:left;width:48%'>
+     <p>Question:  Find the probability that a Japanese survey respondent will want either pink or teal.<br>
+    P(pink OR teal)</p>
+
+<ul>
+<li>Pink and teal are disjoint.</li>
+<li>Apply the Addition Rule.</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p>Question:  P(1st purple AND 2nd purple)<br>
+    Find the probability that two Japanese survey respondents will want purple.</p>
+
+<ul>
+<li>The choice made by the first respondent does not affect the choice of the other.  The events are independent.</li>
+<li>Use the Multiplication Rule.</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="">
+  <hgroup>
+    <h3>M&amp;Ms: 38% Pink, 36% Teal, 16% Purple</h3>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <p>Question:  P(pink OR teal)</p>
+
+<p>Mechanics:  </p>
+
+<ul>
+<li>P(pink OR teal) = P(pink) + P(teal)<br>
+P(pink OR teal) = 0.38 + 0.36<br>
+P(pink OR teal) = 0.74</li>
+</ul>
+
+<p>Conclusion:  The probability that the respondent chose pink or teal is 0.74.</p>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p>Question:  P(1st purple AND 2nd purple)</p>
+
+<ul>
+<li>Mechanics:<br>
+P(1st purple AND 2nd purple) = P(1st purple) × P(2nd purple)<br>
+P(1st purple AND 2nd purple) = 0.16 × 0.16<br>
+P(1st purple AND 2nd purple) =  0.0256</li>
+</ul>
+
+<p>Conclusion:  The probability that both choose purple is 0.0256.</p>
+
+    </div>
+  </article>
+</slide>
+    <slide class="backdrop"></slide>
+  </slides>
+
+  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+<!-- Grab CDN jQuery, fall back to local if offline -->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery-1.7.min.js"><\/script>')</script>
+<!-- Load Javascripts for Widgets -->
+<!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->
+<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+</html>
