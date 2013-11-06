@@ -57,7 +57,7 @@ Oct-23 | NO CLASS |  |
 Oct-28 | Experiments and Observational Studies | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class11.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class11.pdf?raw=true), [Source](Slides/Class11.Rmd) | 11
 Oct-30 | Lab | | 
 Nov-04 | From Randomness to Probability | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class12.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class12.pdf?raw=true), [Source](Slides/Class12.Rmd), [R](Slides/Class12.R) | 12
-Nov-06 | Probability Rules |  | 13
+Nov-06 | Probability Rules | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class13.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class13.pdf?raw=true), [Source](Slides/Class13.Rmd) | 13
 Nov-11 | NO CLASS |  | 
 Nov-13 | Random Variables and Probability Models |  | 14
 Nov-18 | Sampling Distribution Models |  | 15
