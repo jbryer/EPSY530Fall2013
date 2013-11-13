@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Variables and Probability Models</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Random Variables and Probability Models">
+  <meta name="author" content="Jason Bryer">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+    <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+    <!-- END LOGO SLIDE -->
+    
+
+    <!-- TITLE SLIDE -->
+    <!-- Should I move this to a Local Layout File? -->
+    <slide class="title-slide segue nobackground">
+      <hgroup class="auto-fadein">
+        <h1>Random Variables and Probability Models</h1>
+        <h2>November 13, 2013</h2>
+        <p>Jason Bryer<br/>epsy530.bryer.org</p>
+      </hgroup>
+          </slide>
+
+    <!-- SLIDES -->
+      <slide class="" id="">
+  <hgroup>
+    <h2>Probability Models</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li>An insurance company pays 10,000 if you die or 5,000 for a disability.</li>
+<li>The amount the company pays is a <b>random variable</b>: a numeric value based on the outcome of a random event.</li>
+<li>It is a <b>discrete random variable</b>, since we can list all the possible outcomes</li>
+<li>A <b>continuous random variable</b> is a random variable that is not discrete.</li>
+<li>The collection of all possible values and their probabilities is called a <b>probability model</b>.</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <table><thead>
+<tr>
+<th>Outcome</th>
+<th align="right">Payout</th>
+<th align="right">Probability</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Death</td>
+<td align="right">10,000</td>
+<td align="right">1/1000</td>
+</tr>
+<tr>
+<td>Disability</td>
+<td align="right">5,000</td>
+<td align="right">2/1000</td>
+</tr>
+<tr>
+<td>Neither</td>
+<td align="right">0</td>
+<td align="right">997/1000</td>
+</tr>
+</tbody></table>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Expected Value</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>The expected value is the average amount that is likely to occur if there  are many trials.</li>
+<li>Expected Value Formula:</li>
+</ul>
+
+<p>\[ \mu =E(x)=\sum { xP(x) } \]</p>
+
+<p>\[E(x)=(10,000)\frac { 1 }{ 1,000 } +(5,000)\frac { 2 }{ 1,000 } +0\frac { 997 }{ 1,000 } =20\]</p>
+
+<ul>
+<li>The company expects to pay an average of about 20 per policy per year.<br></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h2>Standard Deviation of a Probability Model</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li>Consider data from many outcomes of a random variable.</li>
+<li>The variance and standard deviation of these outcomes will measure the spread of the data.</li>
+</ul>
+
+<p>\[{ \sigma  }^{ 2 }=\sum { { (x-\mu ) }^{ 2 }P(x) } \]</p>
+
+<ul>
+<li>The standard deviation is the square root of the variance.</li>
+</ul>
+
+<p>\[SD(x)=\sigma =\sqrt { { \sigma }^{ 2 } } = \sqrt{ \sum { { (x-\mu ) }^{ 2 }P(x) } } \]</p>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <h3>About the standard deviation</h3>
+
+<ul>
+<li>Not just the standard deviation of the X values</li>
+<li>A weighted average</li>
+<li>Measures how outcomes will likely be spread out if many are selected</li>
+<li>Will be large if there is a high probability of both small values and large values</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="">
+  <hgroup>
+    <h3>Standard Deviation of Insurance Example</h3>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li><p>Insurance policy costs 50.</p></li>
+<li><p>The expected payout is 20 and the standard deviation is 386.78.</p></li>
+<li><p>The insurance company&#39;s expected profit is 50 - 20 = 30.</p></li>
+<li><p>Would you buy this policy?</p></li>
+<li><p>The standard deviation gives an indication of the high risk to the insurer.</p></li>
+</ul>
+
+<pre><code>    Outcome Payout Probability
+      Death  10000       0.001
+ Disability   5000       0.002
+    Neither      0       0.997
+</code></pre>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <pre><code class="r">m &lt;- sum(insurance$Payout * 
+            insurance$Probability)
+m
+</code></pre>
+
+<pre><code>[1] 20
+</code></pre>
+
+<pre><code class="r">sqrt(sum( (insurance$Payout - m)^2  * 
+            insurance$Probability))
+</code></pre>
+
+<pre><code>[1] 386.8
+</code></pre>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h3>Adding or Subtracting a Constant</h3>
+  </hgroup>
+  <article>
+    <ul>
+<li>Adding or subtracting a constant to all the data values shifts the expected value by that constant.</li>
+</ul>
+
+<p>\[E(X+c)\quad =\quad E(X)\quad +\quad c\\ E(X-c)\quad =\quad E(X)\quad -\quad c\]</p>
+
+<ul>
+<li>Adding or subtracting a constant to all the data values has no effect on the standard deviation.</li>
+</ul>
+
+<p>\[Var(X\pm c)\quad =\quad Var(X)\\ SD(X\pm c)\quad =\quad SD(X)\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h3>A Coupon on Top of the Valentine’s Discount</h3>
+  </hgroup>
+  <article>
+    <p>The Valentine&#39;s Discount</p>
+
+<ul>
+<li>E(X) = 5.83,  SD(X) = 8.62</li>
+</ul>
+
+<p>If everybody brings a coupon for 5 off, what are the new expected value and standard deviation?</p>
+
+<ul>
+<li>E(X + 5) = 5.83 + 5 = 10.83</li>
+<li>SD(X + 5) = 8.62</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h3>Multiplying by a Constant</h3>
+  </hgroup>
+  <article>
+    <p>\[E(cX)\quad =\quad cE(X)\\ Var(cX)\quad =\quad { c }^{ 2 }Var(X)\\ SD(cX)\quad =\quad |c|SD(X)\]</p>
+
+<ul>
+<li>There is a double the rewards special Valentines Day discount.  The rewards are now 40 and 20 instead of 20 and 10.  What  are the new expected value and standard deviation?</li>
+<li>\(E(2X)\quad =\quad 2E(X)\quad =\quad (2)(5.83)\quad =\quad 11.66\)</li>
+<li>\(SD(2X)\quad =\quad 2SD(X)\quad =\quad (2)(8.62)\quad =\quad 11.74\)</li>
+<li>With the double rewards special the restaurant expects an average discount of 11.66 and a standard deviation of 17.24.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h3>The Addition Rule</h3>
+  </hgroup>
+  <article>
+    <p>\[E(X+Y)\quad =\quad E(X)\quad +\quad E(Y)\\ Var(X+Y)\quad =\quad Var(X)\quad +\quad Var(Y)\]</p>
+
+<ul>
+<li>Two couples try the Valentines Day discount. For each:  E(X) = 5.83 and SD(X) = 8.62.</li>
+<li>What is the combined expected value and SD?</li>
+<li>Let the total discount be: \(T = { X }_{ 1 }+{ X }_{ 2 }\)
+\[E({ X }_{ 1 }+{ X }_{ 2 }) = E({ X }_{ 1 }) + E({ X }_{ 2 }) = 5.83 + 5.83 = 11.66\]
+\[Var({ X }_{ 1 }+{ X }_{ 2 }) = Var({ X }_{ 1 }) + Var({ X }_{ 2 }) = { 8.62 }^{ 2 }+{ 8.62 }^{ 2 } = 148.6088\]
+\[SD({ X }_{ 1 }+{ X }_{ 2 }) = \sqrt { 148.6099 }  = 12.19\]</li>
+<li>Notice that since the variables are independent, the standard deviation, 12.19, is less than the standard deviation, 17.24, of the double discount.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h3>The Subtraction Rule</h3>
+  </hgroup>
+  <article>
+    <ul>
+<li>Roll two dice.  Each die outcome will have the same SD.<br></li>
+<li>Subtracting the standard deviations gives 0, but the standard deviation of the differences is not 0.<br></li>
+<li>The range of the differences is −5 to 5, larger than the range for a single die: 1 to 6.</li>
+</ul>
+
+<p>\[E(X-Y)=E(X)-E(Y)\\ Var(X-Y)=Var(X)+Var(Y)\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h3>Subtracting Discounts</h3>
+  </hgroup>
+  <article>
+    <ul>
+<li>A competing restaurant also has a game style discount: E(X) = 10, SD = 15.<br></li>
+<li>How much more can you expect to save compared with the Valentines Day Discount: E(X) = 5.83, SD = 8.62?</li>
+<li>E(W – X) = 10 – 5.83 = 4.17</li>
+<li>What is the standard deviation of the differences?</li>
+<li>The competing restaurant’s discount averages 4.17 more than the Valentines Day Discount. The standard deviation for the difference is 17.30.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h3>The Binomial Model</h3>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <h4>Searching for Walt&#39;s Card (see class 9)</h4>
+
+<ul>
+<li>20% of the cereal boxes have Walt’s card.</li>
+<li>What is the expected number of boxes to open to get a Walt card?</li>
+</ul>
+
+<p>Bernoulli Trial</p>
+
+<ul>
+<li>Two outcomes:  success or failure</li>
+<li>The probability of success,  p, is the same for each trial.</li>
+<li>The trials are independent.</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <h4>The 10% Rule</h4>
+
+<ul>
+<li>There are 10 cereal boxes and you sample 4 of them.</li>
+<li>Not independent, since the probability of success changes for the second if you have success on the first</li>
+<li>If the sample is more than 10% of the population, then the trials are far from being independent.</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="">
+  <hgroup>
+    <h3>Probability of Getting 2 Walt in 5 Trials</h3>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li>Bernoulli trials:  Millions of boxes, sample size 5.</li>
+<li>P(X = 2) from Binom(n, p), n = 5, p = 0.2, q = 0.8.</li>
+<li>2 successes, 3 failures.  No quite \(0.2^2\) × \(0.8^3\).</li>
+<li>Must consider all orders of 2 successes and 3 failures.</li>
+<li>Number of ways of picking k items from n:</li>
+</ul>
+
+<p>\[{ _{ n }{ C }_{ k } }=\frac { n! }{ k!(n-k)! } \\ { _{ 5 }{ C }_{ 2 } }=\frac { 5! }{ 2!(5-2)! } =10\]</p>
+
+<ul>
+<li>P(X = 2)  =  10 × 0.22 × 0.83 = 0.2048 </li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <ul>
+<li>n = Number of trials</li>
+<li>p = Probability of success</li>
+<li>q = 1 – p = Probability of failure</li>
+<li>X = Number of successes</li>
+<li>\(P(X=x)={ _{ n }{ C }_{ x }{ p }^{ x }{ q }^{ n-x } }\)</li>
+<li>Mean = \(np\)</li>
+<li>Standard Deviation = $\sqrt { nqp } $</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h3>Binomial Models Using R</h3>
+  </hgroup>
+  <article>
+    <pre><code class="r">dbinom(x=2, size=5, prob=0.2)
+</code></pre>
+
+<pre><code>[1] 0.2048
+</code></pre>
+
+<pre><code class="r">cards &lt;- data.frame(Card=c(&#39;Walt&#39;,
+        &#39;Jesse&#39;,&#39;Hank&#39;),
+        Prob=c(.2,.3,.5))
+dbinom(2, 5, prob=cards$Prob)
+</code></pre>
+
+<pre><code>[1] 0.2048 0.3087 0.3125
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h3>Spam and the Binomial Model</h3>
+  </hgroup>
+  <article>
+    <p>91% of all email is spam.  Your inbox has 25 emails. Find the mean, standard deviation, and the probability that 1 or 2 of the emails are not spam.</p>
+
+<ul>
+<li>n = 25, p = 1 – 0.91 = 0.09, q = 0.91</li>
+<li>Mean:  np = (25)(0.09)  =  2.25</li>
+<li>Standard Deviation = \(\sqrt { nqp } =\sqrt { (25)(0.09)(0.91) } \approx 1.43\)</li>
+<li>P(X = 1 or X = 2) = P(X=1) + P(X=2) = 0.2340 + 0.2777 = 0.5117 </li>
+</ul>
+
+<p>There is about a 51% chance of 1 or 2 emails that are not spam.</p>
+
+<pre><code class="r">dbinom(1, 25, 0.09) + dbinom(2, 25, 0.09)
+</code></pre>
+
+<pre><code>[1] 0.5117
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h3>The Trouble with Large Sample Sizes</h3>
+  </hgroup>
+  <article>
+    <p>The Red Cross has 32,000 donors and needs at least 1850 that are O−. Will they run out?</p>
+
+<ul>
+<li>The computations involve ridiculously  large numbers.</li>
+<li>“At least” requires P(X = 1850), P(X = 1851), all the way up to P(X = 32,000).</li>
+<li>Mean = np = 1920</li>
+<li>\(SD = \sqrt{npq} \approx 42.48\)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h3>The Solution for Large Sample Sizes</h3>
+  </hgroup>
+  <article>
+    <p>The Red Cross has 32,000 donors and needs at least 1850 that are O−.  Will they run out (less than)?</p>
+
+<ul>
+<li>Mean = np = 1920</li>
+<li>\(SD = \sqrt{npq} \approx 42.48\)</li>
+<li>The normal model with the same mean and standard deviation is a very good approximation.
+\[P(X<1850)\approx P\left( z<\frac { 1850-1920 }{ 42.48 }  \right) \approx P(z<-1.65)\approx 0.05\]</li>
+</ul>
+
+<p>There is about a 5% chance that they will run out.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h3>How Large is “Large Enough”</h3>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <p>The Success/Failure Condition</p>
+
+<ul>
+<li>A Binomial is approximately Normal if we expect at least 10 successes and 10 failures.
+
+<ul>
+<li>\(np\ge 10\)</li>
+<li>\(nq\ge 10\)</li>
+</ul></li>
+<li>This comes from the binomial being skewed for a small number of successes or failures expected.</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p><img src='Figures/Class14-BigEnough1.png' width='60%'></p>
+
+<p><img src='Figures/Class14-BigEnough2.png' width='60%'></p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h3>Example:  Spam and the Normal Approximation to the Binomial</h3>
+  </hgroup>
+  <article>
+    <p>Only 151 of 1422 emails got through your spam filter.  Might the filter be too aggressive?</p>
+
+<ul>
+<li>What is the probability that no more than 151 of the emails are real messages?</li>
+<li>These emails represent less than 10% of all emails.</li>
+<li>\(np = (1422)(0.09) = 127.98 \ge 10\)</li>
+<li>\(nq = (1422)(0.91) = 1294.02 \ge 10\)</li>
+<li>Yes, the Normal model is a good approximation.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h3>Example:  Spam and the Normal Approximation to the Binomial</h3>
+  </hgroup>
+  <article>
+    <p>What is the probability that no more than 151 of the emails are real messages?</p>
+
+<ul>
+<li>\(\mu = np = 127.98\)</li>
+<li>\(\sigma = \sqrt{npq} \approx 10.79\)</li>
+<li>\(P(X<151)\approx P\left( z<\frac { 151-127.98 }{ 10.79 }  \right) \approx P(z<2.13)\approx 0.9834\)</li>
+</ul>
+
+<p>There is over a 98% chance that no more than 151 of them were real messages.  The filter may be working.</p>
+
+<p><center><img src='Figures/Class14-NormalDist.png' width='45%'></center></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+
+  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+<!-- Grab CDN jQuery, fall back to local if offline -->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery-1.7.min.js"><\/script>')</script>
+<!-- Load Javascripts for Widgets -->
+<!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->
+<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+</html>

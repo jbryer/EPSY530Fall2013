@@ -21,9 +21,9 @@ opts_chunk$set(comment=NA)
 ## Or but NOT disjoint
 
 Your Wallet
-* S = {$1, $2, $5, $10, $20, $50, $100}
-* A = {odd numbered value} = {$1, $5}
-* B = {bill with a building} = {$5, $10, $20, $50, $100}
+* S = {1, 2, 5, 10, 20, 50, 100}
+* A = {odd numbered value} = {1, 5}
+* B = {bill with a building} = {5, 10, 20, 50, 100}
 
 Why is P(A or B) ≠ P(A) + P(B)?
 * Answer:  A and B are not disjoint.
@@ -141,7 +141,7 @@ What if we knew the chosen personwas a girl? Wouldthat change the probabilit
 * P(boy | grades)  =  117/247 = 0.474 
 
 
-<center><img src='Figures/Class13-ContProb.png' width='60%'></center>
+<center><img src='Figures/Class13-ContTable2.png' width='60%'></center>
 
 --- &twocol
 
