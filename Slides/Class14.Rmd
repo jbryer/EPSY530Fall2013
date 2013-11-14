@@ -135,7 +135,7 @@ $$E(cX)\quad =\quad cE(X)\\ Var(cX)\quad =\quad { c }^{ 2 }Var(X)\\ SD(cX)\quad 
 
 * There is a double the rewards special Valentines Day discount.  The rewards are now 40 and 20 instead of 20 and 10.  What  are the new expected value and standard deviation?
 * $E(2X)\quad =\quad 2E(X)\quad =\quad (2)(5.83)\quad =\quad 11.66$
-* $SD(2X)\quad =\quad 2SD(X)\quad =\quad (2)(8.62)\quad =\quad 11.74$
+* $SD(2X)\quad =\quad 2SD(X)\quad =\quad (2)(8.62)\quad =\quad 17.74$
 * With the double rewards special the restaurant expects an average discount of 11.66 and a standard deviation of 17.24.
 
 ---
