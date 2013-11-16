@@ -101,7 +101,7 @@ You can find a lot of the material in *R in Action* on Kabacoff's website, [stat
 * Chapter 11: 15, 18, 21, 22, 47
 * Chapter 12: 9, 16, 25, 28, 33
 * Chapter 13: 16, 19, 20, 26, 40
-* Chapter 14: 
+* Chapter 14: 15, 16, 29, 30, 40, 50
 * Chapter 15: 
 * Chapter 16:  
 * Chapter 18: 
