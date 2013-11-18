@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sampling Distribution Models</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Sampling Distribution Models">
+  <meta name="author" content="Jason Bryer">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+    <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+    <!-- END LOGO SLIDE -->
+    
+
+    <!-- TITLE SLIDE -->
+    <!-- Should I move this to a Local Layout File? -->
+    <slide class="title-slide segue nobackground">
+      <hgroup class="auto-fadein">
+        <h1>Sampling Distribution Models</h1>
+        <h2>November 18, 2013</h2>
+        <p>Jason Bryer<br/>epsy530.bryer.org</p>
+      </hgroup>
+          </slide>
+
+    <!-- SLIDES -->
+      <slide class="" id="">
+  <hgroup>
+    <h2>Sampling About Evolution</h2>
+  </hgroup>
+  <article>
+    <p>According to a Gallup poll, 43% believe in evolution.  Assume this is true of all Americans.</p>
+
+<ul>
+<li>If many surveys were done of 1007 Americans, we could calculate the sample proportion for each.</li>
+<li>The histogram shows the distribution of a simulation of 2000 sample proportions.</li>
+<li>The distribution of all possible sample proportions from samples with the same sample size is called the <b>sampling distribution</b>.</li>
+</ul>
+
+<p><center><img src='Figures/Class15-SamplingDistribution.png' width='50%')></center></p>
+  
+    <div class='left' style='float:left;width:48%'>
+     
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Sampling Distributions</h2>
+  </hgroup>
+  <article>
+    <p>Sampling Distribution for Proportions</p>
+
+<ul>
+<li>Symmetric</li>
+<li>Unimodal</li>
+<li>Centered at p</li>
+<li>The sampling distribution follows the Normal model.</li>
+</ul>
+
+<p>What does the sampling distribution tell us?</p>
+
+<ul>
+<li>The sampling distribution allows us to make statements about where we think the corresponding population parameter is and how precise these statements are likely to be.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h2>Sampling Distribution for Smoking</h2>
+  </hgroup>
+  <article>
+    <p>18% of US adults smoke.  How much would we expect the proportion of smokers in a sample of size 1000 to vary from sample to sample?</p>
+
+  
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li>A histogram was drawn to display the results of asimulation.</li>
+<li>The mean is 0.18 = the population proportion.</li>
+<li>The standard deviation was calculated as 0.0122.</li>
+<li>Normal:  68-95-99.7 rule works.</li>
+<li>95% of all proportions are within 0.0244 of the mean.</li>
+<li>This is very close to the true value:  95.41%</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p><center><img src='Figures/Class15-Smoking.png' width='90%')></center></p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Mean and Standard Deviation</h2>
+  </hgroup>
+  <article>
+    <p>Sampling Distribution for Proportions</p>
+
+<ul>
+<li>Mean = \(p\)</li>
+<li>Standard Deviation:
+$\sigma (\hat { p } )=\frac { \sqrt { npq }  }{ n } =\sqrt { \frac { pq }{ n }  } $</li>
+</ul>
+
+<p><center><img src='Figures/Class15-Distribution.png' width='50%')></center></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>The Normal Model for Evolution</h2>
+  </hgroup>
+  <article>
+    <p>Population:  p = 0.43, n = 1007.  Sampling Distribution:</p>
+
+<ul>
+<li>Mean = 0.43</li>
+<li>\(\sigma (\hat { p } )=\sqrt { \frac { (0.43)(0.57) }{ 1007 }  } \approx 0.0156\)</li>
+</ul>
+
+<p><center><img src='Figures/Class15-DistributionEvolution.png' width='50%')></center></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Smokers Revisited</h2>
+  </hgroup>
+  <article>
+    <p>p = 0.18, n = 1000</p>
+
+<ul>
+<li>Standard deviation = $\sigma (\hat { p } )=\sqrt { \frac { (0.18)(0.82) }{ 1000 }  } \approx 0.0121$</li>
+<li>Standard deviation from simulation:  0.0122</li>
+</ul>
+
+<p>The sample-to-sample standard deviation is called the standard error or sampling variability.</p>
+
+<ul>
+<li>The standard error is not an error, since no error has been made.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>When Does the Normal Model Work?</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Success Failure Condition: \(np \ge 10\), \(nq \ge 10\)  There must be at least 10 expected successes and failures.</li>
+<li>Independent trials:  Check for the Randomization Condition.</li>
+<li>10% Condition:  Sample size less than 10% of the population size</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h2>Understanding Health Risks</h2>
+  </hgroup>
+  <article>
+    <p>22% of US women have a BMI that is above the 25 healthy mark.
+Only 31 of the 200 randomly chosen women from a large college had a BMI above 25.  Is this proportion unusually small?</p>
+
+  
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li>Success Failure Condition: \(np \ge 10\), \(nq \ge 10\)  There must be at least 10 expected successes and failures.</li>
+<li>Independent trials:  Check for the Randomization Condition.</li>
+<li>10% Condition:  Sample size less than 10% of the population size</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <ul>
+<li>Randomization Condition:  Yes, the women were randomly chosen.</li>
+<li>10% Condition:  For a large college, this is ok.</li>
+<li>Success Failure Condition:  \(31 \ge 10\), \(169 \ge 10\)</li>
+<li>Yes, the Normal model can be used.</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Understanding Health Risks</h2>
+  </hgroup>
+  <article>
+    <p>n = 200, p = 0.22, x = 31</p>
+
+<ul>
+<li>\(\hat { p } =\frac { 31 }{ 200 } =0.155\)</li>
+<li>\(p = 0.22\)</li>
+<li>\(SD(\hat { p } )=\sqrt { \frac { (0.22)(0.78) }{ 200 }  } \approx 0.029\)</li>
+<li>\(z = \frac{0.155 - 0.22}{0.029} \approx -2.24\)</li>
+<li>68-95-99.7 Rule:  Values 2 SD below the mean occur less than 2.5% of the time.  Perhaps this college has a higher proportion of healthy women, or women who lie about their weight.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Enough Lefty Seats?</h2>
+  </hgroup>
+  <article>
+    <p>13% of all people are left handed.</p>
+
+<ul>
+<li>A 200-seat auditorium has 15 lefty seats.</li>
+<li>What is the probability that there will not be enough lefty seats for a class of 90 students?</li>
+</ul>
+
+<p>Plan:  15/90 ≈ 0.167, Want \(P(\hat{p}) > 0.167)\)
+Model:</p>
+
+<ul>
+<li>Independence Assumption:  With respect to lefties, the students are independent.</li>
+<li>10% Condition:  This is out of all people.</li>
+<li>Success/Failure Condition:  \(15 \ge 10\), \(75 \ge 10\)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h2>Enough Lefty Seats?</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <p>Model:</p>
+
+<ul>
+<li>\(p = 0.13\)</li>
+<li>\(SD(\hat { p } )=\sqrt { \frac { (0.13)(0.87) }{ 90 }  } \approx 0.035\)
+Show:</li>
+<li>Plot</li>
+<li><p>Mechanics: \(z = \frac{0.167 - 0.13}{0.035} \approx 1.06\)<br>
+\(P(\hat{p}) > 0.167) = P(z > 1.06) \approx 0.1446\)</p></li>
+<li><p>Conclusion:  There is about a 14.5% chance that there will not be enough seats for the left handed students in the class.</p></li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p><center><img src='Figures/Class15-DistributionLefties.png' width='90%'></center></p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>The Sampling Distribution for Others</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>There is a sampling distribution for any statistic, but the Normal model may not fit.</li>
+<li>Below are histograms showing results of simulations of sampling distributions.</li>
+</ul>
+
+<p><center><img src="Figures/Class15-OtherDistributions.png" width='90%'></center></p>
+
+<ul>
+<li>The medians seem to be approximately Normal.</li>
+<li>The variances seem somewhat skewed right.</li>
+<li>The minimums are all over the place.</li>
+<li>In this course, we will focus on the proportions and the means.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h2>Sampling Distribution of the Means</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li>For 1 die, the distribution is Uniform.</li>
+<li>For 3 dice, the sampling distribution for the means is closer to Normal.</li>
+<li>For 20 dice, the sampling distribution for the means is very close to normal. The standard deviation is much smaller.</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="Figures/Class15-unnamed-chunk-21.png" alt="plot of chunk unnamed-chunk-2"> <img src="Figures/Class15-unnamed-chunk-22.png" alt="plot of chunk unnamed-chunk-2"> <img src="Figures/Class15-unnamed-chunk-23.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="">
+  <hgroup>
+    <h2>The Central Limit Theorem</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <p>The Central Limit Theorem</p>
+
+<ul>
+<li>The sampling distribution of any mean becomes nearly Normal as the sample size grows.</li>
+</ul>
+
+<p>Requirements</p>
+
+<ul>
+<li>Independent</li>
+<li>Randomly collected sample</li>
+</ul>
+
+<p>The sampling distribution of the means is close to Normal if either:</p>
+
+<ul>
+<li>Large sample size</li>
+<li>Population close to Normal</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p>Population Distribution and Sampling Distribution of the Means</p>
+
+<p>Population Distribution</p>
+
+<ul>
+<li>Normal →   Normal (any sample size)</li>
+<li>Uniform →   Normal (large sample size)</li>
+<li>Bimodal →   Normal (larger sample size)</li>
+<li>Skewed →   Normal (larger sample size)</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>Binomial Distributions and the Central Limit Theorem</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Consider a Bernoulli trial as quantitative:<br>
+
+<ul>
+<li>Success = 1</li>
+<li>Failure = 0</li>
+</ul></li>
+<li>The mean of many trials is just \(\hat{p}\)</li>
+<li>This distribution of a single trial is far from Normal.</li>
+<li>By the Central Limit Theorem, the Binomial distribution is approximately normal for large sample sizes.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Standard Deviation of the Means</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Which would be more unusual:  a student who is 6’9” tall in the class or a class that has mean height of 6’9”?</li>
+<li>The sample means have a smaller standard deviation than the individuals.</li>
+<li>The standard deviation of the sample means goes down by the square root of the sample size:</li>
+</ul>
+
+<p>\[SD(\bar{y})=\frac{\sigma}{\sqrt{n}}\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h2>The Sampling Distribution Model for a Mean</h2>
+  </hgroup>
+  <article>
+    <p>When a random sample is drawn from a population with mean \(\mu\) and standard deviation \(\sigma\), the sampling distribution has:</p>
+
+<ul>
+<li>Mean: \(\mu\)</li>
+<li>Standard Deviation: \(SD(\bar{y})=\frac{\sigma}{\sqrt{n}}\)</li>
+</ul>
+
+<p>For large sample size, the distribution is approximately normal regardless of the population the random sample comes from.
+The larger the sample size, the closer to Normal.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h2>Low BMI Revisited</h2>
+  </hgroup>
+  <article>
+    <p>The 200 college women with the low BMI reported a mean weight of only 140 pounds.  For all 18-year-old women, \(\mu = 143.74\) and \(\sigma = 51.54\).  Does the mean weight seem exceptionally low?</p>
+
+<ul>
+<li>Randomization Condition:  The women were a random sample with weights independent.</li>
+<li><p>Sample size Condition:  Weights are approximately Normal. 200 is large enough</p></li>
+<li><p>\(\mu(\bar{y}) = 143.7\)</p></li>
+<li><p>\(SD(\bar { y } )=\frac { \sigma  }{ \sqrt { n }  } =\frac { 51.54 }{ \sqrt { 200 }  } \approx 3.64\)</p></li>
+<li><p>The 68-95-99.7 rule suggests that the mean is low but not that unusual.  Such variability is not extraordinary for samples of this size.</p></li>
+</ul>
+
+<p><center><img src='Figures/Class15-LowBMI.png' width='50%'></center></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h2>Too Heavy for the Elevator?</h2>
+  </hgroup>
+  <article>
+    <p>Mean weight of US men is 190 lb, thestandard deviation is 59 lb.  An elevator has a weight limit of 10 persons or 2500 lb.  Find the probability that 10 men in the elevator will overload the weight limit.</p>
+
+  
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li>Plan:  10 over 2500 lb same as their mean over 250.</li>
+<li>Model:<br>
+
+<ul>
+<li>Independence Assumption:  Not random, but probably independent.</li>
+<li>Sample Size Condition:  Weight  approx. Normal.</li>
+</ul></li>
+<li>Model:  \(\mu = 190\), \(\sigma = 59\)</li>
+<li>By the CLT, the sampling distribution of is approximately Normal:
+\[SD(\bar { y } )=\frac { \sigma  }{ \sqrt { n }  } =\frac { 59 }{ \sqrt { 10 }  } \approx 18.66\]</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p><center><img src='Figures/Class15-Weight.png' width='90%'></center></p>
+
+<ul>
+<li>Mechanics: \(z=\frac { \bar { y } -\mu  }{ SD(\bar { y } ) } =\frac { 250-190 }{ 18.66 } \approx 3.21\)</li>
+<li>\(P(\bar{y} > 250) \approx P(z > 3.21) \approx 0.0007\)</li>
+<li>Conclusion:  There is only a 0.0007 chance that the 10 men will exceed the elevator’s weight limit.</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>Sample Size and Standard Deviation</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>\(SD(\bar{y}) = \frac{ \sigma }{ \sqrt{n} }\)</li>
+<li>\(SD(\hat{p}) = \frac{ \sqrt{pq} }{ \sqrt{n} }\)</li>
+<li>Larger sample size → Smaller standard deviation</li>
+<li>Multiply n by 4 → Divide the standard deviation by 2.</li>
+<li>Need a sample size of 100 to reduce the standard deviation by a factor of 10.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>Distribution of the Sample vs. the Sampling Distribution</h2>
+  </hgroup>
+  <article>
+    <p>Don’t confuse the distribution of the sample and the sampling distribution.</p>
+
+<ul>
+<li>If the population’s distribution is not Normal, then the sample’s distribution will not be normal even if the sample size is very large.</li>
+<li><p>For large sample sizes, the sampling distribution, which is the distribution of all possible sample means from samples of that size, will be approximately Normal.</p></li>
+<li><p>Sampling distributions arise because samples vary.  Each random sample will contain different cases and, so, a different value of the statistic.</p></li>
+<li><p>Although we can always simulate a sampling distribution, the Central Limit Theorem saves us the trouble for proportions and means.  This is especially important when we do not know the population’s distribution.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-22" style="background:;">
+  <hgroup>
+    
+  </hgroup>
+  <article>
+    <p><center><img src='Figures/Class15-Distributions.png' width='70%'></center></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+
+  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+<!-- Grab CDN jQuery, fall back to local if offline -->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery-1.7.min.js"><\/script>')</script>
+<!-- Load Javascripts for Widgets -->
+<!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->
+<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+</html>

@@ -60,7 +60,7 @@ Nov-04 | From Randomness to Probability | [HTML](https://rawgithub.com/jbryer/EP
 Nov-06 | Probability Rules | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class13.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class13.pdf?raw=true), [Source](Slides/Class13.Rmd) | 13
 Nov-11 | NO CLASS |  | 
 Nov-13 | Random Variables and Probability Models | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class14.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class14.pdf?raw=true), [Source](Slides/Class14.Rmd), [Source](Slides/Class14.Rmd) | 14
-Nov-18 | Sampling Distribution Models |  | 15
+Nov-18 | Sampling Distribution Models | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class15.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class15.pdf?raw=true), [Source](Slides/Class15.Rmd), [Source](Slides/Class15.Rmd) | 15
 Nov-20 | Confidence Intervals for Proportions |  | 16
 Nov-25 | Inferences About Means |  | 18
 Nov-27 | NO CLASS - Thanksgiving |  | 
