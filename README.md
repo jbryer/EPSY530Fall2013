@@ -102,12 +102,25 @@ You can find a lot of the material in *R in Action* on Kabacoff's website, [stat
 * Chapter 12: 9, 16, 25, 28, 33
 * Chapter 13: 16, 19, 20, 26, 40
 * Chapter 14: 15, 16, 29, 30, 40, 50
-* Chapter 15: 
-* Chapter 16:  
-* Chapter 18: 
-* Chapter 20: 
-* Chapter 21: 
+* Chapter 15: 22, 24, 29, 31, 42
+* Chapter 16: 10, 11, 17, 26, 32
+* Chapter 18: 16, 20, 29, 35, 36, 47
+* Chapter 20: 25, 28, 37, 53, 55, 63, 70
+* Chapter 21: 12, 13, 16, 23, 33, 36
 
+
+### Project
+
+An important part of learning statistics is to work with a real dataset. For this project, you will analyze data from one country in the 2009 Programme of International Student Assessment (PISA). This study is designed to evaluate what approximately 15-year-old students know in science, math, and reading. You can [download the report template here](https://github.com/jbryer/EPSY530Fall2013/blob/master/Project/EPSY530-Project.Rmd). For your country, do the following:
+
+1. For each variable beginning with `ST`, define what that variable is and whether it is quantiative or qualitative. [Click here to download the codebook](https://github.com/jbryer/EPSY530Fall2013/blob/master/Project/Codebook_Stu09_Dec10.pdf)
+2. Provide descriptive statistics for each `ST` variable. Use the `summary` and `sd` functions for quantitative variable and `table` for qualitative variable.
+3. Provide visualizations for the `ST` variables. Use barplots for quantitative variables and boxplots and histograms for quantitative variables.
+4. Write a paragraph describing your sample using the results from steps 2 and 3.
+5. Describe the distribution of the response variables (i.e. `reading`, `math`, and `science`). Include appropriate descriptive statistics and visualizations.
+6. Calcluate the correlation between `ReadingTime` and `reading`.
+7. Estimate a linear regression predicting `reading` from `ReadingTime`. Interpret the results.
+8. Perform a students t-test for each response variable between private and public school students. Is there a difference? Explain.
 
 ### Software
 
