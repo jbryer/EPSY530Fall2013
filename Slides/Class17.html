@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inferences About Means</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Inferences About Means">
+  <meta name="author" content="Jason Bryer">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+    <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+    <!-- END LOGO SLIDE -->
+    
+
+    <!-- TITLE SLIDE -->
+    <!-- Should I move this to a Local Layout File? -->
+    <slide class="title-slide segue nobackground">
+      <hgroup class="auto-fadein">
+        <h1>Inferences About Means</h1>
+        <h2>November 25, 2013</h2>
+        <p>Jason Bryer<br/>epsy530.bryer.org</p>
+      </hgroup>
+          </slide>
+
+    <!-- SLIDES -->
+      <slide class="" id="">
+  <hgroup>
+    <h2>The Central Limit Theorem (CLT)</h2>
+  </hgroup>
+  <article>
+    <p>When a random sample is drawn from a population with mean m and standard deviation s, the sampling distribution has:</p>
+
+<ul>
+<li>Mean: \(\mu\)</li>
+<li>Standard deviation: \(\frac{\sigma}{\sqrt{n}}\)</li>
+<li>Approximately Normal distribution as long as the sample size is large.</li>
+<li>The larger the distribution, the closer to Normal.</li>
+</ul>
+  
+    <div class='left' style='float:left;width:48%'>
+     
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Weight of Angus Cows</h2>
+  </hgroup>
+  <article>
+    <p>The weight of Angus cows is Normally distributed with \(\mu = 1309\) pounds and \(\sigma = 157 lbs\).  What does the CLT say about the mean weight of a random sample of 100 Angus cows? </p>
+
+<ul>
+<li>Sample means \(\bar{y}\) will average 1309 pounds.</li>
+<li>\(SD(\bar{Y}) = \frac{\sigma}{\sqrt{n}} = \frac{157}{\sqrt{100}} = 15.7 lbs\)</li>
+</ul>
+
+<p>The CLT says the sampling distribution will be approximately Normal:  N(1309, 15.7).</p>
+
+<p><img src='Figures/Class17-Distribution.png' width='50%' align='right'></p>
+
+<p>For the means of all random samples,</p>
+
+<ul>
+<li>68% will be between 1293.3 and 1324.7 lb.</li>
+<li>95% will be between 1277.6 and 1340.4 lb.</li>
+<li>99.7% will be between 1261.9 and 1356.1 lb.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>The Challenge of the CLT</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>CLT tells us \(SD(\bar{y}) = \frac{\sigma}{\sqrt{n}}\)</li>
+<li>We would like to use this for Confidence Intervals and Hypothesis Testing.</li>
+<li>Unfortunately, we almost never know \(\sigma\).</li>
+<li>Using s almost works: \(SE(\bar{y}) = \frac{s}{\sqrt{n}}\), but not quite.</li>
+<li>When using s, the Normal model has some error.</li>
+<li>William Gosset came up with new models, one for each n that works better.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Gosset the Brewer</h2>
+  </hgroup>
+  <article>
+    <p><img src='Figures/William_Sealy_Gosset.jpg' align='right'></p>
+
+<ul>
+<li>At Guinness, Gosset experimented with beer.</li>
+<li>The Normal Model was not right, especially for small samples.</li>
+<li>Still bell shaped, but details differed, depending on n</li>
+<li>Came up with the “Student’s t Distribution” as the correct model</li>
+</ul>
+
+<p><center><img src='Figures/Class17-tdistribution.png' width='50%'></center></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h2>Degrees of Freedom</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li>For every sample size n there is a different Student’s t distribution.</li>
+<li>Degrees of freedom: df = n – 1.</li>
+<li>Similar to the “n – 1” in the formula for sample standard deviation</li>
+<li>It is the number of independent quantities left after we’ve estimated the parameters.</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="Figures/Class17-comparetdistributions.png" alt="plot of chunk comparetdistributions"> </p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Confidence Interval for Means</h2>
+  </hgroup>
+  <article>
+    <p>Sampling Distribution Model for Means</p>
+
+<ul>
+<li>With certain conditions (seen later), the standardized sample mean follows the Student’s t model with n – 1 degrees of freedom.</li>
+</ul>
+
+<p>\[t = \frac{ \bar{y}-\mu }{ SE(\bar{y}) }\]</p>
+
+<ul>
+<li>We estimate the standard deviation with</li>
+</ul>
+
+<p>\[ SE(\bar{y}) = \frac{s}{\sqrt{n}}\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>One Sample t-Interval for the Mean</h2>
+  </hgroup>
+  <article>
+    <p>When the assumptions are met (seen later), the confidence interval for the mean is</p>
+
+<p>\[\bar { y } ={ t }_{ n-1 }^{ * }\times SE(\bar{y})\]</p>
+
+<p>The critical value \({ t }_{ n-1 }^{ * }\) depends on the confidence level, C, and the degrees of freedom n – 1. </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h2>Contaminated Salmon</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <p>A study of mirex concentrations in salmon found</p>
+
+<ul>
+<li>n = 150, \(\bar{y} = 0.0913\) ppm, s = 0.0495 ppm</li>
+<li>Find a 95% confidence interval for mirex concentrations in salmon.</li>
+<li>df = 150 – 1 = 149</li>
+<li>\(SE(\bar{y}) = \frac{0.0485}{\sqrt{150}} \approx 0.0040\)</li>
+<li>\({ t }_{ 149 }^{ * } = 1.976\)</li>
+</ul>
+
+<pre><code class="r">qt(0.975, 149)
+</code></pre>
+
+<pre><code>[1] 1.976
+</code></pre>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p>\(\bar{y} \pm { t }_{ 149 }^{ * } \times SE(\bar{y}) = 0.0913 \pm 1.976(0.0040)\)
+\(\bar{y} \pm { t }_{ 149 }^{ * } \times SE(\bar{y}) = (0.0834, 0.0992)\)</p>
+
+<ul>
+<li>I’m 95% confident that the mean level of mirex concentration in farm-raised salmon is between 0.0834 and 0.0992 parts per million.</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Notes about z and t</h2>
+  </hgroup>
+  <article>
+    <p>The Student’s t distribution:</p>
+
+<ul>
+<li>Is unimodal.</li>
+<li>Is symmetric about its mean.</li>
+<li>Has higher tails than Normal.</li>
+<li>Is very close to Normal for large df.</li>
+<li>Is needed because we are using s as an estimate for s.</li>
+</ul>
+
+<p>If you happen to know \(\sigma\), which almost never happens, use the Normal model and not Student’s t.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Assumptions and Conditions</h2>
+  </hgroup>
+  <article>
+    <p>Independence Condition</p>
+
+<ul>
+<li>Randomization  Condition:  The data should arise from a suitably randomized experiment.</li>
+<li>Sample size &lt; 10% of the population size.</li>
+</ul>
+
+<p>Nearly Normal</p>
+
+<ul>
+<li>For large sample sizes (n &gt; 40), not severely skewed.</li>
+<li>(15 ≤ n ≤ 40):  Need unimodal and symmetric.</li>
+<li>(n &lt; 15):  Need almost perfectly normal.</li>
+<li>Check with a histogram.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h2>How Much Sleep do College Students Get?</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <p>Build a 90% Confidence Interval for the Mean.</p>
+
+<p>Plan:  Data on 25 Students</p>
+
+<p><img src='Figures/Class17-Sleep.png' width='50%' align='right'></p>
+
+<p>Model</p>
+
+<ul>
+<li>Randomization Condition<br>
+The data are from a random survey.</li>
+<li>Nearly Normal Condition<br>
+Unimodal and slightly skewed, so OK</li>
+<li>Use Student’s t-Model with df = 25 – 1 = 24.</li>
+<li>One-sample t-interval for the mean</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p>Mechanics</p>
+
+<ul>
+<li>n = 25; \(\bar{y} = 6.64\); s = 1.075</li>
+<li>\(SE(\bar{y}) = \frac{s}{\sqrt{n}} = \frac{1.075}{\sqrt{25}} = 0.215 hours\)</li>
+</ul>
+
+<pre><code class="r">qt(0.95, 24)
+</code></pre>
+
+<pre><code>[1] 1.711
+</code></pre>
+
+<ul>
+<li>\({ t }_{ 24 }^{ * } = 1.711\)</li>
+<li>\(ME = { t }_{ 24 }^{ * } \times SE{\bar{y}} = 1.711 \times 0.215\)<br>
+\(= 0.368 hours\)</li>
+</ul>
+
+<p>90% $ CI = 6.64 \pm 0.368$</p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>How Much Sleep do College Students Get?</h2>
+  </hgroup>
+  <article>
+    <p>Conclusion:  I’m 90 percent confident that the interval from 6.272 and 7.008 hours contains the true population mean number of hours that college students sleep. </p>
+
+<h3>What Not to Say</h3>
+
+<p>“90% of all students sleep between 6.272 and 7.008 hours each night.”</p>
+
+<ul>
+<li>The CI is for the mean sleep, not individual students.</li>
+</ul>
+
+<p>“We are 90% confident that a randomly selected student will sleep between 6.272 and 7.008 hours per night.”</p>
+
+<ul>
+<li>We are 90% confident about the mean sleep, not an individual’s sleep.</li>
+</ul>
+
+<p>“The mean amount of sleep is 6.64 hours 90% of the time.”</p>
+
+<ul>
+<li>The population mean never changes.  Only sample means vary from sample to sample.</li>
+</ul>
+
+<p>“90% of all samples will have a mean sleep between 6.272 and 7.008 hours per night.”</p>
+
+<ul>
+<li>This interval does not set the standard for all other intervals.  This interval is no more likely to be correct than any other.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>One-Sample t-Test for the Mean</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Assumptions are the same.</li>
+<li>\(H_0: \mu = \mu_0\) </li>
+<li>\({ t }_{ n-1 }^{ * } = \frac{\bar{y} - \mu_0}{SE(\bar{y})}\)</li>
+<li>Standard Error of \(\bar{y}:SE(\bar{y})=\frac{\sigma}{\sqrt{n}}\)</li>
+<li>When the conditions are met and \(H_0\) is true, the statistic follows the Student’s t Model.</li>
+<li>Use this model to find the P-value.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>Are the Salmon Unsafe?</h2>
+  </hgroup>
+  <article>
+    <p><img src='Figures/Class17-Salmon.png' width='45%' align='right'></p>
+
+<p>EPA recommended mirex screening is 0.08 ppm.</p>
+
+<ul>
+<li>Are farmed salmon contaminated beyond the permitted EPA level?</li>
+<li>Recap:  Sampled 150 salmon.  Mean 0.0913 ppm, Standard Deviation 0.0495 ppm.</li>
+<li>\(H_0: \mu = 0.08\)</li>
+<li>\(H_A: \mu > 0.08\)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>Are the Salmon Unsafe?</h2>
+  </hgroup>
+  <article>
+    <p>One-Sample t-Test for the Mean</p>
+
+<ul>
+<li>n=150; df=149; \(\bar{y}=0.0913\); s=0.0495</li>
+<li>\(SE(\bar{y}) = \frac{0.0495}{\sqrt{150}} \approx 0.0040\)</li>
+<li>\({ t }_{ 149 }^{ * } = \frac{0.0913 - 0.08}{0.0040} = 2.825\)</li>
+<li>\(P(t_149 > 2.825) = 0.0027\)</li>
+</ul>
+
+<pre><code class="r">1 - pt(2.825, 149)
+</code></pre>
+
+<pre><code>[1] 0.002688
+</code></pre>
+
+<ul>
+<li>Since the P-value is so low, reject H0 and conclude that the population mean mirex level does exceed the EPA screening value.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Do Students Get at Least Seven Hours of Sleep? 25 Surveyed.</h2>
+  </hgroup>
+  <article>
+    <p><img src='Figures/Class17-Sleep.png' width='30%' align='right'></p>
+
+<ul>
+<li>Plan: Does the mean amount of sleep exceed 7 hours?</li>
+<li>Hypotheses:  \(H_0: \mu = 7;  H_A: \mu > 7\)</li>
+<li>Model
+
+<ul>
+<li>Randomization Condition:  The students were randomly andindependently selected .</li>
+<li>Nearly Normal Condition:  unimodal and symmetric</li>
+</ul></li>
+<li>Use the Student’s t-model, df = 24</li>
+<li>One-sample t-test for the mean</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    
+  </hgroup>
+  <article>
+    <p><img src='Figures/Class17-SleepDistribution.png' width='40%' align='right'></p>
+
+<h2>Do Students Get at Least Seven Hours of Sleep? 25 Surveyed.</h2>
+
+  
+    <div class='left' style='float:left;width:48%'>
+     <p>Mechanics</p>
+
+<ul>
+<li>n = 25; \(\bar{y} = 6.64\); s = 1.075</li>
+<li>\(SE(\bar{y}) = \frac{s}{\sqrt{n}} = \frac{1.075}{\sqrt{25}} = 0.215 hours\)</li>
+<li>\(t = \frac{\bar{y} - \mu_0}{SE(\bar{y})} = \frac{6.64 - 7}{0.215} \approx -1.67\)</li>
+<li>P-value$ = P(t_{25} &lt; -1.67) \approx 0.054$</li>
+</ul>
+
+<pre><code class="r">pt(-1.67, 24)
+</code></pre>
+
+<pre><code>[1] 0.05396
+</code></pre>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p>Conclusion: P-value = 0.054 says thatif students do sleep an average of 7 hrs., samples of 25 students can be expected to have an observed mean of 6.64 hrs. or less about 54 times in 1000. </p>
+
+<ul>
+<li>With 0.05 cutoff, there is not quite enough evidence to conclude that the mean sleep is less than 7.<br></li>
+<li>The 90% CI:  (6.272, 7.008) contains 7.<br></li>
+<li>Collecting a larger sample would reduce the ME and give us a better handle on the true mean hours of sleep.</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h2>Intervals and Tests</h2>
+  </hgroup>
+  <article>
+    <p>Confidence Intervals</p>
+
+<ul>
+<li>Start with data and find plausible values for the parameter.</li>
+<li>Always 2-sided</li>
+</ul>
+
+<p>Hypothesis Tests</p>
+
+<ul>
+<li>Start with a proposed parameter value and then use the data to see if that value is not plausible.</li>
+<li>2-sided test:  Within the confidence interval means fail to reject \(H_0\).  P-value = 1 – C is the cutoff.</li>
+<li>1-sided test:  P-value = (1 – C)/2 is the cutoff.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h2>Sleep, Confidence Intervals and Hypothesis Tests</h2>
+  </hgroup>
+  <article>
+    <p>90% Confidence interval:  (6.272, 7.008)</p>
+
+<ul>
+<li>For a 2-tailed test with a 10% cutoff, any \(6.272 \le \mu_0 \le 7.008\) would result in failing to reject \(H_0\).</li>
+<li>For a 1-tailed test (“&lt;”) with a 5% cutoff, any \(\mu_0 \le 7.008\) would result in failing to reject \(H_0\).</li>
+<li>For a 1-tailed test (“&gt;”) with a 5% cutoff, any \(6.272 \le \mu_0\) would result in failing to reject \(H_0\).</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>The Challenge of Finding the Sample Size</h2>
+  </hgroup>
+  <article>
+    <p>\[ME = { t }_{ n-1 }^{ * } \times \frac{s}{\sqrt{n}} \]</p>
+
+<p>To find the necessary sample size in order to have a small enough margin of error:</p>
+
+<ul>
+<li>Decide on acceptable ME.</li>
+<li>Determine s:  Use a pilot to estimate s.</li>
+<li>Determine \({ t }_{ n-1 }^{ * }\):  Use z* as an estimate.  By the 68-95-99.7 Rule, use 2 for 95% confidence.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+
+  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+<!-- Grab CDN jQuery, fall back to local if offline -->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery-1.7.min.js"><\/script>')</script>
+<!-- Load Javascripts for Widgets -->
+<!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->
+<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+</html>
