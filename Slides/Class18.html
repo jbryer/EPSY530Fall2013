@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Comparing Groups</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Comparing Groups">
+  <meta name="author" content="Jason Bryer">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+    <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+    <!-- END LOGO SLIDE -->
+    
+
+    <!-- TITLE SLIDE -->
+    <!-- Should I move this to a Local Layout File? -->
+    <slide class="title-slide segue nobackground">
+      <hgroup class="auto-fadein">
+        <h1>Comparing Groups</h1>
+        <h2>December 2, 2013</h2>
+        <p>Jason Bryer<br/>epsy530.bryer.org</p>
+      </hgroup>
+          </slide>
+
+    <!-- SLIDES -->
+      <slide class="" id="">
+  <hgroup>
+    <h2>Variance of the Differences</h2>
+  </hgroup>
+  <article>
+    <p>For independent variables X and Y</p>
+
+<p>\[Var(X-Y) = Var(X) + Var(Y)\]</p>
+
+<p>The variance of the difference is larger than either.</p>
+
+<p>Take a square root to get:</p>
+
+<p>\[SD(X-Y) = \sqrt{SD(X)^2 + SD(Y)^2}\]</p>
+  
+    <div class='left' style='float:left;width:48%'>
+     
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>The Standard Deviation of the Difference Between Two Proportions</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Use subscripts to show two proportions: \(p_1, q_1, p_2, q_2, \hat{p}_1, \hat{p}_2, n_1, n_2\)</li>
+</ul>
+
+<p>\[ Var(\hat { p } _{ 1 }-\hat { p } _{ 2 })={ \left( \sqrt { \frac { { p }_{ 1 }{ q }_{ 1 } }{ { n }_{ 1 } }  }  \right)  }^{ 2 }+{ \left( \sqrt { \frac { { p }_{ 2 }{ q }_{ 2 } }{ { n }_{ 2 } }  }  \right)  }^{ 2 }=\frac { { p }_{ 1 }{ q }_{ 1 } }{ { n }_{ 1 } } +\frac { { p }_{ 2 }{ q }_{ 2 } }{ { n }_{ 2 } }  \]</p>
+
+<p>\[SD(\hat { p } _{ 1 }-\hat { p } _{ 2 })=\sqrt { \frac { p_{ 1 }q_{ 1 } }{ n_{ 1 } } +\frac { p_{ 2 }q_{ 2 } }{ n_{ 2 } }  } \]</p>
+
+<p>Standard Error:</p>
+
+<p>\[SE(\hat { p } _{ 1 }-\hat { p } _{ 2 })=\sqrt { \frac { \hat { p } _{ 1 }\hat { q } _{ 1 } }{ n_{ 1 } } +\frac { \hat { p } _{ 2 }\hat { q } _{ 2 } }{ n_{ 2 } }  } \]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Standard Deviation of a Difference</h2>
+  </hgroup>
+  <article>
+    <p>57% of 248 boys aged 15-17 have online profiles.  70% of 256 girls aged 15-17 have online profiles.</p>
+
+<ul>
+<li>What is the standard error of the difference?</li>
+<li>The boys and girls were selected at random, so independent</li>
+</ul>
+
+<p>\[SE(\hat{p}_{boys}) = \sqrt{ \frac{(.57)(.43)}{248} } \approx 0.0314\]
+\[SE(\hat{p}_{girls}) = \sqrt{ \frac{(.70)(.30)}{256} } \approx 0.0286\]</p>
+
+<p>\[SE(\hat{p}_{boys} - \hat{p}_{girls}) = \sqrt{0.0314^2 + 0.0286^2} \approx 0.0425\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Assumptions and Conditions for Comparing Proportions</h2>
+  </hgroup>
+  <article>
+    <p>Independence Assumption:  Check</p>
+
+<ul>
+<li>Randomization  Condition:  The data are drawn independently and randomly.</li>
+<li>10% Condition:  If without replacement, the data represent less than 10% of the population.</li>
+</ul>
+
+<p>Independent Groups Assumption</p>
+
+<ul>
+<li>The two groups are independent of each other.</li>
+<li>Comparing wives and husbands or before and after can give a smaller difference between SDs.</li>
+</ul>
+
+<p>Sample size</p>
+
+<ul>
+<li>Successes and Failures for both \(\ge 10\)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Sampling Distribution for the Difference Between Two Independent Proportions</h2>
+  </hgroup>
+  <article>
+    <p>If samples are independent (individually and by groups) and the sample sizes are large,  then the sampling distribution of \(\hat{p}_1 - \hat{p}_2\) </p>
+
+<ul>
+<li>Follows a Normal model</li>
+<li>Has mean \(\mu = p_1 – p_2\)</li>
+<li>Has standard deviation
+\[ SD(\hat { p } _{ 1 }-\hat { p } )=\sqrt { \frac { { p } _{ 1 } { q } _{ 1 } }{ n_{ 1 } } +\frac {  { p } _{ 2 } { q } _{ 2 } }{ n_{ 2 } }  }  \]</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Two-Proportion z-Interval</h2>
+  </hgroup>
+  <article>
+    <p>If the conditions are met, the confidence interval for \(p_1 – p_2\) is</p>
+
+<p>\[ (\hat{p}_1 - \hat{p}_2) \pm z^* \times SE(\hat{p}_1 - \hat{p}_2) \]
+\[ SE(\hat { p } _{ 1 }-\hat { p } )=\sqrt { \frac { \hat { p } _{ 1 }\hat { q } _{ 1 } }{ n_{ 1 } } +\frac { \hat { p } _{ 2 }\hat { q } _{ 2 } }{ n_{ 2 } }  } \]</p>
+
+<ul>
+<li>z* is the critical value that corresponds to the confidence level C.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Online Presence:  Boys vs. Girls</h2>
+  </hgroup>
+  <article>
+    <p>57% of the 248 boys had an online profiles.
+70% of the 256 girls had an online profiles.
+What does the confidence interval say about the difference?</p>
+
+<p>\[ (\hat{p}_{boys} - \hat{p}_{girls}) \pm z^* \times SE(\hat{p}_{boys} - \hat{p}_{girls}) \]
+\[(0.7 - 0.57) \pm 1.96 \times 0.0425\]
+\[(4.75\%, 21.3\%) \]</p>
+
+<p>We are 95% confident that the proportion of teen girls who post online is between 4.7% and 21.3% higher than for boys.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h2>Wearing Seat Belts</h2>
+  </hgroup>
+  <article>
+    <p>Question:  How much difference is therein the proportion of male drivers who wear seat belts when sitting next to a man and the proportion when sitting next to a woman?</p>
+
+  
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li>Plan:  Want a 95% confidence interval for \(p_F – p_M\)</li>
+<li>Data are from a random sample of MA drivers.</li>
+</ul>
+
+<p>Model:  </p>
+
+<ul>
+<li>Randomization Condition:  Participants selected randomly and independently from car to car.</li>
+<li>10% Condition:  Sample size is less than 10% of all drivers.</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <ul>
+<li>Independent Groups Assumption:  The seat-belt use with male and female passengers are independent.</li>
+</ul>
+
+<p>Success Failure Condition:  </p>
+
+<ul>
+<li>With female passengers:  2777 wore seat belts,  1431 did not.</li>
+<li>With male passengers:  1363 wore seat belts,  1400 did not.</li>
+<li>All successes and failures ≥ 10.</li>
+</ul>
+
+<p>All conditions are met.  Use the Normal model and find a 2-proportion z-interval.</p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Wearing Seat Belts</h2>
+  </hgroup>
+  <article>
+    <p>\[n_F = 4208, n_M = 2763\]
+\[\hat{p}_F = \frac{2777}{4208} \approx 0.660, \hat{p}_M = \frac{1363}{2763} \approx 0.493\]
+\[SE(\hat{p}_F - \hat{p}_M) = \sqrt{\frac{\hat{p}_F \hat{q}_F}{n_F} + \frac{\hat{p}_M \hat{q}_M}{n_M}} = \sqrt{\frac{(0.660)(0.340)}{4208} + \frac{(0.493)(0.507)}{2763}} \approx 0.012\]
+\[ME = z^* \times SE(\hat{p}_F - \hat{p}_M) \approx 1.96 \times 0.012 \approx 0.024\]
+\[ \hat{p}_F - \hat{p}_M = 0.660 - 0.493 = 0.167\]
+95% Condifdence Interval:
+\[0.167 \pm 0.024 = (14.3\%, 19.1\%)\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Wearing Seat Belts</h2>
+  </hgroup>
+  <article>
+    <p>Conclusion: I am 95% confident that the proportion of male drivers who wear seat belts when driving next to a female passenger is between 14.3 and 19.1 percentage points higher than the proportion who wear seat belts when driving next to a male passenger.</p>
+
+<p>Caution</p>
+
+<ul>
+<li>Can’t generalize to other states</li>
+<li>Can’t say men buckle up because of the women; Lurking variables such as age may be present.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>Internet Before Sleep</h2>
+  </hgroup>
+  <article>
+    <p>The Sleep in America Poll found that 205 of 293, or 70%, of Gen-Y use the Internet before sleep.  235 of 469, or 50%, of Gen-X use the Internet before sleep. </p>
+
+<ul>
+<li>Is this difference of 20% real or is it likely to be due only to natural fluctuations in the sample?</li>
+<li>\(H_0:  p_1 – p_2 = 0\)</li>
+<li>For CI: \(SE(\hat{p}_1 - \hat{p}_2) = \sqrt { \frac { \hat { p } _{ 1 }\hat { q } _{ 1 } }{ n_{ 1 } } +\frac { \hat { p } _{ 2 }\hat { q } _{ 2 } }{ n_{ 2 } }  }\)</li>
+<li>For hypothesis testing, we can do better.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Pooling the Proportion</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>\(H_0\) says the proportions are equal.</li>
+<li>\(p_1\) and \(p_2\) should equal the total proportion of successes.</li>
+<li>Total successes:  205 + 235 = 440</li>
+<li>Total trials:  293 + 469 = 762</li>
+<li>Pooled Proportion:<br></li>
+</ul>
+
+<p>\[ \hat{p}_{pooled} = \frac{{success}_1 + {success}_2}{n_1 + n_2} = \frac{440}{762} \approx 0.5774 \]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Standard Error for Internet Before Sleep</h2>
+  </hgroup>
+  <article>
+    <p>The Sleep in America Poll found that 205 of 293 or 70% of Gen-Y use the Internet before sleep.  235 of 469 or 50% of Gen-X use the Internet before sleep. </p>
+
+<p>\[ SE_{pooled}(\hat{p}_{1} - \hat{p}_{2}) = \sqrt{\frac{\hat{p}_{pooled} \hat{q}_{pooled}}{n_1} + \frac{\hat{p}_{pooled} \hat{q}_{pooled}}{n_2}} \]
+\[ SE_{pooled}(\hat{p}_{1} - \hat{p}_{2}) = \sqrt{\frac{0.5774(1-0.5774)}{293} + \frac{0.5774(1-0.5774)}{469}} \]
+\[ SE_{pooled}(\hat{p}_{1} - \hat{p}_{2}) \approx 0.0368 \]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>Two-Proportion z-Test</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Conditions same as 2-proportion CI.</li>
+<li>\(H_0\): \(p_1 – p_2 = 0\)</li>
+<li>\(\hat{p}_{pooled} = \frac{Success_1 + Success_2}{n_1 + n_2}\)</li>
+<li>\(SE_{pooled}(\hat{p}_{1} - \hat{p}_{2}) = \sqrt{\frac{\hat{p}_{pooled} \hat{q}_{pooled}}{n_1} + \frac{\hat{p}_{pooled} \hat{q}_{pooled}}{n_2}}\)</li>
+<li>\(z = \frac{\hat{p}_1 - \hat{p}_2 - 0}{SE_{pooled}(\hat{p}_1 - \hat{p}_2)}\)</li>
+<li>The statistic follows the Normal model. </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>Pre-Sleep Internet Rates Differ?</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Plan:  Random sample ofadults: 293 Gen Y, 469 Gen X</li>
+<li>Hypotheses:<br>
+
+<ul>
+<li>\(H_0\):  \(p_{GenY} – p_{GenX}  =  0\)</li>
+<li>\(H_A\):  \(p_{GenY} – p_{GenX}  \ne  0\)</li>
+</ul></li>
+</ul>
+
+<p>Model</p>
+
+<ul>
+<li>Randomization Condition:  Randomly selected and stratified by sex.</li>
+<li>10% Condition:  Samples less than 10% of all Gen X and Gen Y.</li>
+<li>Independent Groups Assumption:  The samples were selected at random so independent.</li>
+<li>Success/Failure Condition:  Observed numbers of successes and failures for both groups ≥ 10.</li>
+</ul>
+
+<p>The conditions are all met.  Use the Normal model and perform a two-proportion z-test.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Pre-Sleep Internet Rates Differ?</h2>
+  </hgroup>
+  <article>
+    <p>\[n_{GenY} = 293, n_{GenX} = 469\]
+\[y_{GenY} = 205, y_{GenX} = 235\]
+\[\hat{p}_{GenY} = 0.700, \hat{p}_{GenX} = 0.501\]
+\[\hat{p}_{pooled} = \frac{y_{GenY} + y_{GenX}}{n_{GenY} + n_{GenX}} = \frac{205 +  235}{293 + 469} \approx 0.5774\]
+\[SE(\hat { p } _{ GenY }-\hat { p } _{ GenX })=\sqrt { \frac { \hat { p } _{ pooled }(1-\hat { p } _{ pooled }) }{ n_{ GenY } } +\frac { \hat { p } _{ pooled }(1-\hat { p } _{ pooled }) }{ n_{ GenX } }  }\]
+\[SE(\hat { p } _{ GenY }-\hat { p } _{ GenX })=\sqrt { \frac { (0.5774)(0.4226) }{ 293 } +\frac { (0.5774)(0.4226) }{ 469 }  } \approx 0.0368\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h2>Pre-Sleep Internet Rates Differ?</h2>
+  </hgroup>
+  <article>
+    <p>\[\hat{p}_{GenY} - \hat{p}_{GenX} = 0.700 - 0.501 = 0.199\]
+\[ z = \frac{(\hat{p}_{GenY} - \hat{p}_{GenX}) - 0}{SE_{pooled}(\hat{p}_{GenY} - \hat{p}_{GenX})} = \frac{0.199}{0.0368} \approx 5.41\]</p>
+
+<p>\[ P-value = 2 \times P(z > 5.41) \le 0.0001\]</p>
+
+<p><img src='Figures/Class18-SleepDistribution.png' width='40%' align='right'></p>
+
+<p>Conclusion: P-value ≤ 0.0001:  If there really was no difference in surfing rates between the two groups, then the difference observed in this study would be very rare indeed.</p>
+
+<p>We can conclude that there is, in fact, a difference in the rate of surfing between GenY and GenX adults.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h2>Difference Between Means: Standard Error</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>\(Var(\bar{Y}_1 - \bar{Y}_2) = Var(\bar{Y}_1) + Var(\bar{Y}_2)\)</li>
+<li>\(SD(\bar{Y}_1 - \bar{Y}_2) = \sqrt{Var(\bar{Y}_1) + Var(\bar{Y}_2)}\)</li>
+<li>\(SD(\bar{Y}_1 - \bar{Y}_2) = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}\)</li>
+</ul>
+
+<p>Don’t know the population SDs, so use the sample SDs: </p>
+
+<p>\[SE(\bar{Y}_1 - \bar{Y}_2) = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h2>Effect of Knowing How Much We Eat</h2>
+  </hgroup>
+  <article>
+    <p><img src='Figures/Class18-TableEating.png' align='right' width='40%'></p>
+
+<ul>
+<li>27 people observed eating soup from ordinary bowl.</li>
+<li>27 people observed eating soup from a bowl that slowly refills without the person knowing.</li>
+<li>Find the standard error.</li>
+</ul>
+
+<p>\(SE(\bar{y}_{refill} - \bar{y}_{ordinary}) = \sqrt{\frac{s^2_r}{n_r} + \frac{s^2_o}{n_o}} = \sqrt{\frac{8.4^2}{27} + \frac{6.1^2}{27}} \approx 2.0 oz\)</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>Sampling Distribution for the Difference Between Two Means</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>When the assumptions are met, the sampling distribution for the difference between two independent means:</li>
+</ul>
+
+<p>\[t = \frac{(\bar{Y}_1 - \bar{Y}_2) - (\mu_1 - \mu_2)}{SE(\bar{Y}_1 - \bar{Y}_2)}\]
+\[SE(\bar{Y}_1 - \bar{Y}_2) = \sqrt{\frac{s^2_1}{n_1} + \frac{s^2_2}{n_2}}\]</p>
+
+<ul>
+<li>Uses the Student’s t-model</li>
+<li>The degrees of freedom are complicated, so just use a computer.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>Assumptions and Conditions</h2>
+  </hgroup>
+  <article>
+    <p>Independence</p>
+
+<ul>
+<li>Same assumptions as proportions</li>
+<li>Between and within groups</li>
+<li>Randomization is evidence of independence.</li>
+<li>If not independent, can you use pairing?</li>
+</ul>
+
+<p>Nearly Normal Condition</p>
+
+<ul>
+<li>Same as with a single mean, but must check both.</li>
+<li>n &lt; 15:  must be very close to normal.</li>
+<li>15 ≤ n ≤ 40:  Check for outliers and skewness.</li>
+<li>n &gt; 40:  Fine as long as no extreme outliers or extreme skewness</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h2>Checking Conditions for Soup Experiment</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li>Randomization Condition:  The subjects were randomly assigned.</li>
+<li>Nearly Normal Condition: n = 27 for both.  Histograms only a little skewed.  No outliers.</li>
+<li>Independent Groups Assumption:  Randomization to treatment groups guarantees this</li>
+<li>Okay to construct a two-sample t-interval for the difference between two means.</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p><center>
+<img src='Figures/Class18-SoupOrdinary.png' width='60%'>
+<img src='Figures/Class18-SoupRefilling.png' width='60%'>
+</center></p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-23" style="background:;">
+  <hgroup>
+    <h2>Two-Sample t-Interval for the Difference Between Two Means</h2>
+  </hgroup>
+  <article>
+    <p>When the conditions are met, the confidence interval for the difference between means from two independent groups is:</p>
+
+<p>\[(\bar{Y}_1 - \bar{Y}_2) \pm t^*_{df} \times SE(\bar{Y}_1 - \bar{Y}_2)\]
+\[SE(\bar{Y}_1 - \bar{Y}_2) = \sqrt{\frac{s^2_1}{n_1} + \frac{s^2_2}{n_2}}\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-24" style="background:;">
+  <hgroup>
+    <h2>Confidence Interval for Soup Experiment</h2>
+  </hgroup>
+  <article>
+    <p><img src='Figures/Class18-TableEating.png' align='right' width='40%'></p>
+
+<ul>
+<li>What does a 95% confidence interval say about the difference in mean amounts eaten?</li>
+<li>\(\bar{Y}_{refill} - \bar{Y}_{ordinary} = 14.7 - 8.5 = 6.2\)</li>
+<li>\(t^*_{df} = 2.011\) (by computer)</li>
+<li>\(ME = t^*_{df} \times SE(\bar{Y}_{refill} - \bar{Y}_{ordinary}) = 2.11 \times 2.0 \approx 4.02\)</li>
+<li>CI: \(6.2 \pm 4.02 = (2.18, 10.22)\)</li>
+<li>I am 95% confident that people eating from a refilling bowl will eat between 2.18 and 10.22 more ounces than those eating from an ordinary bowl.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-25" style="background:;">
+  <hgroup>
+    <h2>Two-Sample t-Test for the Difference Between Means</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Conditions same as two-sample t-interval</li>
+<li>\(H_0:  \mu_1 – \mu_2 = \Delta_0\)  (\(\Delta_0\) usually 0)</li>
+<li>\(t = \frac{(\bar{Y}_1 - \bar{Y}_2) - \Delta_0}{SE(\bar{Y}_1 - \bar{Y}_2)}\)</li>
+<li><p>\(SE(\bar{Y}_1 - \bar{Y}_2) = \sqrt{\frac{s^2_1}{n_1} + \frac{s^2_2}{n_2}}\)</p></li>
+<li><p>When the conditions are met and the null hypothesis is true, use the Student’s t-model to find the P-value.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-26" style="background:;">
+  <hgroup>
+    <h2>Do People Offer a Lower Price to Friends than to Strangers?</h2>
+  </hgroup>
+  <article>
+    <p>Is there a difference in the average price for a used camera people would offer a friend and a stranger?</p>
+
+<p><img src='Figures/Class18-Selling.png' width='20%' align='right'></p>
+
+<ul>
+<li>Plan:  I have bid prices from 8 subjects buying from a friend and 7 buying from a stranger, found in a randomized experiment.</li>
+<li>Hypotheses
+
+<ul>
+<li>\(H_0:  \mu_F – \mu_s = 0\)</li>
+<li>\(H_A:  \mu_F – \mu_s \ne 0\)</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-27" style="background:;">
+  <hgroup>
+    <h2>Do People Offer a Lower Price to Friends than to Strangers?</h2>
+  </hgroup>
+  <article>
+    <p><img src='Figures/Class18-Selling.png' width='20%' align='right'></p>
+
+<ul>
+<li><p>Model:  Has practical significance, but is there statistical significance?</p>
+
+<ul>
+<li>Randomization  Condition:  Subjects assigned to treatment groups randomly.</li>
+<li>Independent Groups Assumption:  Randomizing gives independent groups.</li>
+<li>Nearly Normal  Condition:  Histograms are reasonably unimodal and symmetric, but with the very small sample sizes, we should be concerned.</li>
+</ul></li>
+<li><p>The assumptions and conditions are somewhat reasonable.  </p></li>
+<li><p>Use the Student’s t-model to perform a two-sample t-test.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-28" style="background:;">
+  <hgroup>
+    <h2>Friends vs. Strangers</h2>
+  </hgroup>
+  <article>
+    <p>\[n_F = 8, n_S = 7\]
+\[\bar{Y}_F = 281.88, \bar{Y}_S = 211.43\]
+\[S_F = 18.31, S_S = 46.43\]
+\[SE(\bar{Y}_F - \bar{Y}_S) = \sqrt{\frac{18.31^2}{8} + \frac{46.43^2}{7}} \approx 18.70\]
+\[\bar{Y}_F - \bar{Y}_S = 281.88 - 211.43 = 70.45\]
+\[t = \frac{70.45}{18.70} \approx 3.77\]
+\[P-value = 2 \times P(t > 3.77) = 0.006\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-29" style="background:;">
+  <hgroup>
+    <h2>Friends vs. Strangers</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Conclusion:  The P-value = 0.006 is very small.</li>
+<li>If there were no difference in the mean prices, then a difference this large would occur 6 times in 1000.</li>
+<li>Too rare to believe</li>
+<li>Reject \(H_0\).</li>
+<li>Conclude that people are likely, on average, to offer a friend more than they’d offer a stranger for a used camera.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h2>Public vs. Private Schools</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">describeBy(pisa.USA$reading, 
+group=pisa.USA$PUBPRIV, mat=TRUE, 
+skew=FALSE)[,2:6]
+</code></pre>
+
+<pre><code>    group1 var    n mean    sd
+11  Public   1 3946 2527 442.8
+12 Private   1  319 2759 410.7
+</code></pre>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <pre><code class="r">ggplot(pisa.USA, aes(x=PUBPRIV, 
+y=reading)) + geom_boxplot()
+</code></pre>
+
+<p><img src="Figures/Class18-pisareadingboxplot.png" alt="plot of chunk pisareadingboxplot"> </p>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-31" style="background:;">
+  <hgroup>
+    <h2>Public vs. Private Schools</h2>
+  </hgroup>
+  <article>
+    <pre><code class="r">t.test(reading ~ PUBPRIV, data = pisa.USA)
+</code></pre>
+
+<pre><code>
+    Welch Two Sample t-test
+
+data:  reading by PUBPRIV
+t = -9.613, df = 380.3, p-value &lt; 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -278.5 -183.9
+sample estimates:
+ mean in group Public mean in group Private 
+                 2527                  2759 
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-32" style="background:;">
+  <hgroup>
+    <h2>Pooling</h2>
+  </hgroup>
+  <article>
+    <p>If the variances are equal, we can use pooling.</p>
+
+<ul>
+<li>Advantages of Pooling
+
+<ul>
+<li>Can have more degrees of freedom than two sample t-test.</li>
+<li>More degrees of freedom gives a higher power.</li>
+</ul></li>
+<li>Disadvantage of Pooling
+
+<ul>
+<li>The assumption of equal variances is difficult to establish and often false.</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-33" style="background:;">
+  <hgroup>
+    <h2>Pooled Variance and Standard Error</h2>
+  </hgroup>
+  <article>
+    <p>Pooled variance:</p>
+
+<p>\[s^2_{pooled} = \frac{(n_1- 1)s^2_{1} + (n_2 - 1)s^2_{2}}{(n_1 - 1) + (n_2 - 1)}\]</p>
+
+<p>Pooled standard error:</p>
+
+<p>\[SE_{ pooled }=\sqrt { \frac { s^{ 2 } }{ _{ pooled } } { n_{ 1 } }+\frac { s^{ 2 }_{ pooled }}{ n_{ 2 } } } =s_{ pooled }\sqrt { \frac { 1 }{ n_{ 1 } } +\frac { 1 }{ n_{ 2 } }  } \]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="">
+  <hgroup>
+    <h2>Pooled t-Test and Confidence Interval for Means</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li>Conditions same as two-sample t-interval/test plus the variances must be equal.</li>
+<li>\(H_0:  \mu_1 – \mu_2 = \Delta_0\)  (\(\Delta_0\) usually 0)</li>
+<li>\(t = \frac{(\bar{Y}_1 - \bar{Y}_2) - \Delta_0}{SE(\bar{Y}_1 - \bar{Y}_2)}\)</li>
+<li>\(SE(\bar{Y}_1 - \bar{Y}_2) = \sqrt{\frac{s^2_1}{n_1} + \frac{s^2_2}{n_2}}\)</li>
+<li>\(s^2_{pooled} = \frac{(n_1 - 1)s^2_1 + (n_2 - 1)s^2_2}{(n_1 - 1) + (n_2 - 1)}\)</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p>When the conditions are met and the null hypothesis is true, use the Student’s t-model with \((n_1 – 1) + (n_2 – 1)\) degrees of freedom.</p>
+
+<ul>
+<li>Use the model to find the P-value or margin of error.</li>
+<li>The CI is:<br>
+\((\bar{y}_1 - \bar{y}_2) \pm t^*_{df} \times SE_{pooled}(\bar{y}_1 - \bar{y}_2)\)<br></li>
+<li>\(df = (n_1 – 1) + (n_2 – 1)\)</li>
+<li>The t* depends on the confidence level.</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="slide-35" style="background:;">
+  <hgroup>
+    <h2>When to Use the Pooled t-Test</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>The pooled t-test has almost no advantage over the independent sample t-test.</li>
+<li>A great disadvantage is that the pooled t-test is very poor when the standard deviations are not the same.</li>
+<li>Avoid this test unless you are very certain that the variances (standard deviations) are the same.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+
+  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+<!-- Grab CDN jQuery, fall back to local if offline -->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery-1.7.min.js"><\/script>')</script>
+<!-- Load Javascripts for Widgets -->
+<!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->
+<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+</html>

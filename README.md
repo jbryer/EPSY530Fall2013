@@ -64,7 +64,7 @@ Nov-18 | Sampling Distribution Models | [HTML](https://rawgithub.com/jbryer/EPSY
 Nov-20 | Confidence Intervals for Proportions | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class16.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class16.pdf?raw=true), [Source](Slides/Class16.Rmd) | 16
 Nov-25 | Inferences About Means | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class17.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class17.pdf?raw=true), [Source](Slides/Class17.Rmd), [R](Slides/Class17.R) | 18
 Nov-27 | NO CLASS - Thanksgiving |  | 
-Dec-02 | Comparing Groups |  | 20
+Dec-02 | Comparing Groups | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class18.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class18.pdf?raw=true), [Source](Slides/Class18.Rmd), [R](Slides/Class18.R) | 20
 Dec-04 | Paired Samples and Block |  | 21
 Dec-09 | FINAL EXAM |  | 	
 
@@ -115,7 +115,7 @@ An important part of learning statistics is to work with a real dataset. For thi
 
 1. For each variable beginning with `ST`, define what that variable is and whether it is quantiative or qualitative. [Click here to download the codebook](https://github.com/jbryer/EPSY530Fall2013/blob/master/Project/Codebook_Stu09_Dec10.pdf)
 2. Provide descriptive statistics for each `ST` variable. Use the `summary` and `sd` functions for quantitative variable and `table` for qualitative variable.
-3. Provide visualizations for the `ST` variables. Use barplots for quantitative variables and boxplots and histograms for quantitative variables.
+3. Provide visualizations for the `ST` variables. Use barplots for qualitative variables and boxplots and histograms for quantitative variables.
 4. Write a paragraph describing your sample using the results from steps 2 and 3.
 5. Describe the distribution of the response variables (i.e. `reading`, `math`, and `science`). Include appropriate descriptive statistics and visualizations.
 6. Calcluate the correlation between `ReadingTime` and `reading`.
