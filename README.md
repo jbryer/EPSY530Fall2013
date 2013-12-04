@@ -65,7 +65,7 @@ Nov-20 | Confidence Intervals for Proportions | [HTML](https://rawgithub.com/jbr
 Nov-25 | Inferences About Means | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class17.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class17.pdf?raw=true), [Source](Slides/Class17.Rmd), [R](Slides/Class17.R) | 18
 Nov-27 | NO CLASS - Thanksgiving |  | 
 Dec-02 | Comparing Groups | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class18.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class18.pdf?raw=true), [Source](Slides/Class18.Rmd), [R](Slides/Class18.R) | 20
-Dec-04 | Paired Samples and Block |  | 21
+Dec-04 | Paired Samples and Block | [HTML](https://rawgithub.com/jbryer/EPSY530Fall2013/master/Slides/Class19.html), [PDF](https://github.com/jbryer/EPSY530Fall2013/blob/master/Slides/Class19.pdf?raw=true), [Source](Slides/Class19.Rmd), [R](Slides/Class19.R) | 21
 Dec-09 | FINAL EXAM |  | 	
 
 

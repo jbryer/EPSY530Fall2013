@@ -1,0 +1,101 @@
+---
+title       : Paired Samples and Block
+subtitle    : December 4, 2013
+author      : Jason Bryer
+job         : epsy530.bryer.org
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+--- &twocol
+```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+require(ggplot2)
+require(gdata)
+require(psych)
+options(digits=4, width=95)
+opts_chunk$set(fig.path='Figures/Class19-')
+opts_chunk$set(comment=NA)
+
+require(granova)
+data(anorexia.sub)
+```
+
+## Pairing
+
+*** left
+
+Family Treatment Weight Change for Young Anorexia Patients: Contains pre and post treatment weights for young female anorexia patients.
+
+* The data are paired rather than independent.
+* Blocking involves pairing arising from an experiment.
+* Matching involves pairing arising from an observational study.
+* With pairing, we look at the differences.
+
+*** right
+
+```{r, echo=FALSE}
+print(anorexia.sub, row.names=FALSE)
+```
+
+--- &twocol
+
+## Differences
+
+*** left
+
+* For paired data, create a new data set of the differences.
+* We can now look only at the differences.
+* Ignoring the originaldata, we now have a single data set.
+* Proceed with a one-sample t-test.  This process is called a paired t-test.
+
+*** right
+
+```{r, echo=FALSE}
+anorexia.sub$Diff <- anorexia.sub[,2] - anorexia.sub[,1]
+print(anorexia.sub, row.names=FALSE)
+```
+
+--- &twocolwideleft
+
+## Dependent Sample t-test
+
+*** left
+
+```{r, granovads,fig.show='hide', fig.width=10, fig.height=9}
+granovagg.ds(anorexia.sub[,1:2], revc=TRUE)
+```
+
+*** right
+
+
+--- &notitle
+
+<center><img src='Figures/Class19-granovads.png'></center>
+
+
+--- &twocol
+
+## Assumptions and Conditions
+
+*** left
+
+Paired Data Condition
+* The data must be paired.
+* Only use pairing if there is a natural matching.
+* The two-sample t-test and the paired t-test are not interchangeable.
+
+Independence Assumption
+* For paired data, the groups are never independent.
+* Need differences independent, not individuals
+* Randomization ensures independence.
+
+*** right 
+
+Normal Population Assumption
+* Need to assume the differences follow a Normal model.
+* Nearly Normal Condition:
+	* Sketch a histogram and normal probability plot of the differences.
+	* Normality less important for larger sample sizes.
+	* Even if the individual measurements are skewed, bimodal or have outliers, the differences may still be Normal.
+

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Paired Samples and Block</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Paired Samples and Block">
+  <meta name="author" content="Jason Bryer">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+    <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+    <!-- END LOGO SLIDE -->
+    
+
+    <!-- TITLE SLIDE -->
+    <!-- Should I move this to a Local Layout File? -->
+    <slide class="title-slide segue nobackground">
+      <hgroup class="auto-fadein">
+        <h1>Paired Samples and Block</h1>
+        <h2>December 4, 2013</h2>
+        <p>Jason Bryer<br/>epsy530.bryer.org</p>
+      </hgroup>
+          </slide>
+
+    <!-- SLIDES -->
+      <slide class="" id="">
+  <hgroup>
+    <h2>Pairing</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <p>Family Treatment Weight Change for Young Anorexia Patients: Contains pre and post treatment weights for young female anorexia patients.</p>
+
+<ul>
+<li>The data are paired rather than independent.</li>
+<li>Blocking involves pairing arising from an experiment.</li>
+<li>Matching involves pairing arising from an observational study.</li>
+<li>With pairing, we look at the differences.</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <pre><code> Prewt Postwt
+  83.8   95.2
+  83.3   94.3
+  86.0   91.5
+  82.5   91.9
+  86.7  100.3
+  79.6   76.7
+  76.9   76.8
+  94.2  101.6
+  73.4   94.9
+  80.5   75.2
+  81.6   77.8
+  82.1   95.5
+  77.6   90.7
+  83.5   92.5
+  89.9   93.8
+  86.0   91.7
+  87.3   98.0
+</code></pre>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="">
+  <hgroup>
+    <h2>Differences</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li>For paired data, create a new data set of the differences.</li>
+<li>We can now look only at the differences.</li>
+<li>Ignoring the originaldata, we now have a single data set.</li>
+<li>Proceed with a one-sample t-test.  This process is called a paired t-test.</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <pre><code> Prewt Postwt Diff
+  83.8   95.2 11.4
+  83.3   94.3 11.0
+  86.0   91.5  5.5
+  82.5   91.9  9.4
+  86.7  100.3 13.6
+  79.6   76.7 -2.9
+  76.9   76.8 -0.1
+  94.2  101.6  7.4
+  73.4   94.9 21.5
+  80.5   75.2 -5.3
+  81.6   77.8 -3.8
+  82.1   95.5 13.4
+  77.6   90.7 13.1
+  83.5   92.5  9.0
+  89.9   93.8  3.9
+  86.0   91.7  5.7
+  87.3   98.0 10.7
+</code></pre>
+
+    </div>
+  </article>
+</slide>
+      <slide class="" id="">
+  <hgroup>
+    <h2>Dependent Sample t-test</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:60%'>
+     <pre><code class="r">granovagg.ds(anorexia.sub[, 1:2], revc = TRUE)
+</code></pre>
+
+<pre><code>                              Summary Statistics
+n                                         17.000
+Postwt mean                               90.494
+Prewt mean                                83.229
+mean(D = Postwt - Prewt)                   7.265
+SD(D)                                      7.157
+Effect Size                                1.015
+r(Postwt, Prewt)                           0.538
+r(Postwt + Prewt, D)                       0.546
+Lower 95% Confidence Interval              3.585
+Upper 95% Confidence Interval             10.945
+t (D-bar)                                  4.185
+df.t                                      16.000
+p-value (t-statistic)                      0.001
+</code></pre>
+
+
+    </div>    
+    <div class='right' style='float:right;width:40%'>
+     
+    </div>
+  </article>
+</slide>
+      <slide class="" id="">
+  <article>
+    <p><center><img src='Figures/Class19-granovads.png'></center></p>
+
+  </article>
+</slide>
+      <slide class="" id="">
+  <hgroup>
+    <h2>Assumptions and Conditions</h2>
+  </hgroup>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <p>Paired Data Condition</p>
+
+<ul>
+<li>The data must be paired.</li>
+<li>Only use pairing if there is a natural matching.</li>
+<li>The two-sample t-test and the paired t-test are not interchangeable.</li>
+</ul>
+
+<p>Independence Assumption</p>
+
+<ul>
+<li>For paired data, the groups are never independent.</li>
+<li>Need differences independent, not individuals</li>
+<li>Randomization ensures independence.</li>
+</ul>
+
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <p>Normal Population Assumption</p>
+
+<ul>
+<li>Need to assume the differences follow a Normal model.</li>
+<li>Nearly Normal Condition:
+
+<ul>
+<li>Sketch a histogram and normal probability plot of the differences.</li>
+<li>Normality less important for larger sample sizes.</li>
+<li>Even if the individual measurements are skewed, bimodal or have outliers, the differences may still be Normal.</li>
+</ul></li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+    <slide class="backdrop"></slide>
+  </slides>
+
+  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+<!-- Grab CDN jQuery, fall back to local if offline -->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery-1.7.min.js"><\/script>')</script>
+<!-- Load Javascripts for Widgets -->
+<!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->
+<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+</html>
